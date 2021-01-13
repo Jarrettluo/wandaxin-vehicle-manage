@@ -20,7 +20,7 @@ public abstract class ApiResult implements Serializable {
     /**
      * 状态码,0-成功，其他-失败
      */
-    public String code;
+    public Integer code;
 
     /**
      * 创建成功返回体，无数据
@@ -48,7 +48,7 @@ public abstract class ApiResult implements Serializable {
      * @param message 错误信息
      * @return ApiResult
      */
-    public static ApiResult error(String code, String message) {
+    public static ApiResult error(Integer code, String message) {
         return new ErrorApiResult(code, message);
     }
 

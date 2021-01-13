@@ -15,5 +15,4 @@ public class PartnerPO {
     private Integer price;
     private Long vehicleId;
 
-
 }

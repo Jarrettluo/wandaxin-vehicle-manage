@@ -18,7 +18,7 @@ public final class SuccessApiResult<T> extends ApiResult implements Serializable
 
     public SuccessApiResult(T data) {
         this.timestamp = System.currentTimeMillis();
-        this.code = "0";
+        this.code = 200;
         this.data = data;
     }
 

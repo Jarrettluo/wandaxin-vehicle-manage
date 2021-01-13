@@ -19,7 +19,7 @@ public class VehicleInformationDTO {
 
     private Long id;
     private String vehicleNumber;
-    private String vehicle_plate;
+    private String vehiclePlate;
     private String vehicleBrand;
     private Date registrationDate;
     private String vehicleColor;

@@ -22,4 +22,6 @@ public class SaleItemPO {
     private float selfProfit;
     private Date saleDate;
 
+    private Long vehicleId;
+
 }

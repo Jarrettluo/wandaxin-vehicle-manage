@@ -21,9 +21,10 @@ public interface MysqlVehicleRepository {
             ")</script>")
     Integer save(VehicleInformationPO vehicleInformationPO);
 
-    @Delete("SELECT * FROM `vehicle_information` WHERE id = #{id}")
+    @Delete("DELETE FROM `vehicle_information` WHERE id = #{id}")
     void remove(Long id);
 
+    // TODO 这里需要修改！
     @Update("<script> UPDATE `vehicle_information` <set>" +
             "<if test='vehicle_number!=null'>vehicle_num = #{vehicleNumber}, </if>" +
             "</set></script>")

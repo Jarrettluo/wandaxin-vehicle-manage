@@ -3,7 +3,6 @@ package com.example.demo.controller;
 import com.example.demo.domain.dto.VehicleInformationDTO;
 import com.example.demo.service.VehicleService;
 import com.example.utils.result.ApiResult;
-import org.apache.ibatis.annotations.Delete;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -23,11 +22,13 @@ public class VehicleController {
 
     @PostMapping
     public ApiResult save(@RequestBody VehicleInformationDTO vehicleInformationDTO) {
+        System.out.println(vehicleInformationDTO.toString());
         return vehicleService.save(vehicleInformationDTO);
     }
 
     @DeleteMapping("/{id}")
     public ApiResult remove(@PathVariable Long id) {
+        System.out.println(id);
         return vehicleService.remove(id);
     }
 

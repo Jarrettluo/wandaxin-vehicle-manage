@@ -17,7 +17,7 @@ public final class ErrorApiResult extends ApiResult implements Serializable {
      */
     public String message;
 
-    public ErrorApiResult(String code, String message) {
+    public ErrorApiResult(Integer code, String message) {
         this.timestamp = System.currentTimeMillis();
         this.code = code;
         this.message = message;
