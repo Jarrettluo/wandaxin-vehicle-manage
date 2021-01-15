@@ -18,7 +18,6 @@ import java.util.List;
 public class VehicleInformationDTO {
 
     private Long id;
-    private String vehicleNumber;
     private String vehiclePlate;
     private String vehicleBrand;
     private Date registrationDate;
@@ -26,8 +25,6 @@ public class VehicleInformationDTO {
     private Date purchaseDate;
     private Integer purchasePrice;
     private String vehicleNote;
-    private Integer repairState;
-    private Integer saleState;
     private Long saleitemId;
 
     // 车辆拥有的合伙人信息，和车辆是一对多的关系

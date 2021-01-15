@@ -26,9 +26,10 @@ public class VehicleServiceImpl implements VehicleService {
 
     @Override
     public ApiResult save(VehicleInformationDTO vehicleInformationDTO) {
+        System.out.println(vehicleInformationDTO.toString());
         VehicleInformationPO vehicleInformationPO = BeanUtil.mapperBean(vehicleInformationDTO, VehicleInformationPO.class);
         vehicleRepository.save(vehicleInformationPO);
-        return ApiResult.success();
+        return ApiResult.success(vehicleInformationPO.getId());
     }
 
     @Override

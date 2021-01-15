@@ -29,8 +29,7 @@ public class PartnerController {
     }
 
     @PostMapping
-    public ApiResult save(@RequestBody PartnerDTO[] partners, @PathVariable Long vehicleId) {
-        System.out.println(partners[0].toString());
+    public ApiResult save(@RequestBody PartnerDTO[] partners) {
         return partnerService.save(partners);
     }
 

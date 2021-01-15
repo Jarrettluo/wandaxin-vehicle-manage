@@ -3,7 +3,11 @@ package com.example.demo.controller;
 import com.example.demo.domain.dto.PartnerDTO;
 import com.example.demo.domain.dto.PreparednessDTO;
 import com.example.demo.domain.po.PreparednessPO;
+import com.example.demo.service.PreparedService;
+import com.example.utils.result.ApiResult;
 import org.springframework.web.bind.annotation.*;
+
+import javax.annotation.Resource;
 
 /**
  * @Author Jarrett Luo
@@ -15,20 +19,22 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(value="/preparedness")
 public class PreparednessController {
 
+    @Resource
+    PreparedService preparedService;
+
     @GetMapping("/{vehicleId}")
-    public String find(@PathVariable Long vehicleId){
-        return vehicleId.toString();
+    public ApiResult list(@PathVariable Long vehicleId){
+        return preparedService.list(vehicleId);
     }
 
-    @PostMapping("/{vehicleId}")
-    public String save(@RequestBody PreparednessDTO[] preparednesses, @PathVariable Long vehicleId){
-
-        return preparednesses.toString();
+    @PostMapping
+    public ApiResult save(@RequestBody PreparednessDTO[] preparednesses){
+        return preparedService.save(preparednesses);
     }
 
-    @PutMapping("/{vehicleId}")
-    public String update(@RequestBody PreparednessDTO[] preparednesses, @PathVariable Long vehicleId){
-        return vehicleId.toString();
+    @DeleteMapping("/{vehicleId}")
+    public ApiResult remove(@PathVariable Long vehicleId) {
+        return preparedService.remove(vehicleId);
     }
 
 }

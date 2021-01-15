@@ -19,7 +19,7 @@ public class VehicleRepository {
     @Resource
     MysqlVehicleRepository mysqlVehicleRepository;
 
-    public Integer save(VehicleInformationPO vehicleInformationPO){
+    public Long save(VehicleInformationPO vehicleInformationPO){
         return mysqlVehicleRepository.save(vehicleInformationPO);
     }
 

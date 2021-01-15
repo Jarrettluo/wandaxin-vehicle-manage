@@ -13,13 +13,14 @@ import java.util.List;
 @Mapper
 public interface MysqlVehicleRepository {
 
-    @Insert("<script>INSERT INTO `vehicle_information`(vehicle_number, vehicle_plate," +
+    @Options(useGeneratedKeys = true, keyProperty = "id", keyColumn = "id")
+    @Insert("<script>INSERT INTO `vehicle_information`(vehicle_plate," +
             "vehicle_brand, registration_date, vehicle_color, purchase_date," +
-            "purchase_price, vehicle_note, repair_state, sale_state) VALUES(" +
-            "#{vehicleNumber}, #{vehiclePlate}, #{vehicleBrand}, #{registrationDate}, " +
-            "#{vehicleColor}, #{purchaseDate}, #{purchasePrice}, #{vehicleNote}, #{repairState}, #{saleState}" +
+            "purchase_price, vehicle_note) VALUES(" +
+            "#{vehiclePlate}, #{vehicleBrand}, #{registrationDate}, " +
+            "#{vehicleColor}, #{purchaseDate}, #{purchasePrice}, #{vehicleNote}" +
             ")</script>")
-    Integer save(VehicleInformationPO vehicleInformationPO);
+    Long save(VehicleInformationPO vehicleInformationPO);
 
     @Delete("DELETE FROM `vehicle_information` WHERE id = #{id}")
     void remove(Long id);
