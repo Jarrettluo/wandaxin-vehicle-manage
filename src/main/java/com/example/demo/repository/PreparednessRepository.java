@@ -24,16 +24,19 @@ public interface PreparednessRepository {
     /**
      * 批量写入合作伙伴的信息
      */
-    @Insert("<script> INSERT INTO `partner` (name, price, vehicle_id) values " +
+    @Insert("<script> INSERT INTO `preparedness` (repair_item, repair_price, handler_name, handle_date," +
+            " vehicle_id) values " +
             " <foreach collection ='result' item= 'item' separator =',' > " +
-            " (#{item.repairItem}, #{item.repairPrice}, #{item.handlerName}, #{item.handlerDate} ) </foreach>" +
+            " (#{item.repairItem}, #{item.repairPrice}, #{item.handlerName}, #{item.handleDate}," +
+            " #{item.vehicleId} ) </foreach>" +
             " </script>")
     Integer save(@Param(value = "result") List<PreparednessPO> result);
+
 
     /**
      * 删除修改合作伙伴的信息
      */
-    @Delete("DELETE FROM `partner` WHERE vehicle_id = #{vehicleId}")
+    @Delete("DELETE FROM `preparedness` WHERE vehicle_id = #{vehicleId}")
     void remove(Long vehicleId);
 
 }

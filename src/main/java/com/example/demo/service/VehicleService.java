@@ -20,4 +20,6 @@ public interface VehicleService {
     ApiResult find(Long id);
 
     ApiResult list();
+    
+    ApiResult search(String vehiclePlate);
 }

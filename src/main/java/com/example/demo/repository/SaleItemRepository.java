@@ -25,21 +25,28 @@ public interface SaleItemRepository {
     @Select("SELECT * FROM `sale_item` WHERE vehicle_id = #{vehicleId} ")
     SaleItemPO findSaleItemByVehicleId(Long vehicleId);
 
-
-    @Insert("<script>INSERT INTO `vehicle_information`(vehicle_number, vehicle_plate," +
-            "vehicle_brand, registration_date, vehicle_color, purchase_date," +
-            "purchase_price, vehicle_note, repair_state, sale_state) VALUES(" +
-            "#{vehicleNumber}, #{vehiclePlate}, #{vehicleBrand}, #{registrationDate}, " +
-            "#{vehicleColor}, #{purchaseDate}, #{purchasePrice}, #{vehicleNote}, #{repairState}, #{saleState}" +
+    @Options(useGeneratedKeys = true, keyProperty = "id", keyColumn = "id")
+    @Insert("<script>INSERT INTO `sale_item`(" +
+            "sale_price, commission_rate, repair_price, partner_price," +
+            "partner_profit, self_profit, sale_date, vehicle_id) VALUES(" +
+            "#{salePrice}, #{commissionRate}, #{repairPrice}, #{partnerPrice}, " +
+            "#{partnerProfit}, #{selfProfit}, #{saleDate}, #{vehicleId}" +
             ")</script>")
     Integer save(SaleItemPO saleItemPO);
 
-    @Delete("DELETE FROM `vehicle_information` WHERE id = #{id}")
+    @Delete("DELETE FROM `sale_item` WHERE id = #{id}")
     void remove(Long id);
 
     // TODO 这里需要修改！
-    @Update("<script> UPDATE `vehicle_information` <set>" +
-            "<if test='vehicle_number!=null'>vehicle_num = #{vehicleNumber}, </if>" +
+    @Update("<script> UPDATE `sale_item` <set>" +
+            "<if test='sale_price!=null'>sale_price = #{salePrice}, </if>" +
+            "<if test='commission_rate!=null'>commission_rate = #{commissionRate}, </if>" +
+            "<if test='repair_price!=null'>repair_price = #{repairPrice}, </if>" +
+            "<if test='partner_price!=null'>partner_price = #{partnerPrice}, </if>" +
+            "<if test='partner_profit!=null'>partner_profit = #{partnerProfit}, </if>" +
+            "<if test='self_profit!=null'>self_profit = #{selfProfit}, </if>" +
+            "<if test='sale_date!=null'>sale_date = #{saleDate}, </if>" +
+            "<if test='vehicle_id!=null'>vehicle_id = #{vehicleId}, </if>" +
             "</set></script>")
     void update(SaleItemPO saleItemPO);
 

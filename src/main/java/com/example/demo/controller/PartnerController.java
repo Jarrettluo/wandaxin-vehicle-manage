@@ -22,17 +22,19 @@ public class PartnerController {
     @Resource
     PartnerService partnerService;
 
-
+    @CrossOrigin
     @GetMapping("/{vehicleId}")
     public ApiResult list(@PathVariable Long vehicleId) {
         return partnerService.list(vehicleId);
     }
-
+    @CrossOrigin
     @PostMapping
     public ApiResult save(@RequestBody PartnerDTO[] partners) {
+        System.out.println(partners);
+        System.out.println("======================================");
         return partnerService.save(partners);
     }
-
+    @CrossOrigin
     @DeleteMapping("/{vehicleId}")
     public ApiResult remove(@PathVariable Long vehicleId) {
         return partnerService.remove(vehicleId);

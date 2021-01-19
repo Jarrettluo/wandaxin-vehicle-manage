@@ -26,7 +26,6 @@ public class VehicleServiceImpl implements VehicleService {
 
     @Override
     public ApiResult save(VehicleInformationDTO vehicleInformationDTO) {
-        System.out.println(vehicleInformationDTO.toString());
         VehicleInformationPO vehicleInformationPO = BeanUtil.mapperBean(vehicleInformationDTO, VehicleInformationPO.class);
         vehicleRepository.save(vehicleInformationPO);
         return ApiResult.success(vehicleInformationPO.getId());
@@ -55,6 +54,13 @@ public class VehicleServiceImpl implements VehicleService {
     @Override
     public ApiResult list() {
         List<VehicleInformationPO> vehicleInformationPOList = vehicleRepository.list();
+        List<VehicleInformationDTO> vehicleInformationDTOList = BeanUtil.mapperList(vehicleInformationPOList, VehicleInformationDTO.class);
+        return ApiResult.success(vehicleInformationDTOList);
+    }
+    
+    @Override
+    public ApiResult search(String vehiclePlate) {
+        List<VehicleInformationPO> vehicleInformationPOList = vehicleRepository.search(vehiclePlate);
         List<VehicleInformationDTO> vehicleInformationDTOList = BeanUtil.mapperList(vehicleInformationPOList, VehicleInformationDTO.class);
         return ApiResult.success(vehicleInformationDTOList);
     }

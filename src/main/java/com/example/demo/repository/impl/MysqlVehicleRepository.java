@@ -25,16 +25,22 @@ public interface MysqlVehicleRepository {
     @Delete("DELETE FROM `vehicle_information` WHERE id = #{id}")
     void remove(Long id);
 
-    // TODO 这里需要修改！
     @Update("<script> UPDATE `vehicle_information` <set>" +
-            "<if test='vehicle_number!=null'>vehicle_num = #{vehicleNumber}, </if>" +
-            "</set></script>")
+            "<if test='vehiclePlate!=null'>vehicle_plate = #{vehiclePlate}, </if>" +
+            "<if test='vehicleBrand!=null'>vehicle_brand = #{vehicleBrand}, </if>" +
+            "<if test='registrationDate!=null'>registration_date = #{registrationDate}, </if>" +
+            "<if test='vehicleColor!=null'>vehicle_color = #{vehicleColor}, </if>" +
+            "<if test='purchaseDate!=null'>purchase_date = #{purchaseDate}, </if>" +
+            "<if test='purchasePrice!=null'>purchase_price = #{purchasePrice}, </if>" +
+            "<if test='vehicleNote!=null'>vehicle_note = #{vehicleNote}, </if>" +
+            "<if test='saleitemId!=null'>saleitem_id = #{saleitemId}, </if>" +
+            "</set> WHERE id = #{id}</script>")
     void update(VehicleInformationPO vehicleInformationPO);
 
     @Select("SELECT * FROM `vehicle_information` WHERE id = #{id}")
     @Results({
-            @Result(property = "saleItem", column = "saleitem_id",
-                    one = @One(select = "com.example.demo.repository.SaleItemRepository.findSaleItemById")),
+            @Result(property = "saleItem", column = "id",
+                    one = @One(select = "com.example.demo.repository.SaleItemRepository.findSaleItemByVehicleId")),
             @Result(property = "partners", column = "id",
                     many = @Many(select = "com.example.demo.repository.PartnerRepository.findPartnersByVehicleId")),
             @Result(property = "preparednesses", column = "id",
@@ -44,6 +50,18 @@ public interface MysqlVehicleRepository {
     VehicleInformationPO find(Long id);
 
     @Select("SELECT * FROM `vehicle_information`")
+    @Results({
+            @Result(property = "saleItem", column = "id",
+                    one = @One(select = "com.example.demo.repository.SaleItemRepository.findSaleItemByVehicleId")),
+            @Result(property = "partners", column = "id",
+                    many = @Many(select = "com.example.demo.repository.PartnerRepository.findPartnersByVehicleId")),
+            @Result(property = "preparednesses", column = "id",
+                    many = @Many(select = "com.example.demo.repository.PreparednessRepository.findPreparednessByVehicleId"))
+    })
+    @Result(property = "id", column = "id")
     List<VehicleInformationPO> list();
+
+    @Select("SELECT * FROM vehicle_information WHERE vehicle_plate like \"%\" #{vehiclePlate} \"%\"")
+    List<VehicleInformationPO> search(String vehiclePlate);
 
 }

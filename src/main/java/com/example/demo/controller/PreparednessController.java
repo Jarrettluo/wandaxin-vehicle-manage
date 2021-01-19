@@ -21,17 +21,19 @@ public class PreparednessController {
 
     @Resource
     PreparedService preparedService;
-
+    @CrossOrigin
     @GetMapping("/{vehicleId}")
     public ApiResult list(@PathVariable Long vehicleId){
         return preparedService.list(vehicleId);
     }
-
+    @CrossOrigin
     @PostMapping
     public ApiResult save(@RequestBody PreparednessDTO[] preparednesses){
+        System.out.println("&&&&&&&&&&&&&&&&&&&&&&");
+        System.out.println(preparednesses);
         return preparedService.save(preparednesses);
     }
-
+    @CrossOrigin
     @DeleteMapping("/{vehicleId}")
     public ApiResult remove(@PathVariable Long vehicleId) {
         return preparedService.remove(vehicleId);

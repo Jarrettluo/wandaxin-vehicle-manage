@@ -17,10 +17,10 @@ public interface StatisticsRepository {
     @Select("SELECT SUM(`self_profit`) FROM `sale_item` WHERE YEAR(created_time) = YEAR(NOW())")
     Integer calTotalProfit();
 
-    @Select("SELECT COUNT(`saleitem_id`) FROM `vehicle_information` where `saleitem_id` = \"null\"")
+    @Select("SELECT COUNT(*) FROM `vehicle_information` where `saleitem_id` is null")
     Integer calTotalNotSold();
     // select count(*) from table where 字段 = "";
 
-    @Select("SELECT COUNT(`saleitem_id`) FROM `vehicle_information` where `saleitem_id` != \"null\"")
+    @Select("SELECT COUNT(*) FROM `vehicle_information` where `saleitem_id` is not null")
     Integer calTotalSold();
 }

@@ -1,6 +1,7 @@
 package com.example.demo.service.impl;
 
 import com.example.demo.domain.dto.SaleItemDTO;
+import com.example.demo.domain.dto.VehicleInformationDTO;
 import com.example.demo.domain.po.SaleItemPO;
 import com.example.demo.domain.po.VehicleInformationPO;
 import com.example.demo.repository.VehicleRepository;
@@ -31,12 +32,23 @@ public class SaleItemServiceImpl implements SaleItemService {
         SaleItemPO saleItemPO = BeanUtil.mapperBean(saleItemDTO, SaleItemPO.class);
         saleItemRepositoryImpl.save(saleItemPO);
 
-        VehicleInformationPO vehicleInformationPO = vehicleRepository.find(saleItemPO.getId());
-        vehicleInformationPO.setSaleitemId(saleItemPO.getVehicleId());
-        vehicleRepository.update(vehicleInformationPO);
+        VehicleInformationPO vehicleInformationPO = vehicleRepository.find(saleItemPO.getVehicleId());
+        vehicleInformationPO.setSaleitemId(saleItemPO.getId());
+        VehicleInformationDTO vehicleInformationDTO = BeanUtil.mapperBean(vehicleInformationPO, VehicleInformationDTO.class);
 
-        return ApiResult.success();
+        VehicleInformationPO vehicleInformationPO2 = BeanUtil.mapperBean(vehicleInformationDTO, VehicleInformationPO.class);
+        vehicleRepository.update(vehicleInformationPO2);
+
+        return ApiResult.success(saleItemPO.getId());
     }
+
+
+    // @Override
+    // public ApiResult find(Long id) {
+    //     VehicleInformationPO vehicleInformationPO = vehicleRepository.find(id);
+    //     VehicleInformationDTO vehicleInformationDTO = BeanUtil.mapperBean(vehicleInformationPO, VehicleInformationDTO.class);
+    //     return ApiResult.success(vehicleInformationDTO);
+    // }
 
     @Override
     public ApiResult remove(Long id) {

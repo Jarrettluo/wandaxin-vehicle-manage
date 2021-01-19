@@ -20,16 +20,18 @@ public class SaleItemController {
     @Resource
     SaleItemService saleItemService;
 
+    @CrossOrigin
     @GetMapping("/{vehicleId}")
     public ApiResult find(@PathVariable Long vehicleId){
         return saleItemService.find(vehicleId);
     }
-
+    @CrossOrigin
     @PostMapping
     public ApiResult save(@RequestBody SaleItemDTO saleItem){
         return saleItemService.save(saleItem);
     }
 
+    @CrossOrigin
     @PutMapping
     public ApiResult update(@RequestBody SaleItemDTO saleItem){
         return saleItemService.update(saleItem);

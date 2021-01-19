@@ -38,4 +38,8 @@ public class VehicleRepository {
     public List<VehicleInformationPO> list() {
         return mysqlVehicleRepository.list();
     }
+
+    public List<VehicleInformationPO> search(String vehiclePlate) {
+        return mysqlVehicleRepository.search(vehiclePlate);
+    }
 }

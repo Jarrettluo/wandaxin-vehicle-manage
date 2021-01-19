@@ -52,4 +52,12 @@ public class VehicleController {
     public ApiResult list(){
         return vehicleService.list();
     }
+
+    @CrossOrigin
+    @GetMapping("/search/")
+    public ApiResult search(@RequestParam(name = "vehiclePlate") String vehiclePlate){
+        System.out.println(vehiclePlate);
+        return vehicleService.search(vehiclePlate);
+    }
+    //
 }
