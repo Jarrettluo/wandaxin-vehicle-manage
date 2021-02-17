@@ -38,4 +38,7 @@ public class SaleItemRepositoryImpl {
         return saleItemRepository.findSaleItemByVehicleId(vehicleId);
     }
 
+    public void removeByVehicleId(Long vehicleId) {
+        saleItemRepository.removeByVehicleId(vehicleId);
+    }
 }

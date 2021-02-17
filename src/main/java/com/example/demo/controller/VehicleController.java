@@ -23,14 +23,12 @@ public class VehicleController {
     @CrossOrigin
     @PostMapping
     public ApiResult save(@RequestBody VehicleInformationDTO vehicleInformationDTO) {
-        System.out.println(vehicleInformationDTO.toString());
         return vehicleService.save(vehicleInformationDTO);
     }
 
     @CrossOrigin
     @DeleteMapping("/{id}")
     public ApiResult remove(@PathVariable Long id) {
-        System.out.println(id);
         return vehicleService.remove(id);
     }
 
@@ -56,8 +54,7 @@ public class VehicleController {
     @CrossOrigin
     @GetMapping("/search/")
     public ApiResult search(@RequestParam(name = "vehiclePlate") String vehiclePlate){
-        System.out.println(vehiclePlate);
         return vehicleService.search(vehiclePlate);
     }
-    //
+
 }

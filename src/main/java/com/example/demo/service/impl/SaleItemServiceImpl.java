@@ -34,21 +34,11 @@ public class SaleItemServiceImpl implements SaleItemService {
 
         VehicleInformationPO vehicleInformationPO = vehicleRepository.find(saleItemPO.getVehicleId());
         vehicleInformationPO.setSaleitemId(saleItemPO.getId());
-        VehicleInformationDTO vehicleInformationDTO = BeanUtil.mapperBean(vehicleInformationPO, VehicleInformationDTO.class);
-
-        VehicleInformationPO vehicleInformationPO2 = BeanUtil.mapperBean(vehicleInformationDTO, VehicleInformationPO.class);
-        vehicleRepository.update(vehicleInformationPO2);
+        vehicleRepository.update(vehicleInformationPO);
 
         return ApiResult.success(saleItemPO.getId());
     }
 
-
-    // @Override
-    // public ApiResult find(Long id) {
-    //     VehicleInformationPO vehicleInformationPO = vehicleRepository.find(id);
-    //     VehicleInformationDTO vehicleInformationDTO = BeanUtil.mapperBean(vehicleInformationPO, VehicleInformationDTO.class);
-    //     return ApiResult.success(vehicleInformationDTO);
-    // }
 
     @Override
     public ApiResult remove(Long id) {
@@ -71,6 +61,6 @@ public class SaleItemServiceImpl implements SaleItemService {
     public ApiResult find(Long vehicleId) {
         SaleItemPO saleItemPO = saleItemRepositoryImpl.find(vehicleId);
         SaleItemDTO saleItemDTO = BeanUtil.mapperBean(saleItemPO, SaleItemDTO.class);
-        return ApiResult.success(saleItemPO);
+        return ApiResult.success(saleItemDTO);
     }
 }

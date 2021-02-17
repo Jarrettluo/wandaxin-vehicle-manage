@@ -83,6 +83,13 @@
             <scope>compile</scope>
         </dependency>
 
+		<!--	版本号在maven官网查询	-->
+		<dependency>
+			<groupId>com.baidu.aip</groupId>
+			<artifactId>java-sdk</artifactId>
+			<version>4.15.3</version>
+		</dependency>
+
 
     </dependencies>
 

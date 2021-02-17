@@ -33,7 +33,7 @@ public interface MysqlVehicleRepository {
             "<if test='purchaseDate!=null'>purchase_date = #{purchaseDate}, </if>" +
             "<if test='purchasePrice!=null'>purchase_price = #{purchasePrice}, </if>" +
             "<if test='vehicleNote!=null'>vehicle_note = #{vehicleNote}, </if>" +
-            "<if test='saleitemId!=null'>saleitem_id = #{saleitemId}, </if>" +
+            "saleitem_id = #{saleitemId}," +
             "</set> WHERE id = #{id}</script>")
     void update(VehicleInformationPO vehicleInformationPO);
 

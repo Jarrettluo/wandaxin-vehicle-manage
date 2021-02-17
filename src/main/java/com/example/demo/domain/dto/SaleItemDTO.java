@@ -22,6 +22,7 @@ public class SaleItemDTO {
     private float partnerProfit;
     private float selfProfit;
     private Date saleDate;
+    private Integer clearState;
 
     private Long vehicleId;
 

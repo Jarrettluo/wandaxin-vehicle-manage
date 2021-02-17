@@ -28,9 +28,9 @@ public interface SaleItemRepository {
     @Options(useGeneratedKeys = true, keyProperty = "id", keyColumn = "id")
     @Insert("<script>INSERT INTO `sale_item`(" +
             "sale_price, commission_rate, repair_price, partner_price," +
-            "partner_profit, self_profit, sale_date, vehicle_id) VALUES(" +
+            "partner_profit, self_profit, sale_date, vehicle_id, clear_state) VALUES(" +
             "#{salePrice}, #{commissionRate}, #{repairPrice}, #{partnerPrice}, " +
-            "#{partnerProfit}, #{selfProfit}, #{saleDate}, #{vehicleId}" +
+            "#{partnerProfit}, #{selfProfit}, #{saleDate}, #{vehicleId}, #{clearState}" +
             ")</script>")
     Integer save(SaleItemPO saleItemPO);
 
@@ -39,17 +39,20 @@ public interface SaleItemRepository {
 
     // TODO 这里需要修改！
     @Update("<script> UPDATE `sale_item` <set>" +
-            "<if test='sale_price!=null'>sale_price = #{salePrice}, </if>" +
-            "<if test='commission_rate!=null'>commission_rate = #{commissionRate}, </if>" +
-            "<if test='repair_price!=null'>repair_price = #{repairPrice}, </if>" +
-            "<if test='partner_price!=null'>partner_price = #{partnerPrice}, </if>" +
-            "<if test='partner_profit!=null'>partner_profit = #{partnerProfit}, </if>" +
-            "<if test='self_profit!=null'>self_profit = #{selfProfit}, </if>" +
-            "<if test='sale_date!=null'>sale_date = #{saleDate}, </if>" +
-            "<if test='vehicle_id!=null'>vehicle_id = #{vehicleId}, </if>" +
-            "</set></script>")
+            "<if test='salePrice!=null'>sale_price = #{salePrice}, </if>" +
+            "<if test='commissionRate!=null'>commission_rate = #{commissionRate}, </if>" +
+            "<if test='repairPrice!=null'>repair_price = #{repairPrice}, </if>" +
+            "<if test='partnerPrice!=null'>partner_price = #{partnerPrice}, </if>" +
+            "<if test='partnerProfit!=null'>partner_profit = #{partnerProfit}, </if>" +
+            "<if test='selfProfit!=null'>self_profit = #{selfProfit}, </if>" +
+            "<if test='saleDate!=null'>sale_date = #{saleDate}, </if>" +
+            "<if test='vehicleId!=null'>vehicle_id = #{vehicleId}, </if>" +
+            "<if test='clearState!=null'>clear_state = #{clearState}, </if>" +
+            "</set>WHERE id = #{id}</script>")
     void update(SaleItemPO saleItemPO);
 
+    @Delete("DELETE FROM `sale_item` WHERE vehicle_id = #{vehicleId}")
+    void removeByVehicleId(Long vehicleId);
 
 
 }

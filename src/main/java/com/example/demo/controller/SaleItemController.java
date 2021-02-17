@@ -2,8 +2,10 @@ package com.example.demo.controller;
 
 
 import com.example.demo.domain.dto.SaleItemDTO;
+import com.example.demo.domain.po.SaleItemPO;
 import com.example.demo.service.SaleItemService;
 import com.example.utils.result.ApiResult;
+import org.apache.ibatis.annotations.Delete;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -14,7 +16,7 @@ import javax.annotation.Resource;
  * @Version 1.0
  */
 @RestController
-@RequestMapping(value="/saleitem")
+@RequestMapping(value = "/saleitem")
 public class SaleItemController {
 
     @Resource
@@ -22,19 +24,26 @@ public class SaleItemController {
 
     @CrossOrigin
     @GetMapping("/{vehicleId}")
-    public ApiResult find(@PathVariable Long vehicleId){
+    public ApiResult find(@PathVariable Long vehicleId) {
         return saleItemService.find(vehicleId);
     }
+
     @CrossOrigin
     @PostMapping
-    public ApiResult save(@RequestBody SaleItemDTO saleItem){
+    public ApiResult save(@RequestBody SaleItemDTO saleItem) {
         return saleItemService.save(saleItem);
     }
 
     @CrossOrigin
     @PutMapping
-    public ApiResult update(@RequestBody SaleItemDTO saleItem){
+    public ApiResult update(@RequestBody SaleItemDTO saleItem) {
         return saleItemService.update(saleItem);
+    }
+
+    @CrossOrigin
+    @DeleteMapping
+    public ApiResult remove(@RequestBody SaleItemDTO saleItemDTO) {
+        return saleItemService.remove(saleItemDTO.getId());
     }
 
 }

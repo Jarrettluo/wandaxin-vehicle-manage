@@ -29,8 +29,6 @@ public class PreparednessController {
     @CrossOrigin
     @PostMapping
     public ApiResult save(@RequestBody PreparednessDTO[] preparednesses){
-        System.out.println("&&&&&&&&&&&&&&&&&&&&&&");
-        System.out.println(preparednesses);
         return preparedService.save(preparednesses);
     }
     @CrossOrigin

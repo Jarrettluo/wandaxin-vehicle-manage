@@ -3,6 +3,8 @@ package com.example.demo.service.impl;
 import com.example.demo.domain.dto.VehicleInformationDTO;
 import com.example.demo.domain.po.VehicleInformationPO;
 import com.example.demo.repository.VehicleRepository;
+import com.example.demo.repository.impl.PreparednessRepositoryImpl;
+import com.example.demo.repository.impl.SaleItemRepositoryImpl;
 import com.example.demo.service.VehicleService;
 import com.example.utils.result.ApiResult;
 import com.example.utils.result.bean.BeanUtil;
@@ -23,6 +25,14 @@ public class VehicleServiceImpl implements VehicleService {
     @Resource
     VehicleRepository vehicleRepository;
 
+    @Resource
+    PartnerServiceImpl partnerServiceImpl;
+
+    @Resource
+    PreparednessRepositoryImpl preparednessRepositoryImpl;
+
+    @Resource
+    SaleItemRepositoryImpl saleItemRepositoryImpl;
 
     @Override
     public ApiResult save(VehicleInformationDTO vehicleInformationDTO) {
@@ -31,8 +41,21 @@ public class VehicleServiceImpl implements VehicleService {
         return ApiResult.success(vehicleInformationPO.getId());
     }
 
+    /**
+     * 删除某辆车的信息的时候，应该同步删除其销售信息，如果存在的话！
+     * @param id 车辆的id
+     * @return 返回成功信息
+     */
     @Override
     public ApiResult remove(Long id) {
+        VehicleInformationPO vehicleInformationPO = vehicleRepository.find(id);
+        if(vehicleInformationPO.getSaleitemId()!=null){
+            saleItemRepositoryImpl.remove(vehicleInformationPO.getSaleitemId());
+        }
+        // 删除车辆的时候必须删除车辆的整备信息和合资人信息
+        partnerServiceImpl.remove(id);
+        preparednessRepositoryImpl.remove(id);
+
         vehicleRepository.remove(id);
         return ApiResult.success();
     }

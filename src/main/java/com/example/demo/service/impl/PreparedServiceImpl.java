@@ -4,8 +4,12 @@ import com.example.demo.domain.dto.PartnerDTO;
 import com.example.demo.domain.dto.PreparednessDTO;
 import com.example.demo.domain.po.PartnerPO;
 import com.example.demo.domain.po.PreparednessPO;
+import com.example.demo.domain.po.VehicleInformationPO;
+import com.example.demo.repository.SaleItemRepository;
+import com.example.demo.repository.VehicleRepository;
 import com.example.demo.repository.impl.PreparednessRepositoryImpl;
 import com.example.demo.service.PreparedService;
+import com.example.demo.service.UpdateSaleItem;
 import com.example.utils.result.ApiResult;
 import com.example.utils.result.bean.BeanUtil;
 import org.springframework.stereotype.Service;
@@ -26,16 +30,32 @@ public class PreparedServiceImpl implements PreparedService {
     @Resource
     PreparednessRepositoryImpl preparednessRepositoryImpl;
 
+    @Resource
+    VehicleRepository vehicleRepository;
+
+    @Resource
+    SaleItemRepository saleItemRepository;
+
     @Override
     public ApiResult save(PreparednessDTO[] preparednessDTOS) {
         ArrayList<PreparednessDTO> preparednessDTOArrayList = new ArrayList<>(Arrays.asList(preparednessDTOS));
         List<PreparednessPO> preparednessPOList= BeanUtil.mapperList(preparednessDTOArrayList, PreparednessPO.class);
-        preparednessRepositoryImpl.save(preparednessPOList);
-        return ApiResult.success();
+        Integer id = preparednessRepositoryImpl.save(preparednessPOList);
+        return ApiResult.success(id);
     }
 
     @Override
     public ApiResult remove(Long vehicleId) {
+        // 如果更新车辆的整备信息，那么必须对删除掉销售信息
+        VehicleInformationPO vehicleInformationPO = vehicleRepository.find(vehicleId);
+        System.out.println(vehicleInformationPO);
+        if(vehicleInformationPO.getSaleitemId() != null) {
+            vehicleInformationPO.setSaleitemId(null);
+            vehicleRepository.update(vehicleInformationPO);
+        }
+        // 删除其销售信息
+        saleItemRepository.removeByVehicleId(vehicleId);
+
         preparednessRepositoryImpl.remove(vehicleId);
         return ApiResult.success();
     }
