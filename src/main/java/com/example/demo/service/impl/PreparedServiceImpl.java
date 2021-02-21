@@ -1,15 +1,12 @@
 package com.example.demo.service.impl;
 
-import com.example.demo.domain.dto.PartnerDTO;
 import com.example.demo.domain.dto.PreparednessDTO;
-import com.example.demo.domain.po.PartnerPO;
 import com.example.demo.domain.po.PreparednessPO;
 import com.example.demo.domain.po.VehicleInformationPO;
 import com.example.demo.repository.SaleItemRepository;
 import com.example.demo.repository.VehicleRepository;
 import com.example.demo.repository.impl.PreparednessRepositoryImpl;
 import com.example.demo.service.PreparedService;
-import com.example.demo.service.UpdateSaleItem;
 import com.example.utils.result.ApiResult;
 import com.example.utils.result.bean.BeanUtil;
 import org.springframework.stereotype.Service;
