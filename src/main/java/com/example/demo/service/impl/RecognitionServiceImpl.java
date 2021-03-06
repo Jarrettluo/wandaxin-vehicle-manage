@@ -5,8 +5,6 @@ import com.baidu.aip.ocr.AipOcr;
 import com.example.demo.domain.dto.RecognitionDTO;
 import com.example.demo.service.RecognitionService;
 import com.example.utils.result.ApiResult;
-import jdk.nashorn.internal.parser.JSONParser;
-import org.apache.ibatis.jdbc.Null;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.stereotype.Service;
