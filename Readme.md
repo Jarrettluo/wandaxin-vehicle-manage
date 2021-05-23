@@ -17,3 +17,14 @@
 #### 待完成的内容：
 https://www.cnblogs.com/cjsblog/p/9152455.html
 https://blog.csdn.net/weixin_43461520/article/details/107941983
+
+
+远程主机：
+http://42.192.121.179/
+
+连接方式：raoshihao
+
+导入数据库：
+source
+导出数据库
+mysqldump

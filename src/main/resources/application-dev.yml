@@ -1,0 +1,15 @@
+server:
+  port: 8081
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/wan_da_xin?characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2B8
+    username: root
+    password: LJR199308
+  servlet:
+    multipart:
+      max-file-size: 10MB
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
