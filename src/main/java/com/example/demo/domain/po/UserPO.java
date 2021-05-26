@@ -1,15 +1,13 @@
 package com.example.demo.domain.po;
 
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 public class UserPO {
-
-    private Long id;
-    private String name;
-    private String password;
-    private String corporationId; // 所属公司的id
-    private String telephone;
-
+    String id;
+    String username;
+    String password;
 }

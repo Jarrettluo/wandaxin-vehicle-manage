@@ -1,28 +1,48 @@
 package com.example.demo.controller;
 
+import com.example.demo.annotation.UserLoginToken;
+import com.example.demo.domain.dto.UserDTO;
+import com.example.demo.service.TokenService;
+import com.example.demo.service.UserService;
 import com.example.utils.result.ApiResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import io.swagger.annotations.Api;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.HashMap;
 
 @RestController
 @RequestMapping("/user")
 public class UserController {
 
-    @GetMapping("/finduser")
-    public ApiResult find(){
-        return ApiResult.success();
+    @Autowired
+    UserService userService;
+    @Autowired
+    TokenService tokenService;
+
+    //登录
+    @PostMapping("/login")
+    public ApiResult login(@RequestBody UserDTO user){
+        UserDTO userForBase=userService.findByUsername(user);
+        if(userForBase==null){
+            return ApiResult.error(1201,"登录失败,用户不存在");
+        }else {
+            if (!userForBase.getPassword().equals(user.getPassword())){
+                return ApiResult.error(1202,"登录失败,密码错误");
+            }else {
+                String token = tokenService.getToken(userForBase);
+                HashMap<String, Object> k = new HashMap<String, Object>();
+                k.put("token", token);
+                k.put("user", userForBase);
+                return ApiResult.success(k);
+            }
+        }
     }
 
-    @GetMapping("/list")
-    public ApiResult list(){
-        return ApiResult.success();
-    }
-
-    @PostMapping("/add")
-    public ApiResult add(){
-        return ApiResult.success();
+    @UserLoginToken
+    @GetMapping("/getMessage")
+    public String getMessage(){
+        return "你已通过验证";
     }
 
 }

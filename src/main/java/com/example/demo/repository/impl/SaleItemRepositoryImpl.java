@@ -1,7 +1,6 @@
 package com.example.demo.repository.impl;
 
 import com.example.demo.domain.po.SaleItemPO;
-import com.example.demo.domain.po.VehicleInformationPO;
 import com.example.demo.repository.SaleItemRepository;
 import org.springframework.stereotype.Repository;
 
