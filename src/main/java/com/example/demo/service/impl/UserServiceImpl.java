@@ -25,7 +25,12 @@ public class UserServiceImpl implements UserService {
 
     @Resource
     UserRepository userRepository;
+    private String userId;
 
+    /**
+     * @param userDTO
+     * @return
+     */
     @Override
     public UserDTO findByUsername(UserDTO userDTO) {
         System.out.println(userDTO);
@@ -36,6 +41,10 @@ public class UserServiceImpl implements UserService {
         return userDTONew;
     }
 
+    /**
+     * @param userId
+     * @return
+     */
     @Override
     public UserDTO findUserById(String userId) {
         UserPO userPO = userRepository.findUserById(userId);

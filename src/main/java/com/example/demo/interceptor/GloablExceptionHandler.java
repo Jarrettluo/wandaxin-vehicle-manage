@@ -14,7 +14,7 @@ public class GloablExceptionHandler {
         if (msg == null || msg.equals("")) {
             msg = "服务器出错";
         }
-        return ApiResult.error(1202, msg);
+        return ApiResult.error(1203, msg);
     }
 }
 

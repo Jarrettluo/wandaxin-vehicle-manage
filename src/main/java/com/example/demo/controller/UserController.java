@@ -21,8 +21,10 @@ public class UserController {
     TokenService tokenService;
 
     //登录
+    @CrossOrigin
     @PostMapping("/login")
     public ApiResult login(@RequestBody UserDTO user){
+        System.out.println(user);
         UserDTO userForBase=userService.findByUsername(user);
         if(userForBase==null){
             return ApiResult.error(1201,"登录失败,用户不存在");
@@ -31,6 +33,7 @@ public class UserController {
                 return ApiResult.error(1202,"登录失败,密码错误");
             }else {
                 String token = tokenService.getToken(userForBase);
+                userForBase.setPassword("");
                 HashMap<String, Object> k = new HashMap<String, Object>();
                 k.put("token", token);
                 k.put("user", userForBase);
@@ -39,6 +42,7 @@ public class UserController {
         }
     }
 
+    @CrossOrigin
     @UserLoginToken
     @GetMapping("/getMessage")
     public String getMessage(){
