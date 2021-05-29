@@ -3,6 +3,8 @@ package com.example.demo.controller;
 import com.example.demo.domain.dto.VehicleInformationDTO;
 import com.example.demo.service.VehicleService;
 import com.example.utils.result.ApiResult;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -22,7 +24,10 @@ public class VehicleController {
 
     @CrossOrigin
     @PostMapping
-    public ApiResult save(@RequestBody VehicleInformationDTO vehicleInformationDTO) {
+    public ApiResult save(@RequestBody VehicleInformationDTO vehicleInformationDTO, BindingResult bindingResult) {
+        for(ObjectError error : bindingResult.getAllErrors()){
+            return ApiResult.error(1201, error.getDefaultMessage());
+        }
         return vehicleService.save(vehicleInformationDTO);
     }
 

@@ -8,6 +8,7 @@ import com.example.demo.repository.VehicleRepository;
 import com.example.demo.repository.impl.PreparednessRepositoryImpl;
 import com.example.demo.service.PreparedService;
 import com.example.utils.result.ApiResult;
+import com.example.utils.result.CheckObject;
 import com.example.utils.result.bean.BeanUtil;
 import org.springframework.stereotype.Service;
 
@@ -34,31 +35,45 @@ public class PreparedServiceImpl implements PreparedService {
     SaleItemRepository saleItemRepository;
 
     @Override
-    public ApiResult save(PreparednessDTO[] preparednessDTOS) {
+    public ApiResult save(PreparednessDTO[] preparednessDTOS) throws IllegalAccessException {
+        for( PreparednessDTO preparednessDTO: preparednessDTOS){
+            if(CheckObject.checkObjFieldIsNull(preparednessDTO)){
+                return ApiResult.error(1201,"参数错误");
+            }
+        }
         ArrayList<PreparednessDTO> preparednessDTOArrayList = new ArrayList<>(Arrays.asList(preparednessDTOS));
         List<PreparednessPO> preparednessPOList= BeanUtil.mapperList(preparednessDTOArrayList, PreparednessPO.class);
         Integer id = preparednessRepositoryImpl.save(preparednessPOList);
-        return ApiResult.success(id);
+        if(id!=null) return ApiResult.success(id);
+        else return ApiResult.error(1202, "保存失败");
     }
 
     @Override
     public ApiResult remove(Long vehicleId) {
+        if(vehicleId==null)return ApiResult.error(1201, "参数错误");
         // 如果更新车辆的整备信息，那么必须对删除掉销售信息
         VehicleInformationPO vehicleInformationPO = vehicleRepository.find(vehicleId);
-        System.out.println(vehicleInformationPO);
         if(vehicleInformationPO.getSaleitemId() != null) {
             vehicleInformationPO.setSaleitemId(null);
-            vehicleRepository.update(vehicleInformationPO);
+            try {
+                vehicleRepository.update(vehicleInformationPO);
+            }catch (Exception err){
+                return ApiResult.error(1203, err.toString());
+            }
         }
-        // 删除其销售信息
-        saleItemRepository.removeByVehicleId(vehicleId);
-
-        preparednessRepositoryImpl.remove(vehicleId);
+        try {
+            // 删除其销售信息
+            saleItemRepository.removeByVehicleId(vehicleId);
+            preparednessRepositoryImpl.remove(vehicleId);
+        } catch (Exception err){
+            return ApiResult.error(1203, err.toString());
+        }
         return ApiResult.success();
     }
 
     @Override
     public ApiResult list(Long vehicleId) {
+        if(vehicleId == null) return ApiResult.error(1201, "参数错误");
         List<PreparednessPO> preparednessPOS = preparednessRepositoryImpl.list(vehicleId);
         List<PreparednessDTO> preparednessDTOList = BeanUtil.mapperList(preparednessPOS, PreparednessDTO.class);
         return ApiResult.success(preparednessDTOList);

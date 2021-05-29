@@ -25,10 +25,11 @@ public class StatictisServiceImpl implements StatictisService {
     @Override
     public ApiResult find() {
         StatisticsDTO statisticsDTO = new StatisticsDTO();
-        statisticsDTO.setTotalSales(statisticRepositoryImpl.calTotalSales());
+        statisticsDTO.setTotalSales( statisticRepositoryImpl.calTotalSales());
         statisticsDTO.setTotalProfit(statisticRepositoryImpl.calTotalProfit());
         statisticsDTO.setTotalNotSold(statisticRepositoryImpl.calTotalNotSold());
         statisticsDTO.setTotalSold(statisticRepositoryImpl.calTotalSold());
+        System.out.println(statisticsDTO.toString());
         return ApiResult.success(statisticsDTO);
     }
 

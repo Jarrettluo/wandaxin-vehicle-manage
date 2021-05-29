@@ -33,10 +33,7 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public UserDTO findByUsername(UserDTO userDTO) {
-        System.out.println(userDTO);
-        System.out.println(userDTO.getUsername());
         UserPO userPO = userRepository.findByUsername(userDTO.getUsername());
-        System.out.println(userPO);
         UserDTO userDTONew = BeanUtil.mapperBean(userPO, UserDTO.class);
         return userDTONew;
     }

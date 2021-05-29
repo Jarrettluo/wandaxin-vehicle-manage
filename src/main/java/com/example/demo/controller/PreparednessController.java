@@ -28,7 +28,7 @@ public class PreparednessController {
     }
     @CrossOrigin
     @PostMapping
-    public ApiResult save(@RequestBody PreparednessDTO[] preparednesses){
+    public ApiResult save(@RequestBody PreparednessDTO[] preparednesses) throws IllegalAccessException {
         return preparedService.save(preparednesses);
     }
     @CrossOrigin

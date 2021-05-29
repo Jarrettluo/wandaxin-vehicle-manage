@@ -11,7 +11,7 @@ import com.example.utils.result.ApiResult;
  */
 public interface PreparedService {
 
-    ApiResult save(PreparednessDTO[] preparednessDTOS);
+    ApiResult save(PreparednessDTO[] preparednessDTOS) throws IllegalAccessException;
 
     ApiResult remove(Long vehicleId);
 

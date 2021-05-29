@@ -11,11 +11,11 @@ import com.example.utils.result.ApiResult;
  */
 public interface SaleItemService {
 
-    ApiResult save(SaleItemDTO saleItemDTO);
+    ApiResult save(SaleItemDTO saleItemDTO) throws IllegalAccessException;
 
     ApiResult remove(Long id);
 
-    ApiResult update(SaleItemDTO saleItemDTO);
+    ApiResult update(SaleItemDTO saleItemDTO) throws IllegalAccessException;
 
     ApiResult find(Long id);
 }

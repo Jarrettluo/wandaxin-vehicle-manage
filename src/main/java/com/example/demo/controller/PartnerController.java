@@ -30,7 +30,7 @@ public class PartnerController {
 
     @CrossOrigin
     @PostMapping
-    public ApiResult save(@RequestBody PartnerDTO[] partners) {
+    public ApiResult save(@RequestBody PartnerDTO[] partners) throws IllegalAccessException {
         return partnerService.save(partners);
     }
 

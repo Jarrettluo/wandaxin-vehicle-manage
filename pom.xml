@@ -124,6 +124,12 @@
 			<version>3.16.0</version>
 		</dependency>
 
+		<!--校验组件-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
+		</dependency>
+
 	</dependencies>
 
 	<build>

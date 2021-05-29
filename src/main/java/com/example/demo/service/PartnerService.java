@@ -12,7 +12,7 @@ import com.example.utils.result.ApiResult;
 
 public interface PartnerService {
 
-    ApiResult save(PartnerDTO[] partners);
+    ApiResult save(PartnerDTO[] partners) throws IllegalAccessException;
 
     ApiResult remove(Long vehicleId);
 

@@ -8,6 +8,7 @@ import com.example.demo.repository.VehicleRepository;
 import com.example.demo.repository.impl.PartnerRepositoryImpl;
 import com.example.demo.service.PartnerService;
 import com.example.utils.result.ApiResult;
+import com.example.utils.result.CheckObject;
 import com.example.utils.result.bean.BeanUtil;
 import org.springframework.stereotype.Service;
 
@@ -34,7 +35,10 @@ public class PartnerServiceImpl implements PartnerService {
     SaleItemRepository saleItemRepository;
 
     @Override
-    public ApiResult save(PartnerDTO[] partners) {
+    public ApiResult save(PartnerDTO[] partners) throws IllegalAccessException {
+        for(PartnerDTO partnerDTO: partners){
+            if(CheckObject.checkObjFieldIsNull(partnerDTO)) return ApiResult.error(1201, "参数错误");
+        }
         ArrayList<PartnerDTO> partnerDTOList = new ArrayList<>(Arrays.asList(partners));
         List<PartnerPO> partnerPOList= BeanUtil.mapperList(partnerDTOList, PartnerPO.class);
         partnerRepositoryImpl.save(partnerPOList);
@@ -43,6 +47,7 @@ public class PartnerServiceImpl implements PartnerService {
 
     @Override
     public ApiResult list(Long vehicleId) {
+        if(vehicleId == null) return ApiResult.error(1201, "参数错误");
         List<PartnerPO> partnerPOList = partnerRepositoryImpl.list(vehicleId);
         List<PartnerDTO> partnerDTOList = BeanUtil.mapperList(partnerPOList, PartnerDTO.class);
         return ApiResult.success(partnerDTOList);
@@ -50,17 +55,25 @@ public class PartnerServiceImpl implements PartnerService {
 
     @Override
     public ApiResult remove(Long vehicleId) {
+        if(vehicleId == null) return ApiResult.error(1201, "参数错误");
         // 如果更新车辆的合资人信息，那么必须对删除掉销售信息
         // 如果删除掉合伙人消息，首先取消销售！
         VehicleInformationPO vehicleInformationPO = vehicleRepository.find(vehicleId);
         if(vehicleInformationPO.getSaleitemId() != null) {
             vehicleInformationPO.setSaleitemId(null);
-            vehicleRepository.update(vehicleInformationPO);
+            try {
+                vehicleRepository.update(vehicleInformationPO);
+            }catch (Exception err){
+                return ApiResult.error(1203, err.toString());
+            }
         }
-        // 删除其销售信息
-        saleItemRepository.removeByVehicleId(vehicleId);
-
-        partnerRepositoryImpl.remove(vehicleId);
+        try {
+            // 删除其销售信息
+            saleItemRepository.removeByVehicleId(vehicleId);
+            partnerRepositoryImpl.remove(vehicleId);
+        } catch (Exception err){
+            return ApiResult.error(1203, err.toString());
+        }
         return ApiResult.success();
     }
 

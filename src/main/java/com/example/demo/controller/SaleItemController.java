@@ -30,13 +30,13 @@ public class SaleItemController {
 
     @CrossOrigin
     @PostMapping
-    public ApiResult save(@RequestBody SaleItemDTO saleItem) {
+    public ApiResult save(@RequestBody SaleItemDTO saleItem) throws IllegalAccessException {
         return saleItemService.save(saleItem);
     }
 
     @CrossOrigin
     @PutMapping
-    public ApiResult update(@RequestBody SaleItemDTO saleItem) {
+    public ApiResult update(@RequestBody SaleItemDTO saleItem) throws IllegalAccessException {
         return saleItemService.update(saleItem);
     }
 
