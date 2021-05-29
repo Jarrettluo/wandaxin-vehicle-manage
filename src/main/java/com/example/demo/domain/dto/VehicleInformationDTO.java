@@ -35,7 +35,7 @@ public class VehicleInformationDTO {
     private Date purchaseDate;
 
     @NotNull(message = "购买价格不能为空")
-    @Size(min = 0, message = "购买价格必须大于0")
+    @Min(value = 0, message = "购买价格必须大于0")
     private Integer purchasePrice;
 
     private String vehicleNote;

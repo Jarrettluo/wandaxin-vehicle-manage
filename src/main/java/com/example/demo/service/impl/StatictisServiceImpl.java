@@ -29,7 +29,6 @@ public class StatictisServiceImpl implements StatictisService {
         statisticsDTO.setTotalProfit(statisticRepositoryImpl.calTotalProfit());
         statisticsDTO.setTotalNotSold(statisticRepositoryImpl.calTotalNotSold());
         statisticsDTO.setTotalSold(statisticRepositoryImpl.calTotalSold());
-        System.out.println(statisticsDTO.toString());
         return ApiResult.success(statisticsDTO);
     }
 

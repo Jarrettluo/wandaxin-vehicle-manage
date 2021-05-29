@@ -5,9 +5,11 @@ import com.example.demo.service.VehicleService;
 import com.example.utils.result.ApiResult;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import javax.validation.Valid;
 
 /**
  * @Author Jarrett Luo
@@ -24,10 +26,15 @@ public class VehicleController {
 
     @CrossOrigin
     @PostMapping
-    public ApiResult save(@RequestBody VehicleInformationDTO vehicleInformationDTO, BindingResult bindingResult) {
-        for(ObjectError error : bindingResult.getAllErrors()){
-            return ApiResult.error(1201, error.getDefaultMessage());
-        }
+    public ApiResult save(@RequestBody VehicleInformationDTO vehicleInformationDTO) {
+//        for(ObjectError error : bindingResult.getAllErrors()){
+//            return ApiResult.error(1201, error.getDefaultMessage());
+//        }
+//        System.out.println(bindingResult);
+//        if (bindingResult.hasErrors()) {
+//
+//            return ApiResult.error(1201, "error.getDefaultMessage()");
+//        }
         return vehicleService.save(vehicleInformationDTO);
     }
 

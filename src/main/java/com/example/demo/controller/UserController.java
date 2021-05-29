@@ -24,7 +24,6 @@ public class UserController {
     @CrossOrigin
     @PostMapping("/login")
     public ApiResult login(@RequestBody UserDTO user){
-        System.out.println(user);
         UserDTO userForBase=userService.findByUsername(user);
         if(userForBase==null){
             return ApiResult.error(1201,"登录失败,用户不存在");
