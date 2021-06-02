@@ -57,19 +57,21 @@ public class VehicleServiceImpl implements VehicleService {
      */
     @Override
     public ApiResult remove(Long id) {
-        if(id ==null ){
+        if(id == null ){
             return ApiResult.error(1201, "参数错误");
         }
         VehicleInformationPO vehicleInformationPO = vehicleRepository.find(id);
         // 如果能够查询到该辆车的话就把该辆车的销售信息给删除
-        if(vehicleInformationPO.getSaleitemId()!=null){
+        if(vehicleInformationPO.getSaleitemId()!=null) {
             saleItemRepositoryImpl.remove(vehicleInformationPO.getSaleitemId());
+        }
+        try {
             // 删除车辆的时候必须删除车辆的整备信息和合资人信息
             partnerServiceImpl.remove(id);
             preparednessRepositoryImpl.remove(id);
             vehicleRepository.remove(id);
-        }else {
-            return ApiResult.error(1202, "删除失败");
+        }catch (Exception err){
+            return ApiResult.error(1202, "删除失败"+err);
         }
         return ApiResult.success();
     }
