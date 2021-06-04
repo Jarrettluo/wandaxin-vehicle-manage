@@ -52,4 +52,7 @@ public abstract class ApiResult implements Serializable {
         return new ErrorApiResult(code, message);
     }
 
+    public Integer getCode() {
+        return code;
+    }
 }

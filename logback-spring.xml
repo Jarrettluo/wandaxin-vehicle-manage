@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="false">
+<!-- 日志文件的地址，windows和Linux下都要写绝对地址 -->
+<property name="LOG_HOME" value="/Users/molly/IdeaProjects/wandaxin-vehicle-manage" />
+<!-- 日志输出格式：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度,%msg：日志消息，%n是换行符 -->
+<property name="LOG_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n" />
+
+<!--控制台输出 -->
+<appender name="CONSOLE_OUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+        <!-- 输出格式，直接引用上面定义的property -->
+        <pattern>${LOG_PATTERN}</pattern>
+    </encoder>
+</appender>
+
+<!--文件输出， 每天生成日志文件 -->
+<appender name="FILE_OUT" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+        <!--日志文件名-->
+        <FileNamePattern>${LOG_HOME}/XXX.log.%d{yyyy-MM-dd}.log</FileNamePattern>
+        <!--日志文件保留天数，15天是阿里巴巴开发规范中的最低要求-->
+        <MaxHistory>15</MaxHistory>
+    </rollingPolicy>
+    <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+        <!--输出格式，同上-->
+        <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
+    </encoder>
+    <!--日志文件最大的大小-->
+    <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+        <MaxFileSize>10MB</MaxFileSize>
+    </triggeringPolicy>
+</appender>
+
+<!-- myibatis日志配置 -->
+<logger name="com.apache.ibatis" level="TRACE"/>
+<logger name="java.sql.Connection" level="DEBUG"/>
+<logger name="java.sql.Statement" level="DEBUG"/>
+<logger name="java.sql.PreparedStatement" level="DEBUG"/>
+
+<!-- 日志输出级别 -->
+<root level="DEBUG">
+    <appender-ref ref="CONSOLE_OUT" />
+    <appender-ref ref="FILE_OUT"/>
+</root>
+
+</configuration>

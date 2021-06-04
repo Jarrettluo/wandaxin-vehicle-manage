@@ -31,4 +31,7 @@ public final class SuccessApiResult<T> extends ApiResult implements Serializable
     public void setData(T data) {
         this.data = data;
     }
+
+
+
 }

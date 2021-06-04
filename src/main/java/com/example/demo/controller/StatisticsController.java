@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.example.demo.aop.OperationLogAnnotation;
 import com.example.demo.service.StatictisService;
 import com.example.utils.result.ApiResult;
 import org.springframework.stereotype.Service;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * @Author Jarrett Luo
@@ -23,9 +25,11 @@ public class StatisticsController {
     @Resource
     StatictisService statictisService;
 
+    @OperationLogAnnotation(operModul = "用户模块-用户列表",operType = "查询",operDesc = "查询所有用户")
     @CrossOrigin
     @GetMapping()
-    public ApiResult get() {
+    public ApiResult get(HttpServletRequest request) {
+        request.setAttribute("userCode","admin");
         return statictisService.find();
     }
 }

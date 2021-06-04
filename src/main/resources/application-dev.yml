@@ -13,3 +13,8 @@ spring:
 mybatis:
   configuration:
     map-underscore-to-camel-case: true
+
+logging:
+  file:
+    name: test.log
+
