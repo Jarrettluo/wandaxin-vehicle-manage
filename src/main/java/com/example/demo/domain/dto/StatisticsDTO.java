@@ -10,8 +10,8 @@ import lombok.Data;
 @Data
 public class StatisticsDTO {
 
-    private Integer totalSales;
-    private Integer totalProfit;
+    private Float totalSales;
+    private Float totalProfit;
     private Integer totalNotSold;
     private Integer totalSold;
 

@@ -33,7 +33,7 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object object) throws Exception {
-        crossDomain(httpServletRequest, httpServletResponse);
+//        crossDomain(httpServletRequest, httpServletResponse);
         String token = httpServletRequest.getHeader("token");// 从 http 请求头中取出 token
         // 如果不是映射到方法直接通过
         if(!(object instanceof HandlerMethod)){

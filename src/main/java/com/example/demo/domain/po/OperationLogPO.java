@@ -15,5 +15,5 @@ public class OperationLogPO {
     String model;
     Timestamp operationTime;
     String result;
-
+    String params; // 访问参数
 }

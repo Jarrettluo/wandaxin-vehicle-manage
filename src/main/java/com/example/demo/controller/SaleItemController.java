@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 
+import com.example.demo.aop.OperationLogAnnotation;
 import com.example.demo.domain.dto.SaleItemDTO;
 import com.example.demo.domain.po.SaleItemPO;
 import com.example.demo.service.SaleItemService;
@@ -22,6 +23,7 @@ public class SaleItemController {
     @Resource
     SaleItemService saleItemService;
 
+    @OperationLogAnnotation(operModul = "库存模块",operType = "查询",operDesc = "车辆信息")
     @CrossOrigin
     @GetMapping("/{vehicleId}")
     public ApiResult find(@PathVariable Long vehicleId) {

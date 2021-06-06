@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.example.demo.aop.OperationLogAnnotation;
 import com.example.demo.domain.dto.VehicleInformationDTO;
 import com.example.demo.service.VehicleService;
 import com.example.utils.result.ApiResult;
@@ -24,6 +25,7 @@ public class VehicleController {
     @Resource
     VehicleService vehicleService;
 
+    @OperationLogAnnotation(operModul = "车辆入库模块",operType = "增加",operDesc = "")
     @CrossOrigin
     @PostMapping
     public ApiResult save(@RequestBody VehicleInformationDTO vehicleInformationDTO) {

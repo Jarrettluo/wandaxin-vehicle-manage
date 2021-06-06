@@ -12,10 +12,10 @@ import org.apache.ibatis.annotations.Select;
 public interface StatisticsRepository {
 
     @Select("SELECT SUM(`sale_price`) FROM `sale_item` WHERE YEAR(created_time) = YEAR(NOW())")
-    Integer calTotalSales();
+    Float calTotalSales();
 
     @Select("SELECT SUM(`self_profit`) FROM `sale_item` WHERE YEAR(created_time) = YEAR(NOW())")
-    Integer calTotalProfit();
+    Float calTotalProfit();
 
     @Select("SELECT COUNT(*) FROM `vehicle_information` where `saleitem_id` is null")
     Integer calTotalNotSold();
