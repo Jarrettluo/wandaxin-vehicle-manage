@@ -37,7 +37,7 @@ import java.util.Map;
 public class OperationLogAspect {
 
 
-    @Resource
+    @Autowired
     OperationLogService logDao;
 
     @Autowired
@@ -79,10 +79,12 @@ public class OperationLogAspect {
             }
             // 获取请求中的token信息
             String token = request.getHeader("token");
-            String userId = JWT.decode(token).getAudience().get(0);
-            UserDTO user = userService.findUserById(userId);
-            String userName = user==null?"未知":user.getUsername();// 取到用户信息
-
+            String userName = "null";
+            if(token != null){
+                String userId = JWT.decode(token).getAudience().get(0);
+                UserDTO user = userService.findUserById(userId);
+                userName = user==null?"未知":user.getUsername();// 取到用户信息
+            }
             //参数,从切点出获取其参数
             Object[] params = joinPoint.getArgs();
             String param = "";
@@ -90,7 +92,6 @@ public class OperationLogAspect {
             for (int i = 0; i < params.length; i++) {
                 param = param + params[i] + ",";
             }
-            System.out.println(param);
 
             //操作时间
             operationLog.setOperationTime(Timestamp.valueOf(sdf.format(new Date())));
@@ -100,6 +101,8 @@ public class OperationLogAspect {
             operationLog.setIp(IPUtil.getIpAdrress(request));
             //返回值信息,200表示正常，不正常的是其他id
             operationLog.setResult(result.getCode().toString());
+            // 请求参数
+            operationLog.setParams(param!=""?param:"无参数");
             //保存日志
             logDao.save(operationLog);
 

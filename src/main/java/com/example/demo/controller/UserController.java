@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.annotation.UserLoginToken;
+import com.example.demo.aop.OperationLogAnnotation;
 import com.example.demo.domain.dto.UserDTO;
 import com.example.demo.service.TokenService;
 import com.example.demo.service.UserService;
@@ -21,6 +22,7 @@ public class UserController {
     TokenService tokenService;
 
     //登录
+    @OperationLogAnnotation(operModul = "用户模块",operType = "登录",operDesc = "用户登录")
     @CrossOrigin
     @PostMapping("/login")
     public ApiResult login(@RequestBody UserDTO user){

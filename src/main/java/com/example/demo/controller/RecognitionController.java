@@ -21,6 +21,7 @@ public class RecognitionController {
     @Resource
     RecognitionService recognitionService;
 
+
     @CrossOrigin
     @PostMapping
     public ApiResult save(@RequestParam(value="file", required=false) MultipartFile multipartFile)

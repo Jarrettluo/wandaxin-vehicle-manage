@@ -28,3 +28,9 @@ http://42.192.121.179/
 source
 导出数据库
 mysqldump
+
+
+```roomsql
+create table operation_log(user_code varchar(20), ip varchar(255), type varchar(255), description varchar(255), model varchar(255), operation_time datetime, result varchar(255), params varchar(512));
+```
+

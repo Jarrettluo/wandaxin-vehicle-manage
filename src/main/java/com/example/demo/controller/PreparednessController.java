@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.example.demo.aop.OperationLogAnnotation;
 import com.example.demo.domain.dto.PartnerDTO;
 import com.example.demo.domain.dto.PreparednessDTO;
 import com.example.demo.domain.po.PreparednessPO;
@@ -21,16 +22,22 @@ public class PreparednessController {
 
     @Resource
     PreparedService preparedService;
+
+    @OperationLogAnnotation(operModul = "车辆整备模块",operType = "查询",operDesc = "整备信息")
     @CrossOrigin
     @GetMapping("/{vehicleId}")
     public ApiResult list(@PathVariable Long vehicleId){
         return preparedService.list(vehicleId);
     }
+
+    @OperationLogAnnotation(operModul = "车辆整备模块",operType = "新增",operDesc = "整备信息")
     @CrossOrigin
     @PostMapping
     public ApiResult save(@RequestBody PreparednessDTO[] preparednesses) throws IllegalAccessException {
         return preparedService.save(preparednesses);
     }
+
+    @OperationLogAnnotation(operModul = "库存模块",operType = "删除",operDesc = "整备信息")
     @CrossOrigin
     @DeleteMapping("/{vehicleId}")
     public ApiResult remove(@PathVariable Long vehicleId) {

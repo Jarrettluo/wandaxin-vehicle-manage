@@ -28,10 +28,7 @@ public class StatisticsController {
     @OperationLogAnnotation(operModul = "数据统计模块",operType = "查询",operDesc = "年度数据")
     @CrossOrigin
     @GetMapping()
-    public ApiResult get(HttpServletRequest request) {
-        System.out.println(request);
-        System.out.println(request.getHeader("token"));
-        request.setAttribute("userCode","admin");
+    public ApiResult get() {
         return statictisService.find();
     }
 }
