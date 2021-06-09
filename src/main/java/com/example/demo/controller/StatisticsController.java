@@ -17,7 +17,6 @@ import javax.servlet.http.HttpServletRequest;
  * @Date 2021/1/13 16:19
  * @Version 1.0
  */
-
 @RestController
 @RequestMapping("/statistics")
 public class StatisticsController {

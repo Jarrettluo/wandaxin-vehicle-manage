@@ -8,5 +8,5 @@ public interface OperationLogService {
 
     void save(OperationLogDTO operationLogDTO);
 
-    ApiResult List();
+    ApiResult list();
 }

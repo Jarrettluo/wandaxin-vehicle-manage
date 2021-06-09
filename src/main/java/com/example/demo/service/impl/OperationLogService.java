@@ -8,6 +8,7 @@ import com.example.utils.result.bean.BeanUtil;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Service
 public class OperationLogService implements com.example.demo.service.OperationLogService {
@@ -22,7 +23,9 @@ public class OperationLogService implements com.example.demo.service.OperationLo
     }
 
     @Override
-    public ApiResult List() {
-        return null;
+    public ApiResult list() {
+        List<OperationLogPO> operationLogPOList = operLogRepository.list();
+        List<OperationLogDTO> operationLogDTOList = BeanUtil.mapperList(operationLogPOList, OperationLogDTO.class);
+        return ApiResult.success(operationLogDTOList);
     }
 }

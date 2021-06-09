@@ -2,10 +2,13 @@ package com.example.demo.repository;
 
 
 import com.example.demo.domain.po.OperationLogPO;
+import com.example.demo.domain.po.VehicleInformationPO;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Options;
+import org.apache.ibatis.annotations.Select;
 
 import java.sql.Timestamp;
+import java.util.List;
 
 public interface OperLogRepository {
 
@@ -17,5 +20,8 @@ public interface OperLogRepository {
             "#{description}, #{model}, #{operationTime}, #{result}, #{params}" +
             ")</script>")
     void save(OperationLogPO operationLogPO);
+
+    @Select("SELECT * FROM `operation_log`")
+    List<OperationLogPO> list();
 
 }
