@@ -84,6 +84,9 @@ public class OperationLogAspect {
                 String userId = JWT.decode(token).getAudience().get(0);
                 UserDTO user = userService.findUserById(userId);
                 userName = user==null?"未知":user.getUsername();// 取到用户信息
+            }else {
+                UserDTO user = (UserDTO) joinPoint.getArgs()[0];
+                userName = user.getUsername();
             }
             //参数,从切点出获取其参数
             Object[] params = joinPoint.getArgs();
