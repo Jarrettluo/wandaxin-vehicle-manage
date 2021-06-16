@@ -21,7 +21,7 @@ public interface OperLogRepository {
             ")</script>")
     void save(OperationLogPO operationLogPO);
 
-    @Select("SELECT * FROM `operation_log`")
+    @Select("SELECT * FROM `operation_log` where DATE_SUB(CURDATE(), INTERVAL 30 DAY) <= date(operation_time)")
     List<OperationLogPO> list();
 
 }
