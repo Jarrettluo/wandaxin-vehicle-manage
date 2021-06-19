@@ -23,6 +23,9 @@ public class SaleItemPO {
     private Date saleDate;
     private Integer clearState;
 
+    private float mortgageRebate; // 贷款返佣
+    private float insuranceRefund; // 保险退费
+
     private Long vehicleId;
 
 }

@@ -3,6 +3,7 @@ package com.example.demo.domain.dto;
 import lombok.Data;
 
 import java.sql.Date;
+import java.sql.Timestamp;
 
 /**
  * @Author Jarrett Luo
@@ -21,8 +22,11 @@ public class SaleItemDTO {
     private Integer partnerPrice;
     private float partnerProfit;
     private float selfProfit;
-    private Date saleDate;
+    private Timestamp saleDate;
     private Integer clearState;
+
+    private float mortgageRebate; // 贷款返佣
+    private float insuranceRefund; // 保险退费
 
     private Long vehicleId;
 

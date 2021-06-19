@@ -28,10 +28,11 @@ public interface SaleItemRepository {
     @Options(useGeneratedKeys = true, keyProperty = "id", keyColumn = "id")
     @Insert("<script>INSERT INTO `sale_item`(" +
             "sale_price, commission_rate, repair_price, partner_price," +
-            "partner_profit, self_profit, sale_date, vehicle_id, clear_state) VALUES(" +
+            "partner_profit, self_profit, sale_date, vehicle_id, clear_state," +
+            "mortgage_rebate, insurance_refund) VALUES(" +
             "#{salePrice}, #{commissionRate}, #{repairPrice}, #{partnerPrice}, " +
             "#{partnerProfit}, #{selfProfit}, #{saleDate}, #{vehicleId}, #{clearState}" +
-            ")</script>")
+            "#{mortgageRebate}, #{insuranceRefund})</script>")
     Integer save(SaleItemPO saleItemPO);
 
     @Delete("DELETE FROM `sale_item` WHERE id = #{id}")
@@ -48,8 +49,11 @@ public interface SaleItemRepository {
             "<if test='saleDate!=null'>sale_date = #{saleDate}, </if>" +
             "<if test='vehicleId!=null'>vehicle_id = #{vehicleId}, </if>" +
             "<if test='clearState!=null'>clear_state = #{clearState}, </if>" +
+            "<if test='mortgage_rebate!=null'>mortgage_rebate = #{mortgageRebate}, </if>" +
+            "<if test='insurance_refund!=null'>insurance_refund = #{insuranceRefund}, </if>" +
             "</set>WHERE id = #{id}</script>")
     void update(SaleItemPO saleItemPO);
+
 
     @Delete("DELETE FROM `sale_item` WHERE vehicle_id = #{vehicleId}")
     void removeByVehicleId(Long vehicleId);
