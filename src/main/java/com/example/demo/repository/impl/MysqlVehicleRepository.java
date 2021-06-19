@@ -61,7 +61,7 @@ public interface MysqlVehicleRepository {
     @Result(property = "id", column = "id")
     List<VehicleInformationPO> list();
 
-    @Select("SELECT * FROM vehicle_information WHERE vehicle_plate like \"%\" #{vehiclePlate} \"%\"")
+    @Select("SELECT * FROM vehicle_information WHERE CONCAT(`vehicle_plate`,`vehicle_brand`,`vehicle_color`) like \"%\" #{vehiclePlate} \"%\"")
     List<VehicleInformationPO> search(String vehiclePlate);
 
 }

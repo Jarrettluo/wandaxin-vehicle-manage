@@ -49,8 +49,8 @@ public interface SaleItemRepository {
             "<if test='saleDate!=null'>sale_date = #{saleDate}, </if>" +
             "<if test='vehicleId!=null'>vehicle_id = #{vehicleId}, </if>" +
             "<if test='clearState!=null'>clear_state = #{clearState}, </if>" +
-            "<if test='mortgage_rebate!=null'>mortgage_rebate = #{mortgageRebate}, </if>" +
-            "<if test='insurance_refund!=null'>insurance_refund = #{insuranceRefund}, </if>" +
+            "<if test='mortgageRebate!=null'>mortgage_rebate = #{mortgageRebate}, </if>" +
+            "<if test='insuranceRefund!=null'>insurance_refund = #{insuranceRefund}, </if>" +
             "</set>WHERE id = #{id}</script>")
     void update(SaleItemPO saleItemPO);
 

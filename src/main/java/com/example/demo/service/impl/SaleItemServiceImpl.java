@@ -69,11 +69,8 @@ public class SaleItemServiceImpl implements SaleItemService {
         }
         // 先去查找一下是否有这么一条记录，然后再进行修改
         SaleItemPO saleItemPOOld = saleItemRepositoryImpl.find(saleItemDTO.getVehicleId());
-        System.out.println(saleItemPOOld);
         if(CheckObject.checkObjFieldIsNull(saleItemPOOld)) return ApiResult.error(1202, "修改失败");
         SaleItemPO saleItemPO = BeanUtil.mapperBean(saleItemDTO, SaleItemPO.class);
-        System.out.println("--------");
-        System.out.println(saleItemPO);
         saleItemRepositoryImpl.update(saleItemPO);
         return ApiResult.success(saleItemPO);
     }

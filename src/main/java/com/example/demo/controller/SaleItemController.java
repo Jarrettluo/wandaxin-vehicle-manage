@@ -35,7 +35,6 @@ public class SaleItemController {
     @CrossOrigin
     @PostMapping
     public ApiResult save(@RequestBody SaleItemDTO saleItem) throws IllegalAccessException {
-        System.out.println(saleItem);
         return saleItemService.save(saleItem);
     }
 
@@ -43,7 +42,6 @@ public class SaleItemController {
     @CrossOrigin
     @PutMapping
     public ApiResult update(@RequestBody SaleItemDTO saleItem) throws IllegalAccessException {
-        System.out.println(saleItem);
         return saleItemService.update(saleItem);
     }
 
