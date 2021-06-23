@@ -31,7 +31,7 @@ public interface SaleItemRepository {
             "partner_profit, self_profit, sale_date, vehicle_id, clear_state," +
             "mortgage_rebate, insurance_refund) VALUES(" +
             "#{salePrice}, #{commissionRate}, #{repairPrice}, #{partnerPrice}, " +
-            "#{partnerProfit}, #{selfProfit}, #{saleDate}, #{vehicleId}, #{clearState}" +
+            "#{partnerProfit}, #{selfProfit}, #{saleDate}, #{vehicleId}, #{clearState}, " +
             "#{mortgageRebate}, #{insuranceRefund})</script>")
     Integer save(SaleItemPO saleItemPO);
 

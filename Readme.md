@@ -46,3 +46,5 @@ alter table sale_item add mortgage_rebate float(8, 2);
 alter table sale_item add insurance_refund float(8, 2);
 ```
 
+
+
