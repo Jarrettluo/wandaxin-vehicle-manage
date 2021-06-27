@@ -46,3 +46,11 @@ alter table sale_item add mortgage_rebate float(8, 2);
 alter table sale_item add insurance_refund float(8, 2);
 ```
 
+```shell
+lsof -i:8081
+```
+$ kill -s 9 1827
+
+nohup java -jar XXX.jar >temp.txt &
+
+sudo scp -r wdx /var/www/html/
