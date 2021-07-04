@@ -10,6 +10,9 @@ spring:
     multipart:
       max-file-size: 10MB
 
+  jackson:
+    time-zone: GMT+8
+
 mybatis:
   configuration:
     map-underscore-to-camel-case: true

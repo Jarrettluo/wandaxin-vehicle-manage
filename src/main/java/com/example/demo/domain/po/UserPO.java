@@ -10,4 +10,6 @@ public class UserPO {
     String id;
     String username;
     String password;
+    String type;
+    Integer companyId;
 }

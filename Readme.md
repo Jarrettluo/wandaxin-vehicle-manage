@@ -59,3 +59,54 @@ sudo scp -r wdx /var/www/html/
 
 
 >>>>>>> 2f602607ca095da331a4dcfe4a3690877288ac5e
+```roomsql
+![./img_1.png](./img_1.png)
+```
+
+
+```roomsql
+CREATE TABLE IF NOT EXISTS `company`(
+    `id` int NOT NULL AUTO_INCREMENT,
+    `company_name` VARCHAR(100) NOT NULL,
+    `abbreviation` VARCHAR(40) NOT NULL,
+    `valid_account` INT UNSIGNED DEFAULT 1,
+    `expiration_time` datetime NOT NULL,
+    `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间\n',
+    `modify_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '修改时间',
+   PRIMARY KEY ( `id` )
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+```
+
+```roomsql
+insert into company (company_name, abbreviation, valid_account, expiration_time) values ("成都万达鑫二手车经销有限公司"
+, "万达鑫", 4, "2022-10-1 12:00:00");
+```
+
+用户表 ![img_3.png](img_3.png)
+
+新增 类型： type: varchar(20)
+外键 公司id： company_id: int
+
+```roomsql
+ALTER TABLE user ADD type VARCHAR(16) not null default "admin";
+```
+```roomsql
+ALTER TABLE user ADD company_id int not null; // 增加字段
+```
+
+```roomsql
+ALTER TABLE <旧表名> RENAME [TO] <新表名>;
+```
+
+```roomsql
+ALTER TABLE <表名> CHANGE <旧字段名> <新字段名> <新数据类型>; // 修改字段
+```
+
+将company_id的值改为1，代表全是第一家公司的。
+```roomsql
+UPDATE user SET company_id = 1 WHERE LastName = 0;
+```
+
+三张表需要添加company_id
+vehicle_information\ sale_item \ operation_log \
+

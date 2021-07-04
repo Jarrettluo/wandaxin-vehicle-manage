@@ -107,7 +107,7 @@ public class OperationLogAspect {
             // 请求参数
             operationLog.setParams(param!=""?param:"无参数");
             //保存日志
-            logDao.save(operationLog);
+//            logDao.save(operationLog);  // 添加车辆的token，就没有添加
 
         } catch (Exception e) {
             e.printStackTrace();

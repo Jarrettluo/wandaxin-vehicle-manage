@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 @Service("UserService")
 public interface UserService {
 
-    UserDTO findByUsername(UserDTO userDTO);
+    ApiResult findByUsername(UserDTO userDTO);
 
     UserDTO findUserById(String userId);
 
