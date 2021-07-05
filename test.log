@@ -1,572 +1,125 @@
-2021-07-04 15:31:56.073  WARN 1068 --- [restartedMain] o.s.boot.StartupInfoLogger               : InetAddress.getLocalHost().getHostName() took 5004 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
-2021-07-04 15:32:01.090  INFO 1068 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Starting WandaxinVehicleManageApplication using Java 1.8.0_282 on MollydeMacBook-Pro.local with PID 1068 (/Users/molly/IdeaProjects/wandaxin-vehicle-manage/target/classes started by molly in /Users/molly/IdeaProjects/wandaxin-vehicle-manage)
-2021-07-04 15:32:01.091  INFO 1068 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : The following profiles are active: dev
-2021-07-04 15:32:01.182  INFO 1068 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2021-07-04 15:32:01.183  INFO 1068 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2021-07-04 15:32:02.496  WARN 1068 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo.mapper]' package. Please check your configuration.
-2021-07-04 15:32:02.509  WARN 1068 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'mysqlVehicleRepository' and 'com.example.demo.repository.impl.MysqlVehicleRepository' mapperInterface. Bean already defined with the same name!
-2021-07-04 15:32:03.520  INFO 1068 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
-2021-07-04 15:32:03.542  INFO 1068 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-07-04 15:32:03.543  INFO 1068 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
-2021-07-04 15:32:03.640  INFO 1068 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-07-04 15:32:03.640  INFO 1068 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2456 ms
-2021-07-04 15:32:04.838  INFO 1068 --- [restartedMain] com.example.demo.config.LogConfig        : ==========print log==========
-2021-07-04 15:32:05.021  INFO 1068 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2021-07-04 15:32:05.049  INFO 1068 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2021-07-04 15:32:05.441  INFO 1068 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
-2021-07-04 15:32:05.903  INFO 1068 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Started WandaxinVehicleManageApplication in 20.981 seconds (JVM running for 22.367)
-2021-07-04 20:08:33.836  INFO 1068 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2021-07-04 20:08:52.538  WARN 1607 --- [restartedMain] o.s.boot.StartupInfoLogger               : InetAddress.getLocalHost().getHostName() took 5001 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
-2021-07-04 20:08:57.545  INFO 1607 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Starting WandaxinVehicleManageApplication using Java 1.8.0_282 on MollydeMacBook-Pro.local with PID 1607 (/Users/molly/IdeaProjects/wandaxin-vehicle-manage/target/classes started by molly in /Users/molly/IdeaProjects/wandaxin-vehicle-manage)
-2021-07-04 20:08:57.546  INFO 1607 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : The following profiles are active: dev
-2021-07-04 20:08:57.648  INFO 1607 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2021-07-04 20:08:57.649  INFO 1607 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2021-07-04 20:08:59.582  WARN 1607 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo.mapper]' package. Please check your configuration.
-2021-07-04 20:08:59.596  WARN 1607 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'mysqlVehicleRepository' and 'com.example.demo.repository.impl.MysqlVehicleRepository' mapperInterface. Bean already defined with the same name!
-2021-07-04 20:09:00.924  INFO 1607 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
-2021-07-04 20:09:00.946  INFO 1607 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-07-04 20:09:00.946  INFO 1607 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
-2021-07-04 20:09:01.073  INFO 1607 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-07-04 20:09:01.073  INFO 1607 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3424 ms
-2021-07-04 20:09:01.521 ERROR 1607 --- [restartedMain] o.m.spring.mapper.MapperFactoryBean      : Error while adding the mapper 'interface com.example.demo.repository.UserRepository' to configuration.
-
-org.apache.ibatis.builder.BuilderException: Error creating document instance.  Cause: org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 128; XML 文档结构必须从头至尾包含在同一个实体内。
-	at org.apache.ibatis.parsing.XPathParser.createDocument(XPathParser.java:263) ~[mybatis-3.5.6.jar:3.5.6]
-	at org.apache.ibatis.parsing.XPathParser.<init>(XPathParser.java:117) ~[mybatis-3.5.6.jar:3.5.6]
-	at org.apache.ibatis.scripting.xmltags.XMLLanguageDriver.createSqlSource(XMLLanguageDriver.java:51) ~[mybatis-3.5.6.jar:3.5.6]
-	at org.apache.ibatis.builder.annotation.MapperAnnotationBuilder.buildSqlSourceFromStrings(MapperAnnotationBuilder.java:635) ~[mybatis-3.5.6.jar:3.5.6]
-	at org.apache.ibatis.builder.annotation.MapperAnnotationBuilder.buildSqlSource(MapperAnnotationBuilder.java:622) ~[mybatis-3.5.6.jar:3.5.6]
-	at org.apache.ibatis.builder.annotation.MapperAnnotationBuilder.lambda$parseStatement$2(MapperAnnotationBuilder.java:301) ~[mybatis-3.5.6.jar:3.5.6]
-	at java.util.Optional.ifPresent(Optional.java:159) ~[na:1.8.0_282]
-	at org.apache.ibatis.builder.annotation.MapperAnnotationBuilder.parseStatement(MapperAnnotationBuilder.java:300) ~[mybatis-3.5.6.jar:3.5.6]
-	at org.apache.ibatis.builder.annotation.MapperAnnotationBuilder.parse(MapperAnnotationBuilder.java:132) ~[mybatis-3.5.6.jar:3.5.6]
-	at org.apache.ibatis.binding.MapperRegistry.addMapper(MapperRegistry.java:72) ~[mybatis-3.5.6.jar:3.5.6]
-	at org.apache.ibatis.session.Configuration.addMapper(Configuration.java:841) ~[mybatis-3.5.6.jar:3.5.6]
-	at org.mybatis.spring.mapper.MapperFactoryBean.checkDaoConfig(MapperFactoryBean.java:80) ~[mybatis-spring-2.0.6.jar:2.0.6]
-	at org.springframework.dao.support.DaoSupport.afterPropertiesSet(DaoSupport.java:44) [spring-tx-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1847) [spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1784) [spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:609) [spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531) [spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) [spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) [spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213) [spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeanByName(AbstractAutowireCapableBeanFactory.java:468) [spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:527) ~[spring-context-5.3.2.jar:5.3.2]
-	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:497) ~[spring-context-5.3.2.jar:5.3.2]
-	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:650) ~[spring-context-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:228) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:318) ~[spring-context-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1415) [spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:608) [spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531) [spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) [spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) [spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) [spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1367) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1287) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1415) [spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:608) [spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531) [spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) [spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) [spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) [spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:944) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:923) ~[spring-context-5.3.2.jar:5.3.2]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:588) ~[spring-context-5.3.2.jar:5.3.2]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144) ~[spring-boot-2.4.1.jar:2.4.1]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:767) ~[spring-boot-2.4.1.jar:2.4.1]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759) ~[spring-boot-2.4.1.jar:2.4.1]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:426) ~[spring-boot-2.4.1.jar:2.4.1]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326) ~[spring-boot-2.4.1.jar:2.4.1]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1309) ~[spring-boot-2.4.1.jar:2.4.1]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1298) ~[spring-boot-2.4.1.jar:2.4.1]
-	at com.example.demo.WandaxinVehicleManageApplication.main(WandaxinVehicleManageApplication.java:18) ~[classes/:na]
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_282]
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_282]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_282]
-	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_282]
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.4.1.jar:2.4.1]
-Caused by: org.xml.sax.SAXParseException: XML 文档结构必须从头至尾包含在同一个实体内。
-	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203) ~[na:1.8.0_282]
-	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177) ~[na:1.8.0_282]
-	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400) ~[na:1.8.0_282]
-	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327) ~[na:1.8.0_282]
-	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1473) ~[na:1.8.0_282]
-	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.endEntity(XMLDocumentFragmentScannerImpl.java:899) ~[na:1.8.0_282]
-	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.endEntity(XMLDocumentScannerImpl.java:559) ~[na:1.8.0_282]
-	at com.sun.org.apache.xerces.internal.impl.XMLEntityManager.endEntity(XMLEntityManager.java:1410) ~[na:1.8.0_282]
-	at com.sun.org.apache.xerces.internal.impl.XMLEntityScanner.load(XMLEntityScanner.java:1916) ~[na:1.8.0_282]
-	at com.sun.org.apache.xerces.internal.impl.XMLEntityScanner.peekChar(XMLEntityScanner.java:508) ~[na:1.8.0_282]
-	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2716) ~[na:1.8.0_282]
-	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:602) ~[na:1.8.0_282]
-	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:505) ~[na:1.8.0_282]
-	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:842) ~[na:1.8.0_282]
-	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:771) ~[na:1.8.0_282]
-	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141) ~[na:1.8.0_282]
-	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(DOMParser.java:243) ~[na:1.8.0_282]
-	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(DocumentBuilderImpl.java:339) ~[na:1.8.0_282]
-	at org.apache.ibatis.parsing.XPathParser.createDocument(XPathParser.java:261) ~[mybatis-3.5.6.jar:3.5.6]
-	... 63 common frames omitted
-
-2021-07-04 20:09:01.524  WARN 1607 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'operationLogAspect': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userServiceImpl': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userRepository' defined in file [/Users/molly/IdeaProjects/wandaxin-vehicle-manage/target/classes/com/example/demo/repository/UserRepository.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: org.apache.ibatis.builder.BuilderException: Error creating document instance.  Cause: org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 128; XML 文档结构必须从头至尾包含在同一个实体内。
-2021-07-04 20:09:01.529  INFO 1607 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2021-07-04 20:09:01.541  INFO 1607 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2021-07-04 20:09:01.568 ERROR 1607 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'operationLogAspect': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userServiceImpl': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userRepository' defined in file [/Users/molly/IdeaProjects/wandaxin-vehicle-manage/target/classes/com/example/demo/repository/UserRepository.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: org.apache.ibatis.builder.BuilderException: Error creating document instance.  Cause: org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 128; XML 文档结构必须从头至尾包含在同一个实体内。
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1415) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:608) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:944) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:923) ~[spring-context-5.3.2.jar:5.3.2]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:588) ~[spring-context-5.3.2.jar:5.3.2]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144) ~[spring-boot-2.4.1.jar:2.4.1]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:767) [spring-boot-2.4.1.jar:2.4.1]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759) [spring-boot-2.4.1.jar:2.4.1]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:426) [spring-boot-2.4.1.jar:2.4.1]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326) [spring-boot-2.4.1.jar:2.4.1]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1309) [spring-boot-2.4.1.jar:2.4.1]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1298) [spring-boot-2.4.1.jar:2.4.1]
-	at com.example.demo.WandaxinVehicleManageApplication.main(WandaxinVehicleManageApplication.java:18) [classes/:na]
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_282]
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_282]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_282]
-	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_282]
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.4.1.jar:2.4.1]
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userServiceImpl': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userRepository' defined in file [/Users/molly/IdeaProjects/wandaxin-vehicle-manage/target/classes/com/example/demo/repository/UserRepository.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: org.apache.ibatis.builder.BuilderException: Error creating document instance.  Cause: org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 128; XML 文档结构必须从头至尾包含在同一个实体内。
-	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:321) ~[spring-context-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1415) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:608) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1367) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1287) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640) ~[spring-beans-5.3.2.jar:5.3.2]
-	... 25 common frames omitted
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userRepository' defined in file [/Users/molly/IdeaProjects/wandaxin-vehicle-manage/target/classes/com/example/demo/repository/UserRepository.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: org.apache.ibatis.builder.BuilderException: Error creating document instance.  Cause: org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 128; XML 文档结构必须从头至尾包含在同一个实体内。
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1788) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:609) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeanByName(AbstractAutowireCapableBeanFactory.java:468) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:527) ~[spring-context-5.3.2.jar:5.3.2]
-	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:497) ~[spring-context-5.3.2.jar:5.3.2]
-	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:650) ~[spring-context-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:228) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:318) ~[spring-context-5.3.2.jar:5.3.2]
-	... 36 common frames omitted
-Caused by: java.lang.IllegalArgumentException: org.apache.ibatis.builder.BuilderException: Error creating document instance.  Cause: org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 128; XML 文档结构必须从头至尾包含在同一个实体内。
-	at org.mybatis.spring.mapper.MapperFactoryBean.checkDaoConfig(MapperFactoryBean.java:83) ~[mybatis-spring-2.0.6.jar:2.0.6]
-	at org.springframework.dao.support.DaoSupport.afterPropertiesSet(DaoSupport.java:44) ~[spring-tx-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1847) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1784) ~[spring-beans-5.3.2.jar:5.3.2]
-	... 49 common frames omitted
-Caused by: org.apache.ibatis.builder.BuilderException: Error creating document instance.  Cause: org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 128; XML 文档结构必须从头至尾包含在同一个实体内。
-	at org.apache.ibatis.parsing.XPathParser.createDocument(XPathParser.java:263) ~[mybatis-3.5.6.jar:3.5.6]
-	at org.apache.ibatis.parsing.XPathParser.<init>(XPathParser.java:117) ~[mybatis-3.5.6.jar:3.5.6]
-	at org.apache.ibatis.scripting.xmltags.XMLLanguageDriver.createSqlSource(XMLLanguageDriver.java:51) ~[mybatis-3.5.6.jar:3.5.6]
-	at org.apache.ibatis.builder.annotation.MapperAnnotationBuilder.buildSqlSourceFromStrings(MapperAnnotationBuilder.java:635) ~[mybatis-3.5.6.jar:3.5.6]
-	at org.apache.ibatis.builder.annotation.MapperAnnotationBuilder.buildSqlSource(MapperAnnotationBuilder.java:622) ~[mybatis-3.5.6.jar:3.5.6]
-	at org.apache.ibatis.builder.annotation.MapperAnnotationBuilder.lambda$parseStatement$2(MapperAnnotationBuilder.java:301) ~[mybatis-3.5.6.jar:3.5.6]
-	at java.util.Optional.ifPresent(Optional.java:159) ~[na:1.8.0_282]
-	at org.apache.ibatis.builder.annotation.MapperAnnotationBuilder.parseStatement(MapperAnnotationBuilder.java:300) ~[mybatis-3.5.6.jar:3.5.6]
-	at org.apache.ibatis.builder.annotation.MapperAnnotationBuilder.parse(MapperAnnotationBuilder.java:132) ~[mybatis-3.5.6.jar:3.5.6]
-	at org.apache.ibatis.binding.MapperRegistry.addMapper(MapperRegistry.java:72) ~[mybatis-3.5.6.jar:3.5.6]
-	at org.apache.ibatis.session.Configuration.addMapper(Configuration.java:841) ~[mybatis-3.5.6.jar:3.5.6]
-	at org.mybatis.spring.mapper.MapperFactoryBean.checkDaoConfig(MapperFactoryBean.java:80) ~[mybatis-spring-2.0.6.jar:2.0.6]
-	... 52 common frames omitted
-Caused by: org.xml.sax.SAXParseException: XML 文档结构必须从头至尾包含在同一个实体内。
-	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203) ~[na:1.8.0_282]
-	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177) ~[na:1.8.0_282]
-	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400) ~[na:1.8.0_282]
-	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327) ~[na:1.8.0_282]
-	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1473) ~[na:1.8.0_282]
-	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.endEntity(XMLDocumentFragmentScannerImpl.java:899) ~[na:1.8.0_282]
-	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.endEntity(XMLDocumentScannerImpl.java:559) ~[na:1.8.0_282]
-	at com.sun.org.apache.xerces.internal.impl.XMLEntityManager.endEntity(XMLEntityManager.java:1410) ~[na:1.8.0_282]
-	at com.sun.org.apache.xerces.internal.impl.XMLEntityScanner.load(XMLEntityScanner.java:1916) ~[na:1.8.0_282]
-	at com.sun.org.apache.xerces.internal.impl.XMLEntityScanner.peekChar(XMLEntityScanner.java:508) ~[na:1.8.0_282]
-	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2716) ~[na:1.8.0_282]
-	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:602) ~[na:1.8.0_282]
-	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:505) ~[na:1.8.0_282]
-	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:842) ~[na:1.8.0_282]
-	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:771) ~[na:1.8.0_282]
-	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141) ~[na:1.8.0_282]
-	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(DOMParser.java:243) ~[na:1.8.0_282]
-	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(DocumentBuilderImpl.java:339) ~[na:1.8.0_282]
-	at org.apache.ibatis.parsing.XPathParser.createDocument(XPathParser.java:261) ~[mybatis-3.5.6.jar:3.5.6]
-	... 63 common frames omitted
-
-2021-07-04 20:16:18.705  WARN 1654 --- [restartedMain] o.s.boot.StartupInfoLogger               : InetAddress.getLocalHost().getHostName() took 5003 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
-2021-07-04 20:16:23.715  INFO 1654 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Starting WandaxinVehicleManageApplication using Java 1.8.0_282 on MollydeMacBook-Pro.local with PID 1654 (/Users/molly/IdeaProjects/wandaxin-vehicle-manage/target/classes started by molly in /Users/molly/IdeaProjects/wandaxin-vehicle-manage)
-2021-07-04 20:16:23.717  INFO 1654 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : The following profiles are active: dev
-2021-07-04 20:16:23.800  INFO 1654 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2021-07-04 20:16:23.801  INFO 1654 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2021-07-04 20:16:25.373  WARN 1654 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo.mapper]' package. Please check your configuration.
-2021-07-04 20:16:25.393  WARN 1654 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'mysqlVehicleRepository' and 'com.example.demo.repository.impl.MysqlVehicleRepository' mapperInterface. Bean already defined with the same name!
-2021-07-04 20:16:26.502  INFO 1654 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
-2021-07-04 20:16:26.519  INFO 1654 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-07-04 20:16:26.519  INFO 1654 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
-2021-07-04 20:16:26.619  INFO 1654 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-07-04 20:16:26.619  INFO 1654 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2818 ms
-2021-07-04 20:16:27.099 ERROR 1654 --- [restartedMain] o.m.spring.mapper.MapperFactoryBean      : Error while adding the mapper 'interface com.example.demo.repository.UserRepository' to configuration.
-
-org.apache.ibatis.builder.BuilderException: Error creating document instance.  Cause: org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 130; 元素类型 "set" 必须由匹配的结束标记 "</set>" 终止。
-	at org.apache.ibatis.parsing.XPathParser.createDocument(XPathParser.java:263) ~[mybatis-3.5.6.jar:3.5.6]
-	at org.apache.ibatis.parsing.XPathParser.<init>(XPathParser.java:117) ~[mybatis-3.5.6.jar:3.5.6]
-	at org.apache.ibatis.scripting.xmltags.XMLLanguageDriver.createSqlSource(XMLLanguageDriver.java:51) ~[mybatis-3.5.6.jar:3.5.6]
-	at org.apache.ibatis.builder.annotation.MapperAnnotationBuilder.buildSqlSourceFromStrings(MapperAnnotationBuilder.java:635) ~[mybatis-3.5.6.jar:3.5.6]
-	at org.apache.ibatis.builder.annotation.MapperAnnotationBuilder.buildSqlSource(MapperAnnotationBuilder.java:622) ~[mybatis-3.5.6.jar:3.5.6]
-	at org.apache.ibatis.builder.annotation.MapperAnnotationBuilder.lambda$parseStatement$2(MapperAnnotationBuilder.java:301) ~[mybatis-3.5.6.jar:3.5.6]
-	at java.util.Optional.ifPresent(Optional.java:159) ~[na:1.8.0_282]
-	at org.apache.ibatis.builder.annotation.MapperAnnotationBuilder.parseStatement(MapperAnnotationBuilder.java:300) ~[mybatis-3.5.6.jar:3.5.6]
-	at org.apache.ibatis.builder.annotation.MapperAnnotationBuilder.parse(MapperAnnotationBuilder.java:132) ~[mybatis-3.5.6.jar:3.5.6]
-	at org.apache.ibatis.binding.MapperRegistry.addMapper(MapperRegistry.java:72) ~[mybatis-3.5.6.jar:3.5.6]
-	at org.apache.ibatis.session.Configuration.addMapper(Configuration.java:841) ~[mybatis-3.5.6.jar:3.5.6]
-	at org.mybatis.spring.mapper.MapperFactoryBean.checkDaoConfig(MapperFactoryBean.java:80) ~[mybatis-spring-2.0.6.jar:2.0.6]
-	at org.springframework.dao.support.DaoSupport.afterPropertiesSet(DaoSupport.java:44) [spring-tx-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1847) [spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1784) [spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:609) [spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531) [spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) [spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) [spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213) [spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeanByName(AbstractAutowireCapableBeanFactory.java:468) [spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:527) ~[spring-context-5.3.2.jar:5.3.2]
-	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:497) ~[spring-context-5.3.2.jar:5.3.2]
-	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:650) ~[spring-context-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:228) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:318) ~[spring-context-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1415) [spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:608) [spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531) [spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) [spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) [spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) [spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1367) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1287) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1415) [spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:608) [spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531) [spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) [spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) [spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) [spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:944) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:923) ~[spring-context-5.3.2.jar:5.3.2]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:588) ~[spring-context-5.3.2.jar:5.3.2]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144) ~[spring-boot-2.4.1.jar:2.4.1]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:767) ~[spring-boot-2.4.1.jar:2.4.1]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759) ~[spring-boot-2.4.1.jar:2.4.1]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:426) ~[spring-boot-2.4.1.jar:2.4.1]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326) ~[spring-boot-2.4.1.jar:2.4.1]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1309) ~[spring-boot-2.4.1.jar:2.4.1]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1298) ~[spring-boot-2.4.1.jar:2.4.1]
-	at com.example.demo.WandaxinVehicleManageApplication.main(WandaxinVehicleManageApplication.java:18) ~[classes/:na]
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_282]
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_282]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_282]
-	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_282]
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.4.1.jar:2.4.1]
-Caused by: org.xml.sax.SAXParseException: 元素类型 "set" 必须由匹配的结束标记 "</set>" 终止。
-	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203) ~[na:1.8.0_282]
-	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177) ~[na:1.8.0_282]
-	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400) ~[na:1.8.0_282]
-	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327) ~[na:1.8.0_282]
-	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1473) ~[na:1.8.0_282]
-	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanEndElement(XMLDocumentFragmentScannerImpl.java:1749) ~[na:1.8.0_282]
-	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2967) ~[na:1.8.0_282]
-	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:602) ~[na:1.8.0_282]
-	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:505) ~[na:1.8.0_282]
-	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:842) ~[na:1.8.0_282]
-	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:771) ~[na:1.8.0_282]
-	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141) ~[na:1.8.0_282]
-	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(DOMParser.java:243) ~[na:1.8.0_282]
-	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(DocumentBuilderImpl.java:339) ~[na:1.8.0_282]
-	at org.apache.ibatis.parsing.XPathParser.createDocument(XPathParser.java:261) ~[mybatis-3.5.6.jar:3.5.6]
-	... 63 common frames omitted
-
-2021-07-04 20:16:27.102  WARN 1654 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'operationLogAspect': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userServiceImpl': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userRepository' defined in file [/Users/molly/IdeaProjects/wandaxin-vehicle-manage/target/classes/com/example/demo/repository/UserRepository.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: org.apache.ibatis.builder.BuilderException: Error creating document instance.  Cause: org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 130; 元素类型 "set" 必须由匹配的结束标记 "</set>" 终止。
-2021-07-04 20:16:27.107  INFO 1654 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2021-07-04 20:16:27.123  INFO 1654 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2021-07-04 20:16:27.150 ERROR 1654 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'operationLogAspect': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userServiceImpl': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userRepository' defined in file [/Users/molly/IdeaProjects/wandaxin-vehicle-manage/target/classes/com/example/demo/repository/UserRepository.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: org.apache.ibatis.builder.BuilderException: Error creating document instance.  Cause: org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 130; 元素类型 "set" 必须由匹配的结束标记 "</set>" 终止。
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1415) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:608) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:944) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:923) ~[spring-context-5.3.2.jar:5.3.2]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:588) ~[spring-context-5.3.2.jar:5.3.2]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144) ~[spring-boot-2.4.1.jar:2.4.1]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:767) [spring-boot-2.4.1.jar:2.4.1]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759) [spring-boot-2.4.1.jar:2.4.1]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:426) [spring-boot-2.4.1.jar:2.4.1]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326) [spring-boot-2.4.1.jar:2.4.1]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1309) [spring-boot-2.4.1.jar:2.4.1]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1298) [spring-boot-2.4.1.jar:2.4.1]
-	at com.example.demo.WandaxinVehicleManageApplication.main(WandaxinVehicleManageApplication.java:18) [classes/:na]
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_282]
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_282]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_282]
-	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_282]
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.4.1.jar:2.4.1]
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userServiceImpl': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userRepository' defined in file [/Users/molly/IdeaProjects/wandaxin-vehicle-manage/target/classes/com/example/demo/repository/UserRepository.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: org.apache.ibatis.builder.BuilderException: Error creating document instance.  Cause: org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 130; 元素类型 "set" 必须由匹配的结束标记 "</set>" 终止。
-	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:321) ~[spring-context-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1415) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:608) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1367) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1287) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640) ~[spring-beans-5.3.2.jar:5.3.2]
-	... 25 common frames omitted
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userRepository' defined in file [/Users/molly/IdeaProjects/wandaxin-vehicle-manage/target/classes/com/example/demo/repository/UserRepository.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: org.apache.ibatis.builder.BuilderException: Error creating document instance.  Cause: org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 130; 元素类型 "set" 必须由匹配的结束标记 "</set>" 终止。
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1788) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:609) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeanByName(AbstractAutowireCapableBeanFactory.java:468) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:527) ~[spring-context-5.3.2.jar:5.3.2]
-	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:497) ~[spring-context-5.3.2.jar:5.3.2]
-	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:650) ~[spring-context-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:228) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:318) ~[spring-context-5.3.2.jar:5.3.2]
-	... 36 common frames omitted
-Caused by: java.lang.IllegalArgumentException: org.apache.ibatis.builder.BuilderException: Error creating document instance.  Cause: org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 130; 元素类型 "set" 必须由匹配的结束标记 "</set>" 终止。
-	at org.mybatis.spring.mapper.MapperFactoryBean.checkDaoConfig(MapperFactoryBean.java:83) ~[mybatis-spring-2.0.6.jar:2.0.6]
-	at org.springframework.dao.support.DaoSupport.afterPropertiesSet(DaoSupport.java:44) ~[spring-tx-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1847) ~[spring-beans-5.3.2.jar:5.3.2]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1784) ~[spring-beans-5.3.2.jar:5.3.2]
-	... 49 common frames omitted
-Caused by: org.apache.ibatis.builder.BuilderException: Error creating document instance.  Cause: org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 130; 元素类型 "set" 必须由匹配的结束标记 "</set>" 终止。
-	at org.apache.ibatis.parsing.XPathParser.createDocument(XPathParser.java:263) ~[mybatis-3.5.6.jar:3.5.6]
-	at org.apache.ibatis.parsing.XPathParser.<init>(XPathParser.java:117) ~[mybatis-3.5.6.jar:3.5.6]
-	at org.apache.ibatis.scripting.xmltags.XMLLanguageDriver.createSqlSource(XMLLanguageDriver.java:51) ~[mybatis-3.5.6.jar:3.5.6]
-	at org.apache.ibatis.builder.annotation.MapperAnnotationBuilder.buildSqlSourceFromStrings(MapperAnnotationBuilder.java:635) ~[mybatis-3.5.6.jar:3.5.6]
-	at org.apache.ibatis.builder.annotation.MapperAnnotationBuilder.buildSqlSource(MapperAnnotationBuilder.java:622) ~[mybatis-3.5.6.jar:3.5.6]
-	at org.apache.ibatis.builder.annotation.MapperAnnotationBuilder.lambda$parseStatement$2(MapperAnnotationBuilder.java:301) ~[mybatis-3.5.6.jar:3.5.6]
-	at java.util.Optional.ifPresent(Optional.java:159) ~[na:1.8.0_282]
-	at org.apache.ibatis.builder.annotation.MapperAnnotationBuilder.parseStatement(MapperAnnotationBuilder.java:300) ~[mybatis-3.5.6.jar:3.5.6]
-	at org.apache.ibatis.builder.annotation.MapperAnnotationBuilder.parse(MapperAnnotationBuilder.java:132) ~[mybatis-3.5.6.jar:3.5.6]
-	at org.apache.ibatis.binding.MapperRegistry.addMapper(MapperRegistry.java:72) ~[mybatis-3.5.6.jar:3.5.6]
-	at org.apache.ibatis.session.Configuration.addMapper(Configuration.java:841) ~[mybatis-3.5.6.jar:3.5.6]
-	at org.mybatis.spring.mapper.MapperFactoryBean.checkDaoConfig(MapperFactoryBean.java:80) ~[mybatis-spring-2.0.6.jar:2.0.6]
-	... 52 common frames omitted
-Caused by: org.xml.sax.SAXParseException: 元素类型 "set" 必须由匹配的结束标记 "</set>" 终止。
-	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203) ~[na:1.8.0_282]
-	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177) ~[na:1.8.0_282]
-	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400) ~[na:1.8.0_282]
-	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327) ~[na:1.8.0_282]
-	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1473) ~[na:1.8.0_282]
-	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanEndElement(XMLDocumentFragmentScannerImpl.java:1749) ~[na:1.8.0_282]
-	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2967) ~[na:1.8.0_282]
-	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:602) ~[na:1.8.0_282]
-	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:505) ~[na:1.8.0_282]
-	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:842) ~[na:1.8.0_282]
-	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:771) ~[na:1.8.0_282]
-	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141) ~[na:1.8.0_282]
-	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(DOMParser.java:243) ~[na:1.8.0_282]
-	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(DocumentBuilderImpl.java:339) ~[na:1.8.0_282]
-	at org.apache.ibatis.parsing.XPathParser.createDocument(XPathParser.java:261) ~[mybatis-3.5.6.jar:3.5.6]
-	... 63 common frames omitted
-
-2021-07-04 20:17:43.888  WARN 1679 --- [restartedMain] o.s.boot.StartupInfoLogger               : InetAddress.getLocalHost().getHostName() took 5007 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
-2021-07-04 20:17:48.899  INFO 1679 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Starting WandaxinVehicleManageApplication using Java 1.8.0_282 on MollydeMacBook-Pro.local with PID 1679 (/Users/molly/IdeaProjects/wandaxin-vehicle-manage/target/classes started by molly in /Users/molly/IdeaProjects/wandaxin-vehicle-manage)
-2021-07-04 20:17:48.900  INFO 1679 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : The following profiles are active: dev
-2021-07-04 20:17:48.974  INFO 1679 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2021-07-04 20:17:48.975  INFO 1679 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2021-07-04 20:17:50.174  WARN 1679 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo.mapper]' package. Please check your configuration.
-2021-07-04 20:17:50.190  WARN 1679 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'mysqlVehicleRepository' and 'com.example.demo.repository.impl.MysqlVehicleRepository' mapperInterface. Bean already defined with the same name!
-2021-07-04 20:17:51.231  INFO 1679 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
-2021-07-04 20:17:51.248  INFO 1679 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-07-04 20:17:51.248  INFO 1679 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
-2021-07-04 20:17:51.331  INFO 1679 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-07-04 20:17:51.331  INFO 1679 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2355 ms
-2021-07-04 20:17:52.830  INFO 1679 --- [restartedMain] com.example.demo.config.LogConfig        : ==========print log==========
-2021-07-04 20:17:52.976  INFO 1679 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2021-07-04 20:17:53.006  INFO 1679 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2021-07-04 20:17:53.489  INFO 1679 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
-2021-07-04 20:17:54.065  INFO 1679 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Started WandaxinVehicleManageApplication in 20.881 seconds (JVM running for 21.648)
-2021-07-04 20:18:02.596  INFO 1679 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-07-04 20:18:02.597  INFO 1679 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2021-07-04 20:18:02.599  INFO 1679 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2021-07-04 20:18:02.761  INFO 1679 --- [http-nio-8081-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-07-04 20:18:03.126  INFO 1679 --- [http-nio-8081-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-07-04 20:21:18.279  INFO 1679 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2021-07-04 20:21:18.290  INFO 1679 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-07-04 20:21:18.302  INFO 1679 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2021-07-04 20:21:33.050  WARN 1716 --- [restartedMain] o.s.boot.StartupInfoLogger               : InetAddress.getLocalHost().getHostName() took 5006 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
-2021-07-04 20:21:38.061  INFO 1716 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Starting WandaxinVehicleManageApplication using Java 1.8.0_282 on MollydeMacBook-Pro.local with PID 1716 (/Users/molly/IdeaProjects/wandaxin-vehicle-manage/target/classes started by molly in /Users/molly/IdeaProjects/wandaxin-vehicle-manage)
-2021-07-04 20:21:38.062  INFO 1716 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : The following profiles are active: dev
-2021-07-04 20:21:38.130  INFO 1716 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2021-07-04 20:21:38.131  INFO 1716 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2021-07-04 20:21:39.187  WARN 1716 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo.mapper]' package. Please check your configuration.
-2021-07-04 20:21:39.199  WARN 1716 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'mysqlVehicleRepository' and 'com.example.demo.repository.impl.MysqlVehicleRepository' mapperInterface. Bean already defined with the same name!
-2021-07-04 20:21:40.177  INFO 1716 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
-2021-07-04 20:21:40.192  INFO 1716 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-07-04 20:21:40.193  INFO 1716 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
-2021-07-04 20:21:40.276  INFO 1716 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-07-04 20:21:40.276  INFO 1716 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2144 ms
-2021-07-04 20:21:41.318  INFO 1716 --- [restartedMain] com.example.demo.config.LogConfig        : ==========print log==========
-2021-07-04 20:21:41.450  INFO 1716 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2021-07-04 20:21:41.470  INFO 1716 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2021-07-04 20:21:41.826  INFO 1716 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
-2021-07-04 20:21:42.282  INFO 1716 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Started WandaxinVehicleManageApplication in 19.811 seconds (JVM running for 20.519)
-2021-07-04 20:38:03.753  INFO 1716 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-07-04 20:38:03.756  INFO 1716 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2021-07-04 20:38:03.767  INFO 1716 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 10 ms
-2021-07-04 20:38:03.934  INFO 1716 --- [http-nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-07-04 20:38:04.255  INFO 1716 --- [http-nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-07-04 20:53:52.742  WARN 1716 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=5m18s275ms).
-2021-07-04 21:10:07.575  INFO 1716 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2021-07-04 21:10:07.583  INFO 1716 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-07-04 21:10:07.605  INFO 1716 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2021-07-04 21:10:22.509  WARN 1806 --- [restartedMain] o.s.boot.StartupInfoLogger               : InetAddress.getLocalHost().getHostName() took 5006 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
-2021-07-04 21:10:27.517  INFO 1806 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Starting WandaxinVehicleManageApplication using Java 1.8.0_282 on MollydeMacBook-Pro.local with PID 1806 (/Users/molly/IdeaProjects/wandaxin-vehicle-manage/target/classes started by molly in /Users/molly/IdeaProjects/wandaxin-vehicle-manage)
-2021-07-04 21:10:27.518  INFO 1806 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : The following profiles are active: dev
-2021-07-04 21:10:27.588  INFO 1806 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2021-07-04 21:10:27.588  INFO 1806 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2021-07-04 21:10:28.976  WARN 1806 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo.mapper]' package. Please check your configuration.
-2021-07-04 21:10:28.987  WARN 1806 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'mysqlVehicleRepository' and 'com.example.demo.repository.impl.MysqlVehicleRepository' mapperInterface. Bean already defined with the same name!
-2021-07-04 21:10:30.226  INFO 1806 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
-2021-07-04 21:10:30.245  INFO 1806 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-07-04 21:10:30.246  INFO 1806 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
-2021-07-04 21:10:30.348  INFO 1806 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-07-04 21:10:30.349  INFO 1806 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2760 ms
-2021-07-04 21:10:31.603  INFO 1806 --- [restartedMain] com.example.demo.config.LogConfig        : ==========print log==========
-2021-07-04 21:10:31.780  INFO 1806 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2021-07-04 21:10:31.804  INFO 1806 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2021-07-04 21:10:32.148  INFO 1806 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
-2021-07-04 21:10:32.657  INFO 1806 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Started WandaxinVehicleManageApplication in 20.926 seconds (JVM running for 21.833)
-2021-07-04 21:11:10.458  INFO 1806 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-07-04 21:11:10.459  INFO 1806 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2021-07-04 21:11:10.462  INFO 1806 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2021-07-04 21:11:10.584  INFO 1806 --- [http-nio-8081-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-07-04 21:11:10.806  INFO 1806 --- [http-nio-8081-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-07-04 21:15:44.568  INFO 1806 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2021-07-04 21:15:44.578  INFO 1806 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-07-04 21:15:44.609  INFO 1806 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2021-07-04 21:16:07.923  WARN 1906 --- [restartedMain] o.s.boot.StartupInfoLogger               : InetAddress.getLocalHost().getHostName() took 5006 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
-2021-07-04 21:16:12.935  INFO 1906 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Starting WandaxinVehicleManageApplication using Java 1.8.0_282 on MollydeMacBook-Pro.local with PID 1906 (/Users/molly/IdeaProjects/wandaxin-vehicle-manage/target/classes started by molly in /Users/molly/IdeaProjects/wandaxin-vehicle-manage)
-2021-07-04 21:16:12.936  INFO 1906 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : The following profiles are active: dev
-2021-07-04 21:16:13.011  INFO 1906 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2021-07-04 21:16:13.012  INFO 1906 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2021-07-04 21:16:14.431  WARN 1906 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo.mapper]' package. Please check your configuration.
-2021-07-04 21:16:14.443  WARN 1906 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'mysqlVehicleRepository' and 'com.example.demo.repository.impl.MysqlVehicleRepository' mapperInterface. Bean already defined with the same name!
-2021-07-04 21:16:15.491  INFO 1906 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
-2021-07-04 21:16:15.505  INFO 1906 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-07-04 21:16:15.505  INFO 1906 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
-2021-07-04 21:16:15.601  INFO 1906 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-07-04 21:16:15.601  INFO 1906 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2589 ms
-2021-07-04 21:16:17.004  INFO 1906 --- [restartedMain] com.example.demo.config.LogConfig        : ==========print log==========
-2021-07-04 21:16:17.152  INFO 1906 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2021-07-04 21:16:17.176  INFO 1906 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2021-07-04 21:16:17.612  INFO 1906 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
-2021-07-04 21:16:18.211  INFO 1906 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Started WandaxinVehicleManageApplication in 21.36 seconds (JVM running for 23.138)
-2021-07-04 21:16:33.995  INFO 1906 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-07-04 21:16:33.996  INFO 1906 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2021-07-04 21:16:33.999  INFO 1906 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2021-07-04 21:16:34.135  INFO 1906 --- [http-nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-07-04 21:16:34.378  INFO 1906 --- [http-nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-07-04 21:23:09.777  INFO 1906 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2021-07-04 21:23:09.787  INFO 1906 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-07-04 21:23:09.826  INFO 1906 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2021-07-04 21:23:51.456  WARN 1959 --- [restartedMain] o.s.boot.StartupInfoLogger               : InetAddress.getLocalHost().getHostName() took 4997 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
-2021-07-04 21:23:56.463  INFO 1959 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Starting WandaxinVehicleManageApplication using Java 1.8.0_282 on MollydeMacBook-Pro.local with PID 1959 (/Users/molly/IdeaProjects/wandaxin-vehicle-manage/target/classes started by molly in /Users/molly/IdeaProjects/wandaxin-vehicle-manage)
-2021-07-04 21:23:56.464  INFO 1959 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : The following profiles are active: dev
-2021-07-04 21:23:56.535  INFO 1959 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2021-07-04 21:23:56.536  INFO 1959 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2021-07-04 21:23:58.061  WARN 1959 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo.mapper]' package. Please check your configuration.
-2021-07-04 21:23:58.082  WARN 1959 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'mysqlVehicleRepository' and 'com.example.demo.repository.impl.MysqlVehicleRepository' mapperInterface. Bean already defined with the same name!
-2021-07-04 21:23:59.791  INFO 1959 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
-2021-07-04 21:23:59.807  INFO 1959 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-07-04 21:23:59.808  INFO 1959 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
-2021-07-04 21:23:59.899  INFO 1959 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-07-04 21:23:59.900  INFO 1959 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3362 ms
-2021-07-04 21:24:01.357  INFO 1959 --- [restartedMain] com.example.demo.config.LogConfig        : ==========print log==========
-2021-07-04 21:24:01.576  INFO 1959 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2021-07-04 21:24:01.615  INFO 1959 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2021-07-04 21:24:02.124  INFO 1959 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
-2021-07-04 21:24:02.669  INFO 1959 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Started WandaxinVehicleManageApplication in 21.987 seconds (JVM running for 22.712)
-2021-07-04 21:24:02.958  INFO 1959 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-07-04 21:24:02.959  INFO 1959 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2021-07-04 21:24:02.961  INFO 1959 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2021-07-04 21:24:03.081  INFO 1959 --- [http-nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-07-04 21:24:03.328  INFO 1959 --- [http-nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-07-04 21:55:25.865  INFO 1959 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2021-07-04 21:55:25.872  INFO 1959 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-07-04 21:55:25.893  INFO 1959 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2021-07-04 21:55:41.340  WARN 2330 --- [restartedMain] o.s.boot.StartupInfoLogger               : InetAddress.getLocalHost().getHostName() took 5003 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
-2021-07-04 21:55:46.350  INFO 2330 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Starting WandaxinVehicleManageApplication using Java 1.8.0_282 on MollydeMacBook-Pro.local with PID 2330 (/Users/molly/IdeaProjects/wandaxin-vehicle-manage/target/classes started by molly in /Users/molly/IdeaProjects/wandaxin-vehicle-manage)
-2021-07-04 21:55:46.351  INFO 2330 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : The following profiles are active: dev
-2021-07-04 21:55:46.449  INFO 2330 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2021-07-04 21:55:46.450  INFO 2330 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2021-07-04 21:55:47.541  WARN 2330 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo.mapper]' package. Please check your configuration.
-2021-07-04 21:55:47.553  WARN 2330 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'mysqlVehicleRepository' and 'com.example.demo.repository.impl.MysqlVehicleRepository' mapperInterface. Bean already defined with the same name!
-2021-07-04 21:55:48.539  INFO 2330 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
-2021-07-04 21:55:48.554  INFO 2330 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-07-04 21:55:48.555  INFO 2330 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
-2021-07-04 21:55:48.646  INFO 2330 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-07-04 21:55:48.646  INFO 2330 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2194 ms
-2021-07-04 21:55:49.987  INFO 2330 --- [restartedMain] com.example.demo.config.LogConfig        : ==========print log==========
-2021-07-04 21:55:50.148  INFO 2330 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2021-07-04 21:55:50.173  INFO 2330 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2021-07-04 21:55:50.565  INFO 2330 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
-2021-07-04 21:55:51.161  INFO 2330 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Started WandaxinVehicleManageApplication in 20.483 seconds (JVM running for 21.319)
-2021-07-04 21:55:56.025  INFO 2330 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-07-04 21:55:56.026  INFO 2330 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2021-07-04 21:55:56.028  INFO 2330 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2021-07-04 21:55:56.143  INFO 2330 --- [http-nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-07-04 21:55:56.372  INFO 2330 --- [http-nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-07-05 00:40:08.139  INFO 828 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-07-05 00:40:08.153  INFO 828 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-07-05 00:40:08.175  INFO 828 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-07-05 21:56:42.173  WARN 708 --- [restartedMain] o.s.boot.StartupInfoLogger               : InetAddress.getLocalHost().getHostName() took 5002 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+2021-07-05 21:56:47.186  INFO 708 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Starting WandaxinVehicleManageApplication using Java 1.8.0_282 on MollydeMacBook-Pro.local with PID 708 (/Users/molly/IdeaProjects/wandaxin-vehicle-manage/target/classes started by molly in /Users/molly/IdeaProjects/wandaxin-vehicle-manage)
+2021-07-05 21:56:47.187  INFO 708 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : The following profiles are active: dev
+2021-07-05 21:56:47.269  INFO 708 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-07-05 21:56:47.270  INFO 708 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-07-05 21:56:48.625  WARN 708 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo.mapper]' package. Please check your configuration.
+2021-07-05 21:56:48.633  WARN 708 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'mysqlVehicleRepository' and 'com.example.demo.repository.impl.MysqlVehicleRepository' mapperInterface. Bean already defined with the same name!
+2021-07-05 21:56:49.805  INFO 708 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-07-05 21:56:49.822  INFO 708 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-05 21:56:49.822  INFO 708 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-07-05 21:56:49.922  INFO 708 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-05 21:56:49.922  INFO 708 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2652 ms
+2021-07-05 21:56:51.557  INFO 708 --- [restartedMain] com.example.demo.config.LogConfig        : ==========print log==========
+2021-07-05 21:56:51.775  INFO 708 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-07-05 21:56:51.823  INFO 708 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-07-05 21:56:52.309  INFO 708 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-07-05 21:56:53.132  INFO 708 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Started WandaxinVehicleManageApplication in 22.157 seconds (JVM running for 24.057)
+2021-07-05 21:57:26.138  INFO 708 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-05 21:57:26.139  INFO 708 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-07-05 21:57:26.143  INFO 708 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-07-05 21:57:26.318  INFO 708 --- [http-nio-8081-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-07-05 21:57:26.722  INFO 708 --- [http-nio-8081-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-07-05 22:24:47.021  INFO 708 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-07-05 22:24:47.031  INFO 708 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-07-05 22:24:47.060  INFO 708 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-07-05 22:25:04.214  WARN 1127 --- [restartedMain] o.s.boot.StartupInfoLogger               : InetAddress.getLocalHost().getHostName() took 5001 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+2021-07-05 22:25:09.224  INFO 1127 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Starting WandaxinVehicleManageApplication using Java 1.8.0_282 on MollydeMacBook-Pro.local with PID 1127 (/Users/molly/IdeaProjects/wandaxin-vehicle-manage/target/classes started by molly in /Users/molly/IdeaProjects/wandaxin-vehicle-manage)
+2021-07-05 22:25:09.225  INFO 1127 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : The following profiles are active: dev
+2021-07-05 22:25:09.298  INFO 1127 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-07-05 22:25:09.299  INFO 1127 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-07-05 22:25:10.653  WARN 1127 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo.mapper]' package. Please check your configuration.
+2021-07-05 22:25:10.665  WARN 1127 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'mysqlVehicleRepository' and 'com.example.demo.repository.impl.MysqlVehicleRepository' mapperInterface. Bean already defined with the same name!
+2021-07-05 22:25:11.816  INFO 1127 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-07-05 22:25:11.835  INFO 1127 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-05 22:25:11.836  INFO 1127 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-07-05 22:25:11.998  INFO 1127 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-05 22:25:11.998  INFO 1127 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2698 ms
+2021-07-05 22:25:13.419  INFO 1127 --- [restartedMain] com.example.demo.config.LogConfig        : ==========print log==========
+2021-07-05 22:25:13.575  INFO 1127 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-07-05 22:25:13.601  INFO 1127 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-07-05 22:25:14.002  INFO 1127 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-07-05 22:25:14.529  INFO 1127 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Started WandaxinVehicleManageApplication in 21.241 seconds (JVM running for 22.544)
+2021-07-05 22:32:08.835  INFO 1127 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-05 22:32:08.839  INFO 1127 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-07-05 22:32:08.841  INFO 1127 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-07-05 22:32:09.087  INFO 1127 --- [http-nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-07-05 22:32:09.473  INFO 1127 --- [http-nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-07-05 22:44:23.616  INFO 1127 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-07-05 22:44:23.634  INFO 1127 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-07-05 22:44:23.686  INFO 1127 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-07-05 22:44:41.204  WARN 1202 --- [restartedMain] o.s.boot.StartupInfoLogger               : InetAddress.getLocalHost().getHostName() took 5003 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+2021-07-05 22:44:46.215  INFO 1202 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Starting WandaxinVehicleManageApplication using Java 1.8.0_282 on MollydeMacBook-Pro.local with PID 1202 (/Users/molly/IdeaProjects/wandaxin-vehicle-manage/target/classes started by molly in /Users/molly/IdeaProjects/wandaxin-vehicle-manage)
+2021-07-05 22:44:46.216  INFO 1202 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : The following profiles are active: dev
+2021-07-05 22:44:46.286  INFO 1202 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-07-05 22:44:46.287  INFO 1202 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-07-05 22:44:47.560  WARN 1202 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo.mapper]' package. Please check your configuration.
+2021-07-05 22:44:47.573  WARN 1202 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'mysqlVehicleRepository' and 'com.example.demo.repository.impl.MysqlVehicleRepository' mapperInterface. Bean already defined with the same name!
+2021-07-05 22:44:49.096  INFO 1202 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-07-05 22:44:49.115  INFO 1202 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-05 22:44:49.115  INFO 1202 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-07-05 22:44:49.256  INFO 1202 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-05 22:44:49.257  INFO 1202 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2970 ms
+2021-07-05 22:44:50.881  INFO 1202 --- [restartedMain] com.example.demo.config.LogConfig        : ==========print log==========
+2021-07-05 22:44:51.123  INFO 1202 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-07-05 22:44:51.155  INFO 1202 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-07-05 22:44:51.691  INFO 1202 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-07-05 22:44:52.447  INFO 1202 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Started WandaxinVehicleManageApplication in 22.218 seconds (JVM running for 23.197)
+2021-07-05 22:45:05.959  INFO 1202 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-05 22:45:05.960  INFO 1202 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-07-05 22:45:05.961  INFO 1202 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-07-05 22:45:06.027  INFO 1202 --- [http-nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-07-05 22:45:06.288  INFO 1202 --- [http-nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-07-05 22:47:25.618  INFO 1202 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-07-05 22:47:25.626  INFO 1202 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-07-05 22:47:25.644  INFO 1202 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-07-05 22:47:41.082  WARN 1231 --- [restartedMain] o.s.boot.StartupInfoLogger               : InetAddress.getLocalHost().getHostName() took 5007 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+2021-07-05 22:47:46.089  INFO 1231 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Starting WandaxinVehicleManageApplication using Java 1.8.0_282 on MollydeMacBook-Pro.local with PID 1231 (/Users/molly/IdeaProjects/wandaxin-vehicle-manage/target/classes started by molly in /Users/molly/IdeaProjects/wandaxin-vehicle-manage)
+2021-07-05 22:47:46.090  INFO 1231 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : The following profiles are active: dev
+2021-07-05 22:47:46.197  INFO 1231 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-07-05 22:47:46.198  INFO 1231 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-07-05 22:47:47.736  WARN 1231 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo.mapper]' package. Please check your configuration.
+2021-07-05 22:47:47.748  WARN 1231 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'mysqlVehicleRepository' and 'com.example.demo.repository.impl.MysqlVehicleRepository' mapperInterface. Bean already defined with the same name!
+2021-07-05 22:47:48.868  INFO 1231 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-07-05 22:47:48.919  INFO 1231 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-05 22:47:48.920  INFO 1231 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-07-05 22:47:49.038  INFO 1231 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-05 22:47:49.038  INFO 1231 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2839 ms
+2021-07-05 22:47:50.223  INFO 1231 --- [restartedMain] com.example.demo.config.LogConfig        : ==========print log==========
+2021-07-05 22:47:50.404  INFO 1231 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-07-05 22:47:50.431  INFO 1231 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-07-05 22:47:50.831  INFO 1231 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-07-05 22:47:51.767  INFO 1231 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Started WandaxinVehicleManageApplication in 21.39 seconds (JVM running for 22.437)
+2021-07-05 22:48:26.344  INFO 1231 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-05 22:48:26.347  INFO 1231 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-07-05 22:48:26.349  INFO 1231 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-07-05 22:48:26.446  INFO 1231 --- [http-nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-07-05 22:48:26.778  INFO 1231 --- [http-nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-07-05 22:59:35.270  INFO 1231 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-07-05 22:59:35.280  INFO 1231 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-07-05 22:59:35.308  INFO 1231 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-07-05 22:59:57.819  WARN 1326 --- [restartedMain] o.s.boot.StartupInfoLogger               : InetAddress.getLocalHost().getHostName() took 5002 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+2021-07-05 23:00:02.829  INFO 1326 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Starting WandaxinVehicleManageApplication using Java 1.8.0_282 on MollydeMacBook-Pro.local with PID 1326 (/Users/molly/IdeaProjects/wandaxin-vehicle-manage/target/classes started by molly in /Users/molly/IdeaProjects/wandaxin-vehicle-manage)
+2021-07-05 23:00:02.830  INFO 1326 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : The following profiles are active: dev
+2021-07-05 23:00:02.896  INFO 1326 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-07-05 23:00:02.899  INFO 1326 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-07-05 23:00:04.360  WARN 1326 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo.mapper]' package. Please check your configuration.
+2021-07-05 23:00:04.372  WARN 1326 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'mysqlVehicleRepository' and 'com.example.demo.repository.impl.MysqlVehicleRepository' mapperInterface. Bean already defined with the same name!
+2021-07-05 23:00:05.286  INFO 1326 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-07-05 23:00:05.299  INFO 1326 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-05 23:00:05.300  INFO 1326 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-07-05 23:00:05.384  INFO 1326 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-05 23:00:05.385  INFO 1326 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2485 ms
+2021-07-05 23:00:06.540  INFO 1326 --- [restartedMain] com.example.demo.config.LogConfig        : ==========print log==========
+2021-07-05 23:00:06.719  INFO 1326 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-07-05 23:00:06.762  INFO 1326 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-07-05 23:00:07.152  INFO 1326 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-07-05 23:00:07.663  INFO 1326 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Started WandaxinVehicleManageApplication in 20.507 seconds (JVM running for 21.314)
+2021-07-05 23:00:52.108  INFO 1326 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-05 23:00:52.111  INFO 1326 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-07-05 23:00:52.113  INFO 1326 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-07-05 23:00:52.280  INFO 1326 --- [http-nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-07-05 23:00:52.699  INFO 1326 --- [http-nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.

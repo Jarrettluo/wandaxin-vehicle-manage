@@ -13,5 +13,6 @@ public class LoginPageVO {
     private String companyName; // 公司名
     private String companyAbbreviation; // 公司简称信息
     private Timestamp expirationTime; // 该公司的账号失效时间
+    private Long companyId; // 公司的id
 
 }

@@ -20,7 +20,7 @@ public interface UserRepository {
     UserPO findUserById(String Id);
 
     @Select("SELECT * FROM `user` WHERE company_id = #{companyId}")
-    List<UserPO> findUserByCompanyId(Integer companyId);
+    List<UserPO> findUserByCompanyId(Long companyId);
 
     @Insert("INSERT INTO `user` (username, password, type, company_id)" +
             "VALUES (#{username}, #{password}, #{type}, #{companyId)")

@@ -5,6 +5,7 @@ import com.example.demo.domain.dto.UserDTO;
 import com.example.demo.domain.po.CompanyPO;
 import com.example.demo.domain.po.UserPO;
 import com.example.demo.domain.vo.LoginPageVO;
+import com.example.demo.domain.vo.UserInfoVO;
 import com.example.demo.repository.CompanyRepository;
 import com.example.demo.repository.UserRepository;
 import com.example.demo.repository.impl.UserRepositoryImpl;
@@ -66,6 +67,7 @@ public class UserServiceImpl implements UserService {
                 loginPageVO.setCompanyName(companyPO.getCompanyName());
                 loginPageVO.setCompanyAbbreviation(companyPO.getAbbreviation());
                 loginPageVO.setExpirationTime(companyPO.getExpirationTime());
+                loginPageVO.setCompanyId(companyPO.getId());
                 return ApiResult.success(loginPageVO);
             }
         }
@@ -80,6 +82,14 @@ public class UserServiceImpl implements UserService {
         UserPO userPO = userRepository.findUserById(userId);
         UserDTO userDTO = BeanUtil.mapperBean(userPO, UserDTO.class);
         return userDTO;
+    }
+
+    @Override
+    public ApiResult list(Long companyId) {
+        if(companyId == null) return ApiResult.error(1201, "参数不足");
+        List<UserPO> userPOList = userRepository.findUserByCompanyId(companyId);
+        List<UserInfoVO> userInfoVOList = BeanUtil.mapperList(userPOList, UserInfoVO.class);
+        return ApiResult.success(userInfoVOList);
     }
 
 }

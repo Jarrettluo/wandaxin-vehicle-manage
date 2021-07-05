@@ -10,6 +10,7 @@ import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 
 @RestController
@@ -18,6 +19,10 @@ public class UserController {
 
     @Autowired
     UserService userService;
+
+    @Autowired
+    private HttpServletRequest request;
+
 
 
     //登录
@@ -34,5 +39,13 @@ public class UserController {
     public String getMessage(){
         return "你已通过验证";
     }
+
+    @CrossOrigin
+    @UserLoginToken
+    @GetMapping("/list/")
+    public ApiResult list(@RequestParam Long companyId) {
+        return userService.list(companyId);
+    }
+
 
 }

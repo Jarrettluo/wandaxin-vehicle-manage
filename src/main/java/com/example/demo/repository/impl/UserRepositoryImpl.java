@@ -23,7 +23,7 @@ public class UserRepositoryImpl implements UserRepository{
         return userRepository.findUserById(id);
     };
 
-    public List<UserPO> findUserByCompanyId(Integer companyId){
+    public List<UserPO> findUserByCompanyId(Long companyId){
         return userRepository.findUserByCompanyId(companyId);
     }
 
