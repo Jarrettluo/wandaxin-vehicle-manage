@@ -13,7 +13,7 @@ public class CompanyRepositoryImpl {
         return companyRepository.save(companyPO);
     }
 
-    CompanyPO find(Integer companyId) {
+    CompanyPO find(Long companyId) {
         return companyRepository.find(companyId);
     }
 

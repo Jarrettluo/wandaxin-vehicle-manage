@@ -14,7 +14,7 @@ public interface CompanyRepository {
     Integer save(CompanyPO companyPO);
 
     @Select("SELECT * FROM `company` where id = #{companyId}")
-    CompanyPO find(Integer companyId);
+    CompanyPO find(Long companyId);
 
     @Select("SELECT * FROM `company` ")
     List<CompanyPO> list();

@@ -11,5 +11,5 @@ public class UserPO {
     String username;
     String password;
     String type;
-    Integer companyId;
+    Long companyId;
 }

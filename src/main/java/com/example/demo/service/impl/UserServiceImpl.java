@@ -23,6 +23,7 @@ import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @Author Jarrett Luo
@@ -57,7 +58,6 @@ public class UserServiceImpl implements UserService {
                 return ApiResult.error(1202,"登录失败,密码错误");
             }else {
                 CompanyPO companyPO = companyRepository.find(userPO.getCompanyId());
-                System.out.println(companyPO);
                 if(ObjectUtils.isEmpty(companyPO)) return ApiResult.error(1203,"为找到所属公司信息");
                 String token = tokenService.getToken(userForBase);
                 LoginPageVO loginPageVO = new LoginPageVO(); // 新建一个视图函数
@@ -91,5 +91,28 @@ public class UserServiceImpl implements UserService {
         List<UserInfoVO> userInfoVOList = BeanUtil.mapperList(userPOList, UserInfoVO.class);
         return ApiResult.success(userInfoVOList);
     }
+
+    @Override
+    public ApiResult changePwd(Map<String, String> pwdMap) {
+        if(pwdMap.get("userId") == null || pwdMap.get("oldPwd") == null || pwdMap.get("newPwd") == null){
+            return ApiResult.error(1201, "参数不足");
+        }
+        UserPO userPO = userRepository.findUserById(pwdMap.get("userId"));
+        if(userPO.getPassword() == null || userPO.getPassword() != pwdMap.get("oldPwd")) {
+            return ApiResult.error(1202, "旧密码错误");
+        }
+        if(pwdMap.get("newPwd").length() > 20 && pwdMap.get("newPwd").length() < 6) {
+            return ApiResult.error(1203, "新密码长度不足");
+        }
+        userPO.setPassword(pwdMap.get("newPwd"));
+        userRepository.update(userPO);
+        return ApiResult.success();
+    }
+
+    @Override
+    public ApiResult changeType(Map<String, String> type) {
+        return ApiResult.success();
+    }
+
 
 }

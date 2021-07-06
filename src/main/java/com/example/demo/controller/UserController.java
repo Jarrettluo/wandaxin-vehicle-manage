@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/user")
@@ -22,7 +23,6 @@ public class UserController {
 
     @Autowired
     private HttpServletRequest request;
-
 
 
     //登录
@@ -47,5 +47,25 @@ public class UserController {
         return userService.list(companyId);
     }
 
+    @CrossOrigin
+    @UserLoginToken
+    @PostMapping("/changePwd/")
+    public ApiResult changePwd(@RequestBody Map<String, String> pwd) {
+        return userService.changePwd(pwd);
+    }
+
+    @CrossOrigin
+    @UserLoginToken
+    @PostMapping()
+    public ApiResult changeType(@RequestBody Map<String, String> type) {
+        return userService.changeType(type);
+    }
+
+    @CrossOrigin
+    @UserLoginToken
+    @DeleteMapping()
+    public ApiResult deleteUser(@RequestParam("userId") String userId) {
+        return ApiResult.success();
+    }
 
 }
