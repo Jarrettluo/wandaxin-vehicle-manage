@@ -2,10 +2,7 @@ package com.example.demo.repository;
 
 import com.example.demo.domain.po.UserPO;
 import org.apache.catalina.User;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -32,5 +29,8 @@ public interface UserRepository {
             "<if test='type!=null'> type = #{type}, </if>" +
             "</set>WHERE id = #{id}</script>")
     void update(UserPO userPO);
+
+    @Delete("DELETE FROM `user` WHERE id = #{id}")
+    void deleteUser(String userId);
 
 }

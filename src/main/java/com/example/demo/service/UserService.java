@@ -22,4 +22,6 @@ public interface UserService {
 
     ApiResult changeType(Map<String, String> type);
 
+    ApiResult deleteUser(String userId);
+
 }

@@ -110,9 +110,28 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public ApiResult changeType(Map<String, String> type) {
+    public ApiResult changeType(Map<String, String> typeMap) {
+        String adminId = typeMap.get("adminId");
+        String userId = typeMap.get("userId");
+        if( adminId == null || userId == null || adminId == userId){
+            return ApiResult.error(1201, "参数不足");
+        }
+        UserPO adminPO = userRepository.findUserById(adminId);
+        if(adminPO.getType().equals("admin") == false || adminPO.getId().equals("")) {
+            return ApiResult.error(1202, "管理员信息错误");
+        }
+        UserPO userPO = userRepository.findUserById(userId);
+        userPO.setType(userPO.getType().equals("admin") ? "user":"admin");
+        System.out.println(userPO);
+        userRepository.update(userPO);
         return ApiResult.success();
     }
 
+    @Override
+    public ApiResult deleteUser(String userId) {
+        if(userId == null) return ApiResult.error(1201, "参数不足");
+        userRepository.deleteUser(userId);
+        return ApiResult.success();
 
+    }
 }

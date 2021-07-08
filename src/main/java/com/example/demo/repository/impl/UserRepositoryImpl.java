@@ -34,4 +34,9 @@ public class UserRepositoryImpl implements UserRepository{
     public void update(UserPO userPO){
         userRepository.update(userPO);
     }
+
+    public void deleteUser(String userId) {
+        userRepository.deleteUser(userId);
+    }
+
 }

@@ -56,16 +56,16 @@ public class UserController {
 
     @CrossOrigin
     @UserLoginToken
-    @PostMapping()
+    @PostMapping("/changeType/")
     public ApiResult changeType(@RequestBody Map<String, String> type) {
         return userService.changeType(type);
     }
 
     @CrossOrigin
     @UserLoginToken
-    @DeleteMapping()
+    @DeleteMapping("/")
     public ApiResult deleteUser(@RequestParam("userId") String userId) {
-        return ApiResult.success();
+        return userService.deleteUser(userId);
     }
 
 }
