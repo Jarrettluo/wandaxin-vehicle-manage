@@ -17,6 +17,12 @@ public class CompanyController {
     @CrossOrigin
     @GetMapping("/list/")
     public ApiResult list(@RequestParam Long companyId) {
+        return companyService.list();
+    }
+
+    @CrossOrigin
+    @GetMapping("/")
+    public ApiResult find(@RequestParam Long companyId) {
         return companyService.find(companyId);
     }
 

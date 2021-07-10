@@ -94,19 +94,21 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public ApiResult changePwd(Map<String, String> pwdMap) {
-        if(pwdMap.get("userId") == null || pwdMap.get("oldPwd") == null || pwdMap.get("newPwd") == null){
+        if(pwdMap.get("userId").equals("") || pwdMap.get("oldPwd").equals("") || pwdMap.get("newPwd").equals("")){
             return ApiResult.error(1201, "参数不足");
         }
         UserPO userPO = userRepository.findUserById(pwdMap.get("userId"));
-        if(userPO.getPassword() == null || userPO.getPassword() != pwdMap.get("oldPwd")) {
+        if(userPO.getPassword().equals("") || userPO.getPassword().equals(pwdMap.get("oldPwd"))==false) {
             return ApiResult.error(1202, "旧密码错误");
         }
-        if(pwdMap.get("newPwd").length() > 20 && pwdMap.get("newPwd").length() < 6) {
-            return ApiResult.error(1203, "新密码长度不足");
+        // 用这个判断不了啊
+        // TODO 剔除掉原来的token信息
+        if(pwdMap.get("newPwd").length() > 14 || pwdMap.get("newPwd").length() < 6) {
+            return ApiResult.error(1203, "新密码格式错误");
         }
         userPO.setPassword(pwdMap.get("newPwd"));
         userRepository.update(userPO);
-        return ApiResult.success();
+        return ApiResult.success("修改成功");
     }
 
     @Override
@@ -122,9 +124,8 @@ public class UserServiceImpl implements UserService {
         }
         UserPO userPO = userRepository.findUserById(userId);
         userPO.setType(userPO.getType().equals("admin") ? "user":"admin");
-        System.out.println(userPO);
         userRepository.update(userPO);
-        return ApiResult.success();
+        return ApiResult.success("修改成功！");
     }
 
     @Override

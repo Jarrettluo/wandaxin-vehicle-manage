@@ -12,6 +12,7 @@ public class CompanyVO {
     private Integer validAccount;
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss") // 格式化
     private Timestamp expirationTime;
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss") // 格式化
     private Timestamp createTime;
 
 }
