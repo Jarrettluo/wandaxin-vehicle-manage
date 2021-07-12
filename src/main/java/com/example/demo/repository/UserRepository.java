@@ -19,8 +19,10 @@ public interface UserRepository {
     @Select("SELECT * FROM `user` WHERE company_id = #{companyId}")
     List<UserPO> findUserByCompanyId(Long companyId);
 
-    @Insert("INSERT INTO `user` (username, password, type, company_id)" +
-            "VALUES (#{username}, #{password}, #{type}, #{companyId)")
+
+    @Options(useGeneratedKeys = true, keyProperty = "id", keyColumn = "id")
+    @Insert("<script>INSERT INTO `user` (username, password, type, company_id) " +
+            "VALUES(#{username}, #{password}, #{type}, #{companyId})</script>")
     Integer save(UserPO userPO);
 
     // 更新用户的密码和用户类型

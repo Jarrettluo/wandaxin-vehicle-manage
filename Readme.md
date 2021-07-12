@@ -76,6 +76,13 @@ CREATE TABLE IF NOT EXISTS `company`(
    PRIMARY KEY ( `id` )
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 ```
+公司名称为唯一：
+修改：
+```roomsql
+ALTER TABLE `company` ADD UNIQUE ( `company_name`); 
+```
+
+问题： 添加Unique以后数据会丢失吗？
 
 ```roomsql
 insert into company (company_name, abbreviation, valid_account, expiration_time) values ("成都万达鑫二手车经销有限公司"
@@ -93,6 +100,13 @@ ALTER TABLE user ADD type VARCHAR(16) not null default "admin";
 ```roomsql
 ALTER TABLE user ADD company_id int not null; // 增加字段
 ```
+用户表的id修改为自增
+```roomsql
+alter table user modify id int(11) auto_increment;
+```
+用户名不能重复，修改为独一无二
+
+ALTER TABLE `user` ADD UNIQUE ( `username`);
 
 ```roomsql
 ALTER TABLE <旧表名> RENAME [TO] <新表名>;

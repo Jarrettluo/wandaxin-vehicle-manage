@@ -9,7 +9,7 @@ public class CompanyRepositoryImpl {
     @Resource
     CompanyRepository companyRepository;
 
-    Integer save(CompanyPO companyPO){
+    Long save(CompanyPO companyPO){
         return companyRepository.save(companyPO);
     }
 
@@ -19,6 +19,10 @@ public class CompanyRepositoryImpl {
 
     List<CompanyPO> list() {
         return companyRepository.list();
+    }
+
+    void deleteById(Long companyId) {
+        companyRepository.deleteById(companyId);
     }
 
 }
