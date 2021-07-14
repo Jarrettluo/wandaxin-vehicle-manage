@@ -10,8 +10,10 @@ import com.example.utils.result.ApiResult;
 import com.example.utils.result.bean.BeanUtil;
 import io.swagger.annotations.Api;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -98,8 +100,14 @@ public class VehicleServiceImpl implements VehicleService {
     }
 
     @Override
-    public ApiResult list() {
-        List<VehicleInformationPO> vehicleInformationPOList = vehicleRepository.list();
+    public ApiResult list(Long companyId, String sellState) {
+        if(StringUtils.isEmpty(companyId) || StringUtils.isEmpty(sellState)) return ApiResult.error(1201, "参数不足");
+        List<VehicleInformationPO> vehicleInformationPOList = new ArrayList<>();
+        if("unsale".equals(sellState)){
+            vehicleInformationPOList = vehicleRepository.listUnsale(companyId);
+        }else {
+            vehicleInformationPOList = vehicleRepository.listSaled(companyId);
+        }
         List<VehicleInformationDTO> vehicleInformationDTOList = BeanUtil.mapperList(vehicleInformationPOList, VehicleInformationDTO.class);
         if (vehicleInformationDTOList.size() > 0) {
             return ApiResult.success(vehicleInformationDTOList);
@@ -109,9 +117,9 @@ public class VehicleServiceImpl implements VehicleService {
     }
     
     @Override
-    public ApiResult search(String vehiclePlate) {
-        if(vehiclePlate == null) return ApiResult.error(1201, "参数不足");
-        List<VehicleInformationPO> vehicleInformationPOList = vehicleRepository.search(vehiclePlate);
+    public ApiResult search(String vehiclePlate, Long companyId) {
+        if(vehiclePlate == null || "".equals(companyId)) return ApiResult.error(1201, "参数不足");
+        List<VehicleInformationPO> vehicleInformationPOList = vehicleRepository.search(vehiclePlate, companyId);
         List<VehicleInformationDTO> vehicleInformationDTOList = BeanUtil.mapperList(vehicleInformationPOList, VehicleInformationDTO.class);
         if (vehicleInformationDTOList.size() > 0) {
             return ApiResult.success(vehicleInformationDTOList);

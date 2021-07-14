@@ -11,16 +11,16 @@ import org.apache.ibatis.annotations.Select;
 @Mapper
 public interface StatisticsRepository {
 
-    @Select("SELECT SUM(`sale_price`) FROM `sale_item` WHERE YEAR(created_time) = YEAR(NOW())")
-    Float calTotalSales();
+    @Select("SELECT SUM(`sale_price`) FROM `sale_item` WHERE YEAR(created_time) = YEAR(NOW()) and company_id = #{companyId}")
+    Float calTotalSales(Long companyId);
 
-    @Select("SELECT SUM(`self_profit`) FROM `sale_item` WHERE YEAR(created_time) = YEAR(NOW())")
-    Float calTotalProfit();
+    @Select("SELECT SUM(`self_profit`) FROM `sale_item` WHERE YEAR(created_time) = YEAR(NOW()) and company_id = #{companyId}")
+    Float calTotalProfit(Long companyId);
 
-    @Select("SELECT COUNT(*) FROM `vehicle_information` where `saleitem_id` is null")
-    Integer calTotalNotSold();
+    @Select("SELECT COUNT(*) FROM `vehicle_information` where `saleitem_id` is null and company_id = #{companyId}")
+    Integer calTotalNotSold(Long companyId);
     // select count(*) from table where 字段 = "";
 
-    @Select("SELECT COUNT(*) FROM `vehicle_information` where `saleitem_id` is not null")
-    Integer calTotalSold();
+    @Select("SELECT COUNT(*) FROM `vehicle_information` where `saleitem_id` is not null and company_id = #{companyId}")
+    Integer calTotalSold(Long companyId);
 }

@@ -34,4 +34,6 @@ public class VehicleInformationPO extends AbstractPO {
 
     // 车辆拥有的销售信息，和车辆是一对一的关系
     private SaleItemPO saleItem;
+
+    private Long companyId; // 所属公司id
 }

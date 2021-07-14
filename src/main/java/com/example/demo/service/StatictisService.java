@@ -11,6 +11,6 @@ import com.example.utils.result.ApiResult;
 
 public interface StatictisService {
 
-    ApiResult find();
+    ApiResult find(Long companyId);
 
 }

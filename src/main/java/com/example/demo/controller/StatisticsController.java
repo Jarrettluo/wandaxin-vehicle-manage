@@ -4,10 +4,7 @@ import com.example.demo.aop.OperationLogAnnotation;
 import com.example.demo.service.StatictisService;
 import com.example.utils.result.ApiResult;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -27,7 +24,7 @@ public class StatisticsController {
     @OperationLogAnnotation(operModul = "数据统计模块",operType = "查询",operDesc = "年度数据")
     @CrossOrigin
     @GetMapping()
-    public ApiResult get() {
-        return statictisService.find();
+    public ApiResult get(@RequestParam("companyId") Long companyId) {
+        return statictisService.find(companyId);
     }
 }

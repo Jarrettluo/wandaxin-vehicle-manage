@@ -55,25 +55,23 @@ public class VehicleController {
         return vehicleService.update(vehicleInformationDTO);
     }
 
-    @OperationLogAnnotation(operModul = "车辆入库模块",operType = "查询",operDesc = "车辆信息")
     @CrossOrigin
     @GetMapping("/{id}")
     public ApiResult find(@PathVariable Long id){
         return vehicleService.find(id);
     }
 
-    @OperationLogAnnotation(operModul = "车辆入库模块",operType = "查询",operDesc = "全部车辆")
     @CrossOrigin
     @GetMapping("/list")
-    public ApiResult list(){
-        return vehicleService.list();
+    public ApiResult list(@RequestParam("companyId") Long companyId, @RequestParam("sellState") String sellState){
+        return vehicleService.list(companyId, sellState);
     }
 
     @OperationLogAnnotation(operModul = "车辆入库模块",operType = "搜索",operDesc = "车辆列表信息")
     @CrossOrigin
     @GetMapping("/search/")
-    public ApiResult search(@RequestParam(name = "vehiclePlate") String vehiclePlate){
-        return vehicleService.search(vehiclePlate);
+    public ApiResult search(@RequestParam(name = "vehiclePlate") String vehiclePlate, @RequestParam(name = "companyId") Long companyId){
+        return vehicleService.search(vehiclePlate, companyId);
     }
 
 }

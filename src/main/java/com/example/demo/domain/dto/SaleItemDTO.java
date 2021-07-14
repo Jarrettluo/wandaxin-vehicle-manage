@@ -30,4 +30,6 @@ public class SaleItemDTO {
 
     private Long vehicleId;
 
+    private Long companyId; // 所属公司id
+
 }

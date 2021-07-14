@@ -51,4 +51,6 @@ public class VehicleInformationDTO {
     // 车辆只有一个销售项
     private SaleItemDTO saleItem;
 
+    private Long companyId; // 所属公司id
+
 }

@@ -16,9 +16,9 @@ public interface MysqlVehicleRepository {
     @Options(useGeneratedKeys = true, keyProperty = "id", keyColumn = "id")
     @Insert("<script>INSERT INTO `vehicle_information`(vehicle_plate," +
             "vehicle_brand, registration_date, vehicle_color, purchase_date," +
-            "purchase_price, vehicle_note) VALUES(" +
+            "purchase_price, vehicle_note, company_id) VALUES(" +
             "#{vehiclePlate}, #{vehicleBrand}, #{registrationDate}, " +
-            "#{vehicleColor}, #{purchaseDate}, #{purchasePrice}, #{vehicleNote}" +
+            "#{vehicleColor}, #{purchaseDate}, #{purchasePrice}, #{vehicleNote}, #{companyId}" +
             ")</script>")
     Long save(VehicleInformationPO vehicleInformationPO);
 
@@ -61,7 +61,25 @@ public interface MysqlVehicleRepository {
     @Result(property = "id", column = "id")
     List<VehicleInformationPO> list();
 
-    @Select("SELECT * FROM vehicle_information WHERE CONCAT(`vehicle_plate`,`vehicle_brand`,`vehicle_color`) like \"%\" #{vehiclePlate} \"%\"")
-    List<VehicleInformationPO> search(String vehiclePlate);
+    @Select("SELECT * FROM `vehicle_information` where `company_id` = #{companyId} and `saleitem_id` is null ORDER BY modify_time DESC")
+    @Results({
+            @Result(property = "preparednesses", column = "id",
+                    many = @Many(select = "com.example.demo.repository.PreparednessRepository.findPreparednessByVehicleId"))
+    })
+    @Result(property = "id", column = "id")
+    List<VehicleInformationPO> listUnsale(Long companyId);
+
+    @Select("SELECT * FROM `vehicle_information` where `company_id` = #{companyId} and `saleitem_id` is not null ORDER BY modify_time DESC")
+    @Results({
+            @Result(property = "saleItem", column = "id",
+                    one = @One(select = "com.example.demo.repository.SaleItemRepository.findSaleItemByVehicleId")),
+    })
+    @Result(property = "id", column = "id")
+    List<VehicleInformationPO> listSaled(Long companyId);
+
+
+
+    @Select("SELECT * FROM vehicle_information WHERE CONCAT(`vehicle_plate`,`vehicle_brand`,`vehicle_color`) like \"%\" #{vehiclePlate} \"%\" and companyId = #{companyId} ")
+    List<VehicleInformationPO> search(String vehiclePlate, Long companyId);
 
 }

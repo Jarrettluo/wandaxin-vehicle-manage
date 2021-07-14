@@ -17,22 +17,22 @@ public class StatisticRepositoryImpl implements StatisticsRepository {
     StatisticsRepository statisticsRepository;
 
     @Override
-    public Float calTotalSales() {
-        return statisticsRepository.calTotalSales();
+    public Float calTotalSales(Long companyId) {
+        return statisticsRepository.calTotalSales(companyId);
     }
 
     @Override
-    public Float calTotalProfit() {
-        return statisticsRepository.calTotalProfit();
+    public Float calTotalProfit(Long companyId) {
+        return statisticsRepository.calTotalProfit(companyId);
     }
 
     @Override
-    public Integer calTotalNotSold() {
-        return statisticsRepository.calTotalNotSold();
+    public Integer calTotalNotSold(Long companyId) {
+        return statisticsRepository.calTotalNotSold(companyId);
     }
 
     @Override
-    public Integer calTotalSold() {
-        return statisticsRepository.calTotalSold();
+    public Integer calTotalSold(Long companyId) {
+        return statisticsRepository.calTotalSold(companyId);
     }
 }

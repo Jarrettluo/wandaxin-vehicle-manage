@@ -19,7 +19,7 @@ public interface VehicleService {
 
     ApiResult find(Long id);
 
-    ApiResult list();
+    ApiResult list(Long companyId, String sellState);
     
-    ApiResult search(String vehiclePlate);
+    ApiResult search(String vehiclePlate, Long companyId);
 }

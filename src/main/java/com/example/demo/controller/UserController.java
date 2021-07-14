@@ -42,6 +42,13 @@ public class UserController {
 
     @CrossOrigin
     @UserLoginToken
+    @GetMapping("/save/")
+    public ApiResult save(){
+        return ApiResult.success();
+    }
+
+    @CrossOrigin
+    @UserLoginToken
     @GetMapping("/list/")
     public ApiResult list(@RequestParam Long companyId) {
         return userService.list(companyId);

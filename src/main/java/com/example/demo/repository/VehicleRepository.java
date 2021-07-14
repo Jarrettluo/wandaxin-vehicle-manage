@@ -39,7 +39,11 @@ public class VehicleRepository {
         return mysqlVehicleRepository.list();
     }
 
-    public List<VehicleInformationPO> search(String vehiclePlate) {
-        return mysqlVehicleRepository.search(vehiclePlate);
+    public List<VehicleInformationPO> listSaled(Long companyId) {return mysqlVehicleRepository.listSaled(companyId);}
+
+    public List<VehicleInformationPO> listUnsale(Long companyId) {return mysqlVehicleRepository.listUnsale(companyId);}
+
+    public List<VehicleInformationPO> search(String vehiclePlate, Long companyId) {
+        return mysqlVehicleRepository.search(vehiclePlate, companyId);
     }
 }

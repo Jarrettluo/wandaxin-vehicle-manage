@@ -1,31 +1,92 @@
-2021-07-12 22:04:06.475  WARN 2398 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1d2h45m24s773ms).
-2021-07-12 22:10:01.432  INFO 2398 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2021-07-12 22:10:01.443  INFO 2398 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-07-12 22:10:01.452  INFO 2398 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2021-07-12 22:10:21.837  WARN 3769 --- [restartedMain] o.s.boot.StartupInfoLogger               : InetAddress.getLocalHost().getHostName() took 5002 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
-2021-07-12 22:10:26.846  INFO 3769 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Starting WandaxinVehicleManageApplication using Java 1.8.0_282 on MollydeMacBook-Pro.local with PID 3769 (/Users/molly/IdeaProjects/wandaxin-vehicle-manage/target/classes started by molly in /Users/molly/IdeaProjects/wandaxin-vehicle-manage)
-2021-07-12 22:10:26.847  INFO 3769 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : The following profiles are active: dev
-2021-07-12 22:10:26.988  INFO 3769 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2021-07-12 22:10:26.988  INFO 3769 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2021-07-12 22:10:28.415  WARN 3769 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo.mapper]' package. Please check your configuration.
-2021-07-12 22:10:28.425  WARN 3769 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'mysqlVehicleRepository' and 'com.example.demo.repository.impl.MysqlVehicleRepository' mapperInterface. Bean already defined with the same name!
-2021-07-12 22:10:29.715  INFO 3769 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
-2021-07-12 22:10:29.751  INFO 3769 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-07-12 22:10:29.751  INFO 3769 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
-2021-07-12 22:10:29.894  INFO 3769 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-07-12 22:10:29.895  INFO 3769 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2906 ms
-2021-07-12 22:10:31.312  INFO 3769 --- [restartedMain] com.example.demo.config.LogConfig        : ==========print log==========
-2021-07-12 22:10:31.448  INFO 3769 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2021-07-12 22:10:31.469  INFO 3769 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2021-07-12 22:10:31.798  INFO 3769 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
-2021-07-12 22:10:32.274  INFO 3769 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Started WandaxinVehicleManageApplication in 21.301 seconds (JVM running for 22.216)
-2021-07-12 22:14:42.879  INFO 3769 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-07-12 22:14:42.879  INFO 3769 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2021-07-12 22:14:42.883  INFO 3769 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2021-07-12 22:14:43.042  INFO 3769 --- [http-nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-07-12 22:14:43.288  INFO 3769 --- [http-nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-07-12 22:51:49.397  WARN 3769 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=5m5s813ms).
-2021-07-12 22:52:18.352  WARN 3769 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Retrograde clock change detected (housekeeper delta=28s956ms), soft-evicting connections from pool.
-2021-07-12 23:04:23.408  INFO 3769 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2021-07-12 23:04:23.413  INFO 3769 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-07-12 23:04:23.417  INFO 3769 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-07-15 00:01:11.996  INFO 1733 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-07-15 00:01:12.013  INFO 1733 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-07-15 00:01:12.042  INFO 1733 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-07-15 00:01:26.401  WARN 1775 --- [restartedMain] o.s.boot.StartupInfoLogger               : InetAddress.getLocalHost().getHostName() took 5006 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+2021-07-15 00:01:31.409  INFO 1775 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Starting WandaxinVehicleManageApplication using Java 1.8.0_282 on MollydeMacBook-Pro.local with PID 1775 (/Users/molly/IdeaProjects/wandaxin-vehicle-manage/target/classes started by molly in /Users/molly/IdeaProjects/wandaxin-vehicle-manage)
+2021-07-15 00:01:31.410  INFO 1775 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : The following profiles are active: dev
+2021-07-15 00:01:31.477  INFO 1775 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-07-15 00:01:31.478  INFO 1775 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-07-15 00:01:32.511  WARN 1775 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo.mapper]' package. Please check your configuration.
+2021-07-15 00:01:32.521  WARN 1775 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'mysqlVehicleRepository' and 'com.example.demo.repository.impl.MysqlVehicleRepository' mapperInterface. Bean already defined with the same name!
+2021-07-15 00:01:33.408  INFO 1775 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-07-15 00:01:33.421  INFO 1775 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-15 00:01:33.421  INFO 1775 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-07-15 00:01:33.491  INFO 1775 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-15 00:01:33.491  INFO 1775 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2012 ms
+2021-07-15 00:01:34.568  INFO 1775 --- [restartedMain] com.example.demo.config.LogConfig        : ==========print log==========
+2021-07-15 00:01:34.693  INFO 1775 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-07-15 00:01:34.717  INFO 1775 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-07-15 00:01:35.053  INFO 1775 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-07-15 00:01:35.534  INFO 1775 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Started WandaxinVehicleManageApplication in 19.617 seconds (JVM running for 20.3)
+2021-07-15 00:01:49.806  INFO 1775 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-15 00:01:49.806  INFO 1775 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-07-15 00:01:49.808  INFO 1775 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-07-15 00:01:50.166  INFO 1775 --- [http-nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-07-15 00:01:50.518  INFO 1775 --- [http-nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-07-15 00:01:50.675  WARN 1775 --- [http-nio-8081-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+### Error updating database.  Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+### The error may exist in com/example/demo/repository/SaleItemRepository.java (best guess)
+### The error may involve com.example.demo.repository.SaleItemRepository.save-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO `sale_item`(sale_price, commission_rate, repair_price, partner_price,partner_profit, self_profit, sale_date, vehicle_id, clear_state,mortgage_rebate, insurance_refund, company_id) VALUES(?, ?, ?, ?,?, ?, ?, ?, ?,?, ?, #{companyId))
+### Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1]
+2021-07-15 00:05:25.259  INFO 1775 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-07-15 00:05:25.265  INFO 1775 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-07-15 00:05:25.298  INFO 1775 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-07-15 00:05:39.609  WARN 1800 --- [restartedMain] o.s.boot.StartupInfoLogger               : InetAddress.getLocalHost().getHostName() took 5006 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+2021-07-15 00:05:55.184  WARN 1810 --- [restartedMain] o.s.boot.StartupInfoLogger               : InetAddress.getLocalHost().getHostName() took 5005 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+2021-07-15 00:06:00.195  INFO 1810 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Starting WandaxinVehicleManageApplication using Java 1.8.0_282 on MollydeMacBook-Pro.local with PID 1810 (/Users/molly/IdeaProjects/wandaxin-vehicle-manage/target/classes started by molly in /Users/molly/IdeaProjects/wandaxin-vehicle-manage)
+2021-07-15 00:06:00.196  INFO 1810 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : The following profiles are active: dev
+2021-07-15 00:06:00.266  INFO 1810 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-07-15 00:06:00.267  INFO 1810 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-07-15 00:06:01.453  WARN 1810 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo.mapper]' package. Please check your configuration.
+2021-07-15 00:06:01.460  WARN 1810 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'mysqlVehicleRepository' and 'com.example.demo.repository.impl.MysqlVehicleRepository' mapperInterface. Bean already defined with the same name!
+2021-07-15 00:06:02.397  INFO 1810 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-07-15 00:06:02.412  INFO 1810 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-15 00:06:02.413  INFO 1810 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-07-15 00:06:02.495  INFO 1810 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-15 00:06:02.495  INFO 1810 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2227 ms
+2021-07-15 00:06:03.689  INFO 1810 --- [restartedMain] com.example.demo.config.LogConfig        : ==========print log==========
+2021-07-15 00:06:03.879  INFO 1810 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-07-15 00:06:03.908  INFO 1810 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-07-15 00:06:04.254  INFO 1810 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-07-15 00:06:04.781  INFO 1810 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Started WandaxinVehicleManageApplication in 20.267 seconds (JVM running for 20.974)
+2021-07-15 00:06:38.009  INFO 1810 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-15 00:06:38.010  INFO 1810 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-07-15 00:06:38.012  INFO 1810 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-07-15 00:06:38.397  INFO 1810 --- [http-nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-07-15 00:06:38.761  INFO 1810 --- [http-nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-07-15 00:06:57.355  WARN 1810 --- [http-nio-8081-exec-10] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.NullPointerException]
+2021-07-15 00:08:16.059  WARN 1810 --- [http-nio-8081-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.NullPointerException]
+2021-07-15 00:08:21.695  WARN 1810 --- [http-nio-8081-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.NullPointerException]
+2021-07-15 00:08:36.347  WARN 1810 --- [http-nio-8081-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.NullPointerException]
+2021-07-15 00:09:17.927  INFO 1810 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-07-15 00:09:17.933  INFO 1810 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-07-15 00:09:17.956  INFO 1810 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-07-15 00:09:32.500  WARN 1854 --- [restartedMain] o.s.boot.StartupInfoLogger               : InetAddress.getLocalHost().getHostName() took 5003 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+2021-07-15 00:09:37.506  INFO 1854 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Starting WandaxinVehicleManageApplication using Java 1.8.0_282 on MollydeMacBook-Pro.local with PID 1854 (/Users/molly/IdeaProjects/wandaxin-vehicle-manage/target/classes started by molly in /Users/molly/IdeaProjects/wandaxin-vehicle-manage)
+2021-07-15 00:09:37.506  INFO 1854 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : The following profiles are active: dev
+2021-07-15 00:09:37.576  INFO 1854 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-07-15 00:09:37.576  INFO 1854 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-07-15 00:09:39.694  WARN 1854 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo.mapper]' package. Please check your configuration.
+2021-07-15 00:09:39.707  WARN 1854 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'mysqlVehicleRepository' and 'com.example.demo.repository.impl.MysqlVehicleRepository' mapperInterface. Bean already defined with the same name!
+2021-07-15 00:09:40.985  INFO 1854 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-07-15 00:09:41.002  INFO 1854 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-15 00:09:41.002  INFO 1854 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-07-15 00:09:41.102  INFO 1854 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-15 00:09:41.102  INFO 1854 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3525 ms
+2021-07-15 00:09:42.258  INFO 1854 --- [restartedMain] com.example.demo.config.LogConfig        : ==========print log==========
+2021-07-15 00:09:42.408  INFO 1854 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-07-15 00:09:42.433  INFO 1854 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-07-15 00:09:42.841  INFO 1854 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-07-15 00:09:43.550  INFO 1854 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Started WandaxinVehicleManageApplication in 21.595 seconds (JVM running for 22.256)
+2021-07-15 00:09:47.563  INFO 1854 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-15 00:09:47.587  INFO 1854 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-07-15 00:09:47.592  INFO 1854 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2021-07-15 00:09:47.698  WARN 1854 --- [http-nio-8081-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required Long parameter 'companyId' is not present]
+2021-07-15 00:10:27.267  INFO 1854 --- [http-nio-8081-exec-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-07-15 00:10:27.899  INFO 1854 --- [http-nio-8081-exec-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-07-15 00:11:57.637  WARN 1854 --- [http-nio-8081-exec-10] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.NullPointerException]
+2021-07-15 00:13:21.833  WARN 1854 --- [http-nio-8081-exec-8] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.NullPointerException]
+2021-07-15 00:13:32.244  WARN 1854 --- [http-nio-8081-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.NullPointerException]

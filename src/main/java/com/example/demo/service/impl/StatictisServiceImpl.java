@@ -23,14 +23,14 @@ public class StatictisServiceImpl implements StatictisService {
     StatisticRepositoryImpl statisticRepositoryImpl;
 
     @Override
-    public ApiResult find() {
+    public ApiResult find(Long companyId) {
         StatisticsDTO statisticsDTO = new StatisticsDTO();
-        Float totalSales = (float) Math.round(statisticRepositoryImpl.calTotalSales()* 100 )/ 100;
+        Float totalSales = (float) Math.round(statisticRepositoryImpl.calTotalSales(companyId)* 100 )/ 100;
         statisticsDTO.setTotalSales(totalSales);
-        float totalProfit = (float) Math.round(statisticRepositoryImpl.calTotalProfit()* 100 )/ 100;
+        float totalProfit = (float) Math.round(statisticRepositoryImpl.calTotalProfit(companyId)* 100 )/ 100;
         statisticsDTO.setTotalProfit(totalProfit);
-        statisticsDTO.setTotalNotSold(statisticRepositoryImpl.calTotalNotSold());
-        statisticsDTO.setTotalSold(statisticRepositoryImpl.calTotalSold());
+        statisticsDTO.setTotalNotSold(statisticRepositoryImpl.calTotalNotSold(companyId));
+        statisticsDTO.setTotalSold(statisticRepositoryImpl.calTotalSold(companyId));
         return ApiResult.success(statisticsDTO);
     }
 

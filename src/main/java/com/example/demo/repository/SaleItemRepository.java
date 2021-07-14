@@ -26,13 +26,13 @@ public interface SaleItemRepository {
     SaleItemPO findSaleItemByVehicleId(Long vehicleId);
 
     @Options(useGeneratedKeys = true, keyProperty = "id", keyColumn = "id")
-    @Insert("<script>INSERT INTO `sale_item`(" +
+    @Insert("<script>INSERT INTO `sale_item` (" +
             "sale_price, commission_rate, repair_price, partner_price," +
             "partner_profit, self_profit, sale_date, vehicle_id, clear_state," +
-            "mortgage_rebate, insurance_refund) VALUES(" +
-            "#{salePrice}, #{commissionRate}, #{repairPrice}, #{partnerPrice}, " +
-            "#{partnerProfit}, #{selfProfit}, #{saleDate}, #{vehicleId}, #{clearState}, " +
-            "#{mortgageRebate}, #{insuranceRefund})</script>")
+            "mortgage_rebate, insurance_refund, company_id ) VALUES (" +
+            "#{salePrice}, #{commissionRate}, #{repairPrice}, #{partnerPrice}," +
+            "#{partnerProfit}, #{selfProfit}, #{saleDate}, #{vehicleId}, #{clearState}," +
+            "#{mortgageRebate}, #{insuranceRefund}, #{companyId})</script>")
     Integer save(SaleItemPO saleItemPO);
 
     @Delete("DELETE FROM `sale_item` WHERE id = #{id}")
