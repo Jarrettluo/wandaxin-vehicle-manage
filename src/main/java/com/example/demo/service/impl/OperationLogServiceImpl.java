@@ -24,8 +24,9 @@ public class OperationLogServiceImpl implements OperationLogService {
     }
 
     @Override
-    public ApiResult list() {
-        List<OperationLogPO> operationLogPOList = operLogRepository.list();
+    public ApiResult list(Long companyId, List<String> userIdList) {
+        if(companyId.equals("")) return ApiResult.error(1201, "参数不足");
+        List<OperationLogPO> operationLogPOList = operLogRepository.list(companyId, userIdList);
         List<OperationLogDTO> operationLogDTOList = BeanUtil.mapperList(operationLogPOList, OperationLogDTO.class);
         return ApiResult.success(operationLogDTOList);
     }

@@ -2,12 +2,12 @@ package com.example.demo.controller;
 
 import com.example.demo.service.OperationLogService;
 import com.example.utils.result.ApiResult;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 @RestController
 @RequestMapping("/log")
@@ -18,7 +18,11 @@ public class LogController {
 
     @CrossOrigin
     @GetMapping()
-    public ApiResult list() {
-        return operationLogService.list();
+    public ApiResult list(@RequestParam("companyId") Long companyId, @RequestParam("userId") String userList)
+    {
+        String str[] = userList.split(",");
+        List<String> userNameList = Arrays.asList(str);
+        System.out.println(userNameList);
+        return operationLogService.list(companyId, userNameList);
     }
 }

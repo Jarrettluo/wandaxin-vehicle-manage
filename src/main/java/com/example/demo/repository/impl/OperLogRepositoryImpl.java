@@ -15,8 +15,8 @@ public class OperLogRepositoryImpl {
         operLogRepository.save(operationLogPO);
     }
 
-    public List<OperationLogPO> list() {
-        return operLogRepository.list();
+    public List<OperationLogPO> list(Long companyId, List<String> userNameList) {
+        return operLogRepository.list(companyId, userNameList);
     }
 
 }

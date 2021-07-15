@@ -90,3 +90,409 @@
 2021-07-15 00:11:57.637  WARN 1854 --- [http-nio-8081-exec-10] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.NullPointerException]
 2021-07-15 00:13:21.833  WARN 1854 --- [http-nio-8081-exec-8] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.NullPointerException]
 2021-07-15 00:13:32.244  WARN 1854 --- [http-nio-8081-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.NullPointerException]
+2021-07-15 00:23:47.417  INFO 1854 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-07-15 00:23:47.423  INFO 1854 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-07-15 00:23:47.441  INFO 1854 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-07-15 21:56:32.266  WARN 693 --- [restartedMain] o.s.boot.StartupInfoLogger               : InetAddress.getLocalHost().getHostName() took 5005 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+2021-07-15 21:56:37.276  INFO 693 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Starting WandaxinVehicleManageApplication using Java 1.8.0_282 on MollydeMacBook-Pro.local with PID 693 (/Users/molly/IdeaProjects/wandaxin-vehicle-manage/target/classes started by molly in /Users/molly/IdeaProjects/wandaxin-vehicle-manage)
+2021-07-15 21:56:37.277  INFO 693 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : The following profiles are active: dev
+2021-07-15 21:56:37.365  INFO 693 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-07-15 21:56:37.366  INFO 693 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-07-15 21:56:39.664  WARN 693 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo.mapper]' package. Please check your configuration.
+2021-07-15 21:56:39.701  WARN 693 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'mysqlVehicleRepository' and 'com.example.demo.repository.impl.MysqlVehicleRepository' mapperInterface. Bean already defined with the same name!
+2021-07-15 21:56:42.134  INFO 693 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-07-15 21:56:42.155  INFO 693 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-15 21:56:42.156  INFO 693 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-07-15 21:56:42.265  INFO 693 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-15 21:56:42.266  INFO 693 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4899 ms
+2021-07-15 21:56:44.043  INFO 693 --- [restartedMain] com.example.demo.config.LogConfig        : ==========print log==========
+2021-07-15 21:56:44.402  INFO 693 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-07-15 21:56:44.432  INFO 693 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-07-15 21:56:45.194  INFO 693 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-07-15 21:56:46.179  INFO 693 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Started WandaxinVehicleManageApplication in 24.829 seconds (JVM running for 26.553)
+2021-07-15 21:57:32.509  INFO 693 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-15 21:57:32.510  INFO 693 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-07-15 21:57:32.513  INFO 693 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2021-07-15 21:57:32.730  INFO 693 --- [http-nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-07-15 21:57:33.201  INFO 693 --- [http-nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-07-15 21:58:06.588  WARN 693 --- [http-nio-8081-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required Long parameter 'companyId' is not present]
+2021-07-15 21:58:09.448  WARN 693 --- [http-nio-8081-exec-9] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required Long parameter 'companyId' is not present]
+2021-07-15 21:58:13.584  WARN 693 --- [http-nio-8081-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required Long parameter 'companyId' is not present]
+2021-07-15 21:58:25.031  WARN 693 --- [http-nio-8081-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required Long parameter 'companyId' is not present]
+2021-07-15 22:05:20.037  WARN 693 --- [http-nio-8081-exec-9] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'companyId' in 'where clause'
+### The error may exist in com/example/demo/repository/impl/MysqlVehicleRepository.java (best guess)
+### The error may involve com.example.demo.repository.impl.MysqlVehicleRepository.search-Inline
+### The error occurred while setting parameters
+### SQL: SELECT * FROM vehicle_information WHERE CONCAT(`vehicle_plate`,`vehicle_brand`,`vehicle_color`) like "%" ? "%" and companyId = ?
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'companyId' in 'where clause'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'companyId' in 'where clause']
+2021-07-15 22:06:49.455  INFO 693 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-07-15 22:06:49.461  INFO 693 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-07-15 22:06:49.469  INFO 693 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-07-15 22:07:06.489  WARN 25070 --- [restartedMain] o.s.boot.StartupInfoLogger               : InetAddress.getLocalHost().getHostName() took 5008 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+2021-07-15 22:07:11.507  INFO 25070 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Starting WandaxinVehicleManageApplication using Java 1.8.0_282 on MollydeMacBook-Pro.local with PID 25070 (/Users/molly/IdeaProjects/wandaxin-vehicle-manage/target/classes started by molly in /Users/molly/IdeaProjects/wandaxin-vehicle-manage)
+2021-07-15 22:07:11.508  INFO 25070 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : The following profiles are active: dev
+2021-07-15 22:07:11.565  INFO 25070 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-07-15 22:07:11.565  INFO 25070 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-07-15 22:07:12.704  WARN 25070 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo.mapper]' package. Please check your configuration.
+2021-07-15 22:07:12.713  WARN 25070 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'mysqlVehicleRepository' and 'com.example.demo.repository.impl.MysqlVehicleRepository' mapperInterface. Bean already defined with the same name!
+2021-07-15 22:07:13.695  INFO 25070 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-07-15 22:07:13.708  INFO 25070 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-15 22:07:13.708  INFO 25070 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-07-15 22:07:13.800  INFO 25070 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-15 22:07:13.800  INFO 25070 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2234 ms
+2021-07-15 22:07:15.060  INFO 25070 --- [restartedMain] com.example.demo.config.LogConfig        : ==========print log==========
+2021-07-15 22:07:15.207  INFO 25070 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-07-15 22:07:15.227  INFO 25070 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-07-15 22:07:15.656  INFO 25070 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-07-15 22:07:16.221  INFO 25070 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Started WandaxinVehicleManageApplication in 20.474 seconds (JVM running for 21.473)
+2021-07-15 22:10:40.971  INFO 25070 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-15 22:10:40.973  INFO 25070 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-07-15 22:10:40.978  INFO 25070 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2021-07-15 22:10:41.080  INFO 25070 --- [http-nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-07-15 22:10:41.310  INFO 25070 --- [http-nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-07-15 22:10:41.506  WARN 25070 --- [http-nio-8081-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'companyId' in 'where clause'
+### The error may exist in com/example/demo/repository/impl/MysqlVehicleRepository.java (best guess)
+### The error may involve com.example.demo.repository.impl.MysqlVehicleRepository.search-Inline
+### The error occurred while setting parameters
+### SQL: SELECT * FROM vehicle_information WHERE CONCAT(`vehicle_plate`,`vehicle_brand`,`vehicle_color`) like "%" ? "%" and `companyId` = ?
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'companyId' in 'where clause'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'companyId' in 'where clause']
+2021-07-15 22:11:39.224  INFO 25070 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-07-15 22:11:39.232  INFO 25070 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-07-15 22:11:39.247  INFO 25070 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-07-15 22:11:53.742  WARN 25092 --- [restartedMain] o.s.boot.StartupInfoLogger               : InetAddress.getLocalHost().getHostName() took 5004 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+2021-07-15 22:11:58.753  INFO 25092 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Starting WandaxinVehicleManageApplication using Java 1.8.0_282 on MollydeMacBook-Pro.local with PID 25092 (/Users/molly/IdeaProjects/wandaxin-vehicle-manage/target/classes started by molly in /Users/molly/IdeaProjects/wandaxin-vehicle-manage)
+2021-07-15 22:11:58.754  INFO 25092 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : The following profiles are active: dev
+2021-07-15 22:11:58.816  INFO 25092 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-07-15 22:11:58.817  INFO 25092 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-07-15 22:12:00.254  WARN 25092 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo.mapper]' package. Please check your configuration.
+2021-07-15 22:12:00.266  WARN 25092 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'mysqlVehicleRepository' and 'com.example.demo.repository.impl.MysqlVehicleRepository' mapperInterface. Bean already defined with the same name!
+2021-07-15 22:12:01.789  INFO 25092 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-07-15 22:12:01.803  INFO 25092 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-15 22:12:01.804  INFO 25092 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-07-15 22:12:01.903  INFO 25092 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-15 22:12:01.903  INFO 25092 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3085 ms
+2021-07-15 22:12:02.974  INFO 25092 --- [restartedMain] com.example.demo.config.LogConfig        : ==========print log==========
+2021-07-15 22:12:03.127  INFO 25092 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-07-15 22:12:03.177  INFO 25092 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-07-15 22:12:03.730  INFO 25092 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-07-15 22:12:04.613  INFO 25092 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Started WandaxinVehicleManageApplication in 21.393 seconds (JVM running for 22.137)
+2021-07-15 22:13:14.952  INFO 25092 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-15 22:13:14.953  INFO 25092 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-07-15 22:13:14.955  INFO 25092 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-07-15 22:13:15.046  INFO 25092 --- [http-nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-07-15 22:13:15.250  INFO 25092 --- [http-nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-07-15 23:06:37.475  INFO 25092 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-07-15 23:06:37.487  INFO 25092 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-07-15 23:06:37.502  INFO 25092 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-07-15 23:06:53.799  WARN 25468 --- [restartedMain] o.s.boot.StartupInfoLogger               : InetAddress.getLocalHost().getHostName() took 5005 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+2021-07-15 23:06:58.805  INFO 25468 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Starting WandaxinVehicleManageApplication using Java 1.8.0_282 on MollydeMacBook-Pro.local with PID 25468 (/Users/molly/IdeaProjects/wandaxin-vehicle-manage/target/classes started by molly in /Users/molly/IdeaProjects/wandaxin-vehicle-manage)
+2021-07-15 23:06:58.806  INFO 25468 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : The following profiles are active: dev
+2021-07-15 23:06:58.889  INFO 25468 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-07-15 23:06:58.890  INFO 25468 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-07-15 23:07:00.081  WARN 25468 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo.mapper]' package. Please check your configuration.
+2021-07-15 23:07:00.113  WARN 25468 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'mysqlVehicleRepository' and 'com.example.demo.repository.impl.MysqlVehicleRepository' mapperInterface. Bean already defined with the same name!
+2021-07-15 23:07:01.465  INFO 25468 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-07-15 23:07:01.479  INFO 25468 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-15 23:07:01.480  INFO 25468 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-07-15 23:07:01.563  INFO 25468 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-15 23:07:01.563  INFO 25468 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2672 ms
+2021-07-15 23:07:03.126  INFO 25468 --- [restartedMain] com.example.demo.config.LogConfig        : ==========print log==========
+2021-07-15 23:07:03.301  INFO 25468 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-07-15 23:07:03.325  INFO 25468 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-07-15 23:07:03.770  INFO 25468 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-07-15 23:07:04.405  INFO 25468 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Started WandaxinVehicleManageApplication in 21.382 seconds (JVM running for 22.138)
+2021-07-15 23:09:43.070  INFO 25468 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-15 23:09:43.072  INFO 25468 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-07-15 23:09:43.076  INFO 25468 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2021-07-15 23:09:43.200  WARN 25468 --- [http-nio-8081-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required List parameter 'userId[]' is not present]
+2021-07-15 23:09:59.612  WARN 25468 --- [http-nio-8081-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required List parameter 'userId[]' is not present]
+2021-07-15 23:12:30.933  WARN 25468 --- [http-nio-8081-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required List parameter 'userId[]' is not present]
+2021-07-15 23:13:20.724  WARN 25468 --- [http-nio-8081-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required List parameter 'userId[]' is not present]
+2021-07-15 23:13:27.141  WARN 25468 --- [http-nio-8081-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required List parameter 'userId[]' is not present]
+2021-07-15 23:14:18.352  WARN 25468 --- [http-nio-8081-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required List parameter 'userId[]' is not present]
+2021-07-15 23:14:27.415  WARN 25468 --- [http-nio-8081-exec-8] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required List parameter 'userId[]' is not present]
+2021-07-15 23:18:16.538  WARN 25468 --- [http-nio-8081-exec-10] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required List parameter 'userId[]' is not present]
+2021-07-15 23:18:22.420  WARN 25468 --- [http-nio-8081-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required List parameter 'userId[]' is not present]
+2021-07-15 23:18:36.676  WARN 25468 --- [http-nio-8081-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required List parameter 'userId[]' is not present]
+2021-07-15 23:18:48.392  WARN 25468 --- [http-nio-8081-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required List parameter 'userId[]' is not present]
+2021-07-15 23:19:39.645  WARN 25468 --- [http-nio-8081-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required List parameter 'userId[]' is not present]
+2021-07-15 23:19:42.900  WARN 25468 --- [http-nio-8081-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required List parameter 'userId[]' is not present]
+2021-07-15 23:28:23.493  WARN 25468 --- [http-nio-8081-exec-9] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required List parameter 'userId[]' is not present]
+2021-07-15 23:28:30.937  WARN 25468 --- [http-nio-8081-exec-10] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required List parameter 'userId[]' is not present]
+2021-07-15 23:29:18.937  INFO 25468 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-07-15 23:29:33.312  WARN 25687 --- [restartedMain] o.s.boot.StartupInfoLogger               : InetAddress.getLocalHost().getHostName() took 5002 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+2021-07-15 23:29:38.323  INFO 25687 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Starting WandaxinVehicleManageApplication using Java 1.8.0_282 on MollydeMacBook-Pro.local with PID 25687 (/Users/molly/IdeaProjects/wandaxin-vehicle-manage/target/classes started by molly in /Users/molly/IdeaProjects/wandaxin-vehicle-manage)
+2021-07-15 23:29:38.325  INFO 25687 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : The following profiles are active: dev
+2021-07-15 23:29:38.419  INFO 25687 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-07-15 23:29:38.420  INFO 25687 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-07-15 23:29:39.970  WARN 25687 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo.mapper]' package. Please check your configuration.
+2021-07-15 23:29:40.004  WARN 25687 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'mysqlVehicleRepository' and 'com.example.demo.repository.impl.MysqlVehicleRepository' mapperInterface. Bean already defined with the same name!
+2021-07-15 23:29:41.133  INFO 25687 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-07-15 23:29:41.149  INFO 25687 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-15 23:29:41.150  INFO 25687 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-07-15 23:29:41.252  INFO 25687 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-15 23:29:41.252  INFO 25687 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2831 ms
+2021-07-15 23:29:42.585  INFO 25687 --- [restartedMain] com.example.demo.config.LogConfig        : ==========print log==========
+2021-07-15 23:29:42.734  INFO 25687 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-07-15 23:29:42.765  INFO 25687 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-07-15 23:29:43.193  INFO 25687 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-07-15 23:29:43.766  INFO 25687 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Started WandaxinVehicleManageApplication in 20.937 seconds (JVM running for 21.598)
+2021-07-15 23:31:22.495  INFO 25687 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-15 23:31:22.497  INFO 25687 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-07-15 23:31:22.500  INFO 25687 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2021-07-15 23:31:22.664  WARN 25687 --- [http-nio-8081-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.binding.BindingException: Parameter 'item' not found. Available parameters are [companyId, param1, userNameList, param2]]
+2021-07-15 23:36:59.734  INFO 25687 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-07-15 23:37:14.287  WARN 25726 --- [restartedMain] o.s.boot.StartupInfoLogger               : InetAddress.getLocalHost().getHostName() took 5007 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+2021-07-15 23:37:19.302  INFO 25726 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Starting WandaxinVehicleManageApplication using Java 1.8.0_282 on MollydeMacBook-Pro.local with PID 25726 (/Users/molly/IdeaProjects/wandaxin-vehicle-manage/target/classes started by molly in /Users/molly/IdeaProjects/wandaxin-vehicle-manage)
+2021-07-15 23:37:19.303  INFO 25726 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : The following profiles are active: dev
+2021-07-15 23:37:19.395  INFO 25726 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-07-15 23:37:19.395  INFO 25726 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-07-15 23:37:20.685  WARN 25726 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo.mapper]' package. Please check your configuration.
+2021-07-15 23:37:20.700  WARN 25726 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'mysqlVehicleRepository' and 'com.example.demo.repository.impl.MysqlVehicleRepository' mapperInterface. Bean already defined with the same name!
+2021-07-15 23:37:22.266  INFO 25726 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-07-15 23:37:22.281  INFO 25726 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-15 23:37:22.281  INFO 25726 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-07-15 23:37:22.377  INFO 25726 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-15 23:37:22.378  INFO 25726 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2982 ms
+2021-07-15 23:37:24.702  INFO 25726 --- [restartedMain] com.example.demo.config.LogConfig        : ==========print log==========
+2021-07-15 23:37:24.903  INFO 25726 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-07-15 23:37:24.951  INFO 25726 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-07-15 23:37:25.400  INFO 25726 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-07-15 23:37:26.141  INFO 25726 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Started WandaxinVehicleManageApplication in 22.35 seconds (JVM running for 23.021)
+2021-07-15 23:37:30.001  INFO 25726 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-15 23:37:30.004  INFO 25726 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-07-15 23:37:30.007  INFO 25726 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2021-07-15 23:37:30.139  WARN 25726 --- [http-nio-8081-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.binding.BindingException: Parameter 'userName' not found. Available parameters are [companyId, param1, userNameList, param2]]
+2021-07-15 23:37:32.732  INFO 25726 --- [http-nio-8081-exec-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-07-15 23:37:32.927  INFO 25726 --- [http-nio-8081-exec-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-07-15 23:37:34.898  WARN 25726 --- [http-nio-8081-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.binding.BindingException: Parameter 'userName' not found. Available parameters are [companyId, param1, userNameList, param2]]
+2021-07-15 23:40:45.005  INFO 25726 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-07-15 23:40:45.017  INFO 25726 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-07-15 23:40:45.035  INFO 25726 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-07-15 23:40:59.115  WARN 25769 --- [restartedMain] o.s.boot.StartupInfoLogger               : InetAddress.getLocalHost().getHostName() took 5010 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+2021-07-15 23:41:04.122  INFO 25769 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Starting WandaxinVehicleManageApplication using Java 1.8.0_282 on MollydeMacBook-Pro.local with PID 25769 (/Users/molly/IdeaProjects/wandaxin-vehicle-manage/target/classes started by molly in /Users/molly/IdeaProjects/wandaxin-vehicle-manage)
+2021-07-15 23:41:04.123  INFO 25769 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : The following profiles are active: dev
+2021-07-15 23:41:04.194  INFO 25769 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-07-15 23:41:04.195  INFO 25769 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-07-15 23:41:05.239  WARN 25769 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo.mapper]' package. Please check your configuration.
+2021-07-15 23:41:05.251  WARN 25769 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'mysqlVehicleRepository' and 'com.example.demo.repository.impl.MysqlVehicleRepository' mapperInterface. Bean already defined with the same name!
+2021-07-15 23:41:06.148  INFO 25769 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-07-15 23:41:06.163  INFO 25769 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-15 23:41:06.163  INFO 25769 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-07-15 23:41:06.236  INFO 25769 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-15 23:41:06.237  INFO 25769 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2042 ms
+2021-07-15 23:41:07.325  INFO 25769 --- [restartedMain] com.example.demo.config.LogConfig        : ==========print log==========
+2021-07-15 23:41:07.455  INFO 25769 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-07-15 23:41:07.486  INFO 25769 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-07-15 23:41:07.805  INFO 25769 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-07-15 23:41:08.289  INFO 25769 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Started WandaxinVehicleManageApplication in 19.637 seconds (JVM running for 20.318)
+2021-07-15 23:41:21.986  INFO 25769 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-15 23:41:21.988  INFO 25769 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-07-15 23:41:21.990  INFO 25769 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-07-15 23:41:22.152  WARN 25769 --- [http-nio-8081-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.binding.BindingException: Parameter 'userName' not found. Available parameters are [companyId, param1, userNameList, param2]]
+2021-07-15 23:42:24.268  INFO 25769 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-07-15 23:42:38.531  WARN 25787 --- [restartedMain] o.s.boot.StartupInfoLogger               : InetAddress.getLocalHost().getHostName() took 5007 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+2021-07-15 23:42:43.537  INFO 25787 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Starting WandaxinVehicleManageApplication using Java 1.8.0_282 on MollydeMacBook-Pro.local with PID 25787 (/Users/molly/IdeaProjects/wandaxin-vehicle-manage/target/classes started by molly in /Users/molly/IdeaProjects/wandaxin-vehicle-manage)
+2021-07-15 23:42:43.538  INFO 25787 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : The following profiles are active: dev
+2021-07-15 23:42:43.600  INFO 25787 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-07-15 23:42:43.601  INFO 25787 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-07-15 23:42:44.654  WARN 25787 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo.mapper]' package. Please check your configuration.
+2021-07-15 23:42:44.663  WARN 25787 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'mysqlVehicleRepository' and 'com.example.demo.repository.impl.MysqlVehicleRepository' mapperInterface. Bean already defined with the same name!
+2021-07-15 23:42:45.509  INFO 25787 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-07-15 23:42:45.521  INFO 25787 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-15 23:42:45.521  INFO 25787 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-07-15 23:42:45.589  INFO 25787 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-15 23:42:45.589  INFO 25787 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1988 ms
+2021-07-15 23:42:46.656  INFO 25787 --- [restartedMain] com.example.demo.config.LogConfig        : ==========print log==========
+2021-07-15 23:42:46.776  INFO 25787 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-07-15 23:42:46.798  INFO 25787 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-07-15 23:42:47.113  INFO 25787 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-07-15 23:42:47.589  INFO 25787 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Started WandaxinVehicleManageApplication in 19.522 seconds (JVM running for 20.228)
+2021-07-15 23:42:54.894  INFO 25787 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-15 23:42:54.899  INFO 25787 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-07-15 23:42:54.901  INFO 25787 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-07-15 23:42:55.079  WARN 25787 --- [http-nio-8081-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.binding.BindingException: Parameter 'userName' not found. Available parameters are [companyId, param1, userNameList, param2]]
+2021-07-15 23:43:27.302  INFO 25787 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-07-15 23:43:41.252  WARN 25799 --- [restartedMain] o.s.boot.StartupInfoLogger               : InetAddress.getLocalHost().getHostName() took 5003 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+2021-07-15 23:43:46.261  INFO 25799 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Starting WandaxinVehicleManageApplication using Java 1.8.0_282 on MollydeMacBook-Pro.local with PID 25799 (/Users/molly/IdeaProjects/wandaxin-vehicle-manage/target/classes started by molly in /Users/molly/IdeaProjects/wandaxin-vehicle-manage)
+2021-07-15 23:43:46.262  INFO 25799 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : The following profiles are active: dev
+2021-07-15 23:43:46.326  INFO 25799 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-07-15 23:43:46.326  INFO 25799 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-07-15 23:43:47.277  WARN 25799 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo.mapper]' package. Please check your configuration.
+2021-07-15 23:43:47.285  WARN 25799 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'mysqlVehicleRepository' and 'com.example.demo.repository.impl.MysqlVehicleRepository' mapperInterface. Bean already defined with the same name!
+2021-07-15 23:43:48.099  INFO 25799 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-07-15 23:43:48.113  INFO 25799 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-15 23:43:48.113  INFO 25799 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-07-15 23:43:48.189  INFO 25799 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-15 23:43:48.190  INFO 25799 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1863 ms
+2021-07-15 23:43:49.400  INFO 25799 --- [restartedMain] com.example.demo.config.LogConfig        : ==========print log==========
+2021-07-15 23:43:49.529  INFO 25799 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-07-15 23:43:49.551  INFO 25799 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-07-15 23:43:49.890  INFO 25799 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-07-15 23:43:50.450  INFO 25799 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Started WandaxinVehicleManageApplication in 19.656 seconds (JVM running for 20.31)
+2021-07-15 23:43:53.206  INFO 25799 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-15 23:43:53.208  INFO 25799 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-07-15 23:43:53.212  INFO 25799 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2021-07-15 23:43:53.377  WARN 25799 --- [http-nio-8081-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.binding.BindingException: Parameter 'userName' not found. Available parameters are [companyId, param1, userNameList, param2]]
+2021-07-15 23:46:07.628  INFO 25799 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-07-15 23:46:21.635  WARN 25819 --- [restartedMain] o.s.boot.StartupInfoLogger               : InetAddress.getLocalHost().getHostName() took 5007 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+2021-07-15 23:46:26.641  INFO 25819 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Starting WandaxinVehicleManageApplication using Java 1.8.0_282 on MollydeMacBook-Pro.local with PID 25819 (/Users/molly/IdeaProjects/wandaxin-vehicle-manage/target/classes started by molly in /Users/molly/IdeaProjects/wandaxin-vehicle-manage)
+2021-07-15 23:46:26.642  INFO 25819 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : The following profiles are active: dev
+2021-07-15 23:46:26.713  INFO 25819 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-07-15 23:46:26.713  INFO 25819 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-07-15 23:46:27.759  WARN 25819 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo.mapper]' package. Please check your configuration.
+2021-07-15 23:46:27.768  WARN 25819 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'mysqlVehicleRepository' and 'com.example.demo.repository.impl.MysqlVehicleRepository' mapperInterface. Bean already defined with the same name!
+2021-07-15 23:46:28.615  INFO 25819 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-07-15 23:46:28.629  INFO 25819 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-15 23:46:28.630  INFO 25819 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-07-15 23:46:28.715  INFO 25819 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-15 23:46:28.715  INFO 25819 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2001 ms
+2021-07-15 23:46:29.992  INFO 25819 --- [restartedMain] com.example.demo.config.LogConfig        : ==========print log==========
+2021-07-15 23:46:30.136  INFO 25819 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-07-15 23:46:30.160  INFO 25819 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-07-15 23:46:30.545  INFO 25819 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-07-15 23:46:31.147  INFO 25819 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Started WandaxinVehicleManageApplication in 19.997 seconds (JVM running for 20.659)
+2021-07-15 23:46:34.320  INFO 25819 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-15 23:46:34.322  INFO 25819 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-07-15 23:46:34.329  INFO 25819 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2021-07-15 23:46:34.517  WARN 25819 --- [http-nio-8081-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.binding.BindingException: Parameter 'item' not found. Available parameters are [companyId, param1, userNameList, param2]]
+2021-07-15 23:46:56.971  INFO 25819 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-07-15 23:47:12.151  WARN 25831 --- [restartedMain] o.s.boot.StartupInfoLogger               : InetAddress.getLocalHost().getHostName() took 5002 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+2021-07-15 23:47:17.157  INFO 25831 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Starting WandaxinVehicleManageApplication using Java 1.8.0_282 on MollydeMacBook-Pro.local with PID 25831 (/Users/molly/IdeaProjects/wandaxin-vehicle-manage/target/classes started by molly in /Users/molly/IdeaProjects/wandaxin-vehicle-manage)
+2021-07-15 23:47:17.158  INFO 25831 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : The following profiles are active: dev
+2021-07-15 23:47:17.238  INFO 25831 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-07-15 23:47:17.238  INFO 25831 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-07-15 23:47:18.384  WARN 25831 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo.mapper]' package. Please check your configuration.
+2021-07-15 23:47:18.395  WARN 25831 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'mysqlVehicleRepository' and 'com.example.demo.repository.impl.MysqlVehicleRepository' mapperInterface. Bean already defined with the same name!
+2021-07-15 23:47:19.417  INFO 25831 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-07-15 23:47:19.439  INFO 25831 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-15 23:47:19.439  INFO 25831 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-07-15 23:47:19.545  INFO 25831 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-15 23:47:19.547  INFO 25831 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2308 ms
+2021-07-15 23:47:21.206  INFO 25831 --- [restartedMain] com.example.demo.config.LogConfig        : ==========print log==========
+2021-07-15 23:47:21.389  INFO 25831 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-07-15 23:47:21.420  INFO 25831 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-07-15 23:47:21.833  INFO 25831 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-07-15 23:47:22.468  INFO 25831 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Started WandaxinVehicleManageApplication in 21.073 seconds (JVM running for 22.064)
+2021-07-15 23:47:30.991  INFO 25831 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-15 23:47:31.003  INFO 25831 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-07-15 23:47:31.006  INFO 25831 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-07-15 23:47:31.211  WARN 25831 --- [http-nio-8081-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.binding.BindingException: Parameter 'item' not found. Available parameters are [companyId, param1, userNameList, param2]]
+2021-07-15 23:49:52.423  INFO 25831 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-07-15 23:50:06.664  WARN 25854 --- [restartedMain] o.s.boot.StartupInfoLogger               : InetAddress.getLocalHost().getHostName() took 5005 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+2021-07-15 23:50:11.673  INFO 25854 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Starting WandaxinVehicleManageApplication using Java 1.8.0_282 on MollydeMacBook-Pro.local with PID 25854 (/Users/molly/IdeaProjects/wandaxin-vehicle-manage/target/classes started by molly in /Users/molly/IdeaProjects/wandaxin-vehicle-manage)
+2021-07-15 23:50:11.674  INFO 25854 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : The following profiles are active: dev
+2021-07-15 23:50:11.769  INFO 25854 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-07-15 23:50:11.770  INFO 25854 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-07-15 23:50:13.802  WARN 25854 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo.mapper]' package. Please check your configuration.
+2021-07-15 23:50:13.811  WARN 25854 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'mysqlVehicleRepository' and 'com.example.demo.repository.impl.MysqlVehicleRepository' mapperInterface. Bean already defined with the same name!
+2021-07-15 23:50:14.862  INFO 25854 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-07-15 23:50:14.888  INFO 25854 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-15 23:50:14.889  INFO 25854 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-07-15 23:50:14.987  INFO 25854 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-15 23:50:14.987  INFO 25854 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3216 ms
+2021-07-15 23:50:16.593  INFO 25854 --- [restartedMain] com.example.demo.config.LogConfig        : ==========print log==========
+2021-07-15 23:50:16.867  INFO 25854 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-07-15 23:50:16.942  INFO 25854 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-07-15 23:50:17.451  INFO 25854 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-07-15 23:50:18.446  INFO 25854 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-15 23:50:18.447  INFO 25854 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-07-15 23:50:18.449  INFO 25854 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-07-15 23:50:18.599  WARN 25854 --- [http-nio-8081-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.binding.BindingException: Parameter 'item' not found. Available parameters are [companyId, param1, userNameList, param2]]
+2021-07-15 23:50:18.667  INFO 25854 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Started WandaxinVehicleManageApplication in 22.535 seconds (JVM running for 23.272)
+2021-07-15 23:50:21.709  WARN 25854 --- [http-nio-8081-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.binding.BindingException: Parameter 'item' not found. Available parameters are [companyId, param1, userNameList, param2]]
+2021-07-15 23:50:32.835  INFO 25854 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-07-15 23:50:47.058  WARN 25864 --- [restartedMain] o.s.boot.StartupInfoLogger               : InetAddress.getLocalHost().getHostName() took 5003 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+2021-07-15 23:50:52.065  INFO 25864 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Starting WandaxinVehicleManageApplication using Java 1.8.0_282 on MollydeMacBook-Pro.local with PID 25864 (/Users/molly/IdeaProjects/wandaxin-vehicle-manage/target/classes started by molly in /Users/molly/IdeaProjects/wandaxin-vehicle-manage)
+2021-07-15 23:50:52.066  INFO 25864 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : The following profiles are active: dev
+2021-07-15 23:50:52.144  INFO 25864 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-07-15 23:50:52.145  INFO 25864 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-07-15 23:50:53.307  WARN 25864 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo.mapper]' package. Please check your configuration.
+2021-07-15 23:50:53.317  WARN 25864 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'mysqlVehicleRepository' and 'com.example.demo.repository.impl.MysqlVehicleRepository' mapperInterface. Bean already defined with the same name!
+2021-07-15 23:50:54.163  INFO 25864 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-07-15 23:50:54.255  INFO 25864 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2110 ms
+2021-07-15 23:50:55.279  INFO 25864 --- [restartedMain] com.example.demo.config.LogConfig        : ==========print log==========
+2021-07-15 23:50:55.419  INFO 25864 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-07-15 23:50:55.450  INFO 25864 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-07-15 23:50:55.774  INFO 25864 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-07-15 23:50:56.233  INFO 25864 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Started WandaxinVehicleManageApplication in 19.662 seconds (JVM running for 20.398)
+2021-07-15 23:50:56.259  INFO 25864 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-07-15 23:51:10.954  WARN 25869 --- [restartedMain] o.s.boot.StartupInfoLogger               : InetAddress.getLocalHost().getHostName() took 5004 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+2021-07-15 23:51:15.966  INFO 25869 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Starting WandaxinVehicleManageApplication using Java 1.8.0_282 on MollydeMacBook-Pro.local with PID 25869 (/Users/molly/IdeaProjects/wandaxin-vehicle-manage/target/classes started by molly in /Users/molly/IdeaProjects/wandaxin-vehicle-manage)
+2021-07-15 23:51:15.968  INFO 25869 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : The following profiles are active: dev
+2021-07-15 23:51:16.048  INFO 25869 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-07-15 23:51:16.049  INFO 25869 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-07-15 23:51:17.595  WARN 25869 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo.mapper]' package. Please check your configuration.
+2021-07-15 23:51:17.607  WARN 25869 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'mysqlVehicleRepository' and 'com.example.demo.repository.impl.MysqlVehicleRepository' mapperInterface. Bean already defined with the same name!
+2021-07-15 23:51:18.574  INFO 25869 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-07-15 23:51:18.588  INFO 25869 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-15 23:51:18.588  INFO 25869 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-07-15 23:51:18.667  INFO 25869 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-15 23:51:18.667  INFO 25869 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2617 ms
+2021-07-15 23:51:19.874  INFO 25869 --- [restartedMain] com.example.demo.config.LogConfig        : ==========print log==========
+2021-07-15 23:51:20.056  INFO 25869 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-07-15 23:51:20.084  INFO 25869 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-07-15 23:51:20.543  INFO 25869 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-07-15 23:51:21.288  INFO 25869 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Started WandaxinVehicleManageApplication in 21.171 seconds (JVM running for 22.24)
+2021-07-15 23:51:35.543  INFO 25869 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-15 23:51:35.547  INFO 25869 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-07-15 23:51:35.552  INFO 25869 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2021-07-15 23:51:35.693  WARN 25869 --- [http-nio-8081-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.binding.BindingException: Parameter 'item' not found. Available parameters are [companyId, param1, userNameList, param2]]
+2021-07-15 23:53:36.753  INFO 25869 --- [http-nio-8081-exec-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-07-15 23:53:36.977  INFO 25869 --- [http-nio-8081-exec-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-07-15 23:53:54.189  WARN 25869 --- [http-nio-8081-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.binding.BindingException: Parameter 'item' not found. Available parameters are [companyId, param1, userNameList, param2]]
+2021-07-15 23:55:28.640  INFO 25869 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-07-15 23:55:28.648  INFO 25869 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-07-15 23:55:28.664  INFO 25869 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-07-15 23:55:42.815  WARN 25920 --- [restartedMain] o.s.boot.StartupInfoLogger               : InetAddress.getLocalHost().getHostName() took 5002 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+2021-07-15 23:55:47.821  INFO 25920 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Starting WandaxinVehicleManageApplication using Java 1.8.0_282 on MollydeMacBook-Pro.local with PID 25920 (/Users/molly/IdeaProjects/wandaxin-vehicle-manage/target/classes started by molly in /Users/molly/IdeaProjects/wandaxin-vehicle-manage)
+2021-07-15 23:55:47.822  INFO 25920 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : The following profiles are active: dev
+2021-07-15 23:55:47.896  INFO 25920 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-07-15 23:55:47.897  INFO 25920 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-07-15 23:55:49.164  WARN 25920 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo.mapper]' package. Please check your configuration.
+2021-07-15 23:55:49.181  WARN 25920 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'mysqlVehicleRepository' and 'com.example.demo.repository.impl.MysqlVehicleRepository' mapperInterface. Bean already defined with the same name!
+2021-07-15 23:55:50.123  INFO 25920 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-07-15 23:55:50.138  INFO 25920 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-15 23:55:50.138  INFO 25920 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-07-15 23:55:50.220  INFO 25920 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-15 23:55:50.221  INFO 25920 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2323 ms
+2021-07-15 23:55:51.530  INFO 25920 --- [restartedMain] com.example.demo.config.LogConfig        : ==========print log==========
+2021-07-15 23:55:51.701  INFO 25920 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-07-15 23:55:51.733  INFO 25920 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-07-15 23:55:52.100  INFO 25920 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-07-15 23:55:53.267  INFO 25920 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Started WandaxinVehicleManageApplication in 20.992 seconds (JVM running for 21.632)
+2021-07-15 23:55:53.972  INFO 25920 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-15 23:55:53.974  INFO 25920 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-07-15 23:55:53.977  INFO 25920 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-07-15 23:55:54.100  INFO 25920 --- [http-nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-07-15 23:55:54.453  INFO 25920 --- [http-nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-07-15 23:56:00.276  WARN 25920 --- [http-nio-8081-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.binding.BindingException: Parameter 'item' not found. Available parameters are [companyId, param1, userNameList, param2]]
+2021-07-15 23:56:12.683  WARN 25920 --- [http-nio-8081-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.binding.BindingException: Parameter 'item' not found. Available parameters are [companyId, param1, userNameList, param2]]
+2021-07-15 23:59:11.773  INFO 25920 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-07-15 23:59:11.779  INFO 25920 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-07-15 23:59:11.797  INFO 25920 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-07-15 23:59:25.700  WARN 25952 --- [restartedMain] o.s.boot.StartupInfoLogger               : InetAddress.getLocalHost().getHostName() took 5005 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+2021-07-15 23:59:30.710  INFO 25952 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Starting WandaxinVehicleManageApplication using Java 1.8.0_282 on MollydeMacBook-Pro.local with PID 25952 (/Users/molly/IdeaProjects/wandaxin-vehicle-manage/target/classes started by molly in /Users/molly/IdeaProjects/wandaxin-vehicle-manage)
+2021-07-15 23:59:30.711  INFO 25952 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : The following profiles are active: dev
+2021-07-15 23:59:30.779  INFO 25952 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-07-15 23:59:30.779  INFO 25952 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-07-15 23:59:31.825  WARN 25952 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo.mapper]' package. Please check your configuration.
+2021-07-15 23:59:31.835  WARN 25952 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'mysqlVehicleRepository' and 'com.example.demo.repository.impl.MysqlVehicleRepository' mapperInterface. Bean already defined with the same name!
+2021-07-15 23:59:32.685  INFO 25952 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-07-15 23:59:32.699  INFO 25952 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-15 23:59:32.699  INFO 25952 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-07-15 23:59:32.771  INFO 25952 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-15 23:59:32.771  INFO 25952 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1991 ms
+2021-07-15 23:59:33.816  INFO 25952 --- [restartedMain] com.example.demo.config.LogConfig        : ==========print log==========
+2021-07-15 23:59:33.947  INFO 25952 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-07-15 23:59:33.969  INFO 25952 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-07-15 23:59:34.279  INFO 25952 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-07-15 23:59:34.740  INFO 25952 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Started WandaxinVehicleManageApplication in 19.493 seconds (JVM running for 20.156)
+2021-07-15 23:59:42.818  INFO 25952 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-15 23:59:42.819  INFO 25952 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-07-15 23:59:42.821  INFO 25952 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-07-15 23:59:42.919  WARN 25952 --- [http-nio-8081-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.binding.BindingException: Parameter 'item' not found. Available parameters are [companyId, param1, userNameList, param2]]

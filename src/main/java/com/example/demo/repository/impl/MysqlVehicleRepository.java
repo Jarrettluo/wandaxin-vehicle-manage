@@ -79,7 +79,8 @@ public interface MysqlVehicleRepository {
 
 
 
-    @Select("SELECT * FROM vehicle_information WHERE CONCAT(`vehicle_plate`,`vehicle_brand`,`vehicle_color`) like \"%\" #{vehiclePlate} \"%\" and companyId = #{companyId} ")
+    @Select("SELECT * FROM vehicle_information WHERE CONCAT(`vehicle_plate`,`vehicle_brand`,`vehicle_color`) like \"%\" #{vehiclePlate} \"%\" " +
+            "and `company_id` = #{companyId} ORDER BY modify_time DESC")
     List<VehicleInformationPO> search(String vehiclePlate, Long companyId);
 
 }
