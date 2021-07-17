@@ -23,21 +23,21 @@ public class PreparednessController {
     @Resource
     PreparedService preparedService;
 
-    @OperationLogAnnotation(operModul = "车辆整备模块",operType = "查询",operDesc = "整备信息")
+    @OperationLogAnnotation(operModul = "车辆整备信息",operType = "查询",operDesc = "整备信息")
     @CrossOrigin
     @GetMapping("/{vehicleId}")
     public ApiResult list(@PathVariable Long vehicleId){
         return preparedService.list(vehicleId);
     }
 
-    @OperationLogAnnotation(operModul = "车辆整备模块",operType = "新增",operDesc = "整备信息")
+    @OperationLogAnnotation(operModul = "车辆整备信息",operType = "新增",operDesc = "整备信息")
     @CrossOrigin
     @PostMapping
     public ApiResult save(@RequestBody PreparednessDTO[] preparednesses) throws IllegalAccessException {
         return preparedService.save(preparednesses);
     }
 
-    @OperationLogAnnotation(operModul = "库存模块",operType = "删除",operDesc = "整备信息")
+    @OperationLogAnnotation(operModul = "车辆整备信息",operType = "删除",operDesc = "整备信息")
     @CrossOrigin
     @DeleteMapping("/{vehicleId}")
     public ApiResult remove(@PathVariable Long vehicleId) {

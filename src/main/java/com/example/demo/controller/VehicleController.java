@@ -25,7 +25,7 @@ public class VehicleController {
     @Resource
     VehicleService vehicleService;
 
-    @OperationLogAnnotation(operModul = "车辆入库模块",operType = "增加",operDesc = "增加新车")
+    @OperationLogAnnotation(operModul = "车辆入库信息",operType = "增加",operDesc = "增加新车")
     @CrossOrigin
     @PostMapping
     public ApiResult save(@RequestBody VehicleInformationDTO vehicleInformationDTO) {
@@ -40,14 +40,14 @@ public class VehicleController {
         return vehicleService.save(vehicleInformationDTO);
     }
 
-    @OperationLogAnnotation(operModul = "车辆入库模块",operType = "删除",operDesc = "删除车辆")
+    @OperationLogAnnotation(operModul = "车辆入库信息",operType = "删除",operDesc = "删除车辆")
     @CrossOrigin
     @DeleteMapping("/{id}")
     public ApiResult remove(@PathVariable Long id) {
         return vehicleService.remove(id);
     }
 
-    @OperationLogAnnotation(operModul = "车辆入库模块",operType = "修改",operDesc = "车辆信息")
+    @OperationLogAnnotation(operModul = "车辆入库信息",operType = "修改",operDesc = "车辆信息")
     @CrossOrigin
     @PutMapping("/{id}")
     public ApiResult update(@RequestBody VehicleInformationDTO vehicleInformationDTO, @PathVariable Long id){
@@ -67,7 +67,7 @@ public class VehicleController {
         return vehicleService.list(companyId, sellState);
     }
 
-    @OperationLogAnnotation(operModul = "车辆入库模块",operType = "搜索",operDesc = "车辆列表信息")
+    @OperationLogAnnotation(operModul = "车辆入库信息",operType = "搜索",operDesc = "车辆列表信息")
     @CrossOrigin
     @GetMapping("/search/")
     public ApiResult search(@RequestParam(name = "vehiclePlate") String vehiclePlate, @RequestParam(name = "companyId") Long companyId){

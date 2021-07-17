@@ -21,7 +21,7 @@ public class StatisticsController {
     @Resource
     StatictisService statictisService;
 
-    @OperationLogAnnotation(operModul = "数据统计模块",operType = "查询",operDesc = "年度数据")
+    @OperationLogAnnotation(operModul = "数据统计",operType = "查询",operDesc = "年度数据")
     @CrossOrigin
     @GetMapping()
     public ApiResult get(@RequestParam("companyId") Long companyId) {

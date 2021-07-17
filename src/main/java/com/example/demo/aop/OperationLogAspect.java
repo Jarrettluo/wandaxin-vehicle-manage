@@ -80,13 +80,16 @@ public class OperationLogAspect {
             // 获取请求中的token信息
             String token = request.getHeader("token");
             String userName = "null";
+            Long companyId = null;
             if(token != null){
                 String userId = JWT.decode(token).getAudience().get(0);
                 UserDTO user = userService.findUserById(userId);
                 userName = user==null?"未知":user.getUsername();// 取到用户信息
+                companyId = user.getCompanyId();
             }else {
                 UserDTO user = (UserDTO) joinPoint.getArgs()[0];
                 userName = user.getUsername();
+//                companyId = user.getCompanyId();
             }
             //参数,从切点出获取其参数
             Object[] params = joinPoint.getArgs();
@@ -106,8 +109,9 @@ public class OperationLogAspect {
             operationLog.setResult(result.getCode().toString());
             // 请求参数
             operationLog.setParams(param!=""?param:"无参数");
+            operationLog.setCompanyId(companyId);
             //保存日志
-//            logDao.save(operationLog);  // 添加车辆的token，就没有添加
+            logDao.save(operationLog);  // 添加车辆的token，就没有添加
 
         } catch (Exception e) {
             e.printStackTrace();

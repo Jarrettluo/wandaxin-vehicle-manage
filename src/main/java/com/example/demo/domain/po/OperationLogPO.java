@@ -16,4 +16,5 @@ public class OperationLogPO {
     Timestamp operationTime;
     String result;
     String params; // 访问参数
+    Long companyId; // 公司的主键
 }

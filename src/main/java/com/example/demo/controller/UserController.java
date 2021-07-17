@@ -26,7 +26,7 @@ public class UserController {
 
 
     //登录
-    @OperationLogAnnotation(operModul = "用户模块",operType = "登录", operDesc = "用户登录")
+    @OperationLogAnnotation(operModul = "用户系统",operType = "登录", operDesc = "用户登录")
     @CrossOrigin
     @PostMapping("/login")
     public ApiResult login(@RequestBody UserDTO user){

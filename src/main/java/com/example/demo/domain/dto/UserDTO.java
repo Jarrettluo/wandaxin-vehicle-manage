@@ -17,4 +17,9 @@ public class UserDTO {
     @NotNull(message = "密码不能为空")
     @Size(min = 1, max = 20, message = "密码的长度是1到20")
     String password;
+
+    String type;
+
+    Long companyId;
+
 }

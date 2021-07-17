@@ -3,41 +3,42 @@ package com.example.demo.repository;
 
 import com.example.demo.domain.po.OperationLogPO;
 import com.example.demo.domain.po.VehicleInformationPO;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Options;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 import java.sql.Timestamp;
 import java.util.List;
 
+@Mapper
 public interface OperLogRepository {
 
 
     @Insert("<script>INSERT INTO `operation_log`(user_code," +
             "ip, type, description, model," +
-            "operation_time, result, params) VALUES(" +
+            "operation_time, result, params, company_id) VALUES(" +
             "#{userCode}, #{ip}, #{type}, " +
             "#{description}, #{model}, #{operationTime}, #{result}, #{params}" +
-            ")</script>")
+            ", #{companyId})</script>")
     void save(OperationLogPO operationLogPO);
 
-//    @Select("{ <script>" +
-//            "SELECT * FROM `operation_log` " +
-//            "where DATE_SUB(CURDATE(), INTERVAL 7 DAY) <= date(operation_time) " +
-//            "<if test='userIdList.length >0 and userIdList != null'>" +
-//            "and user_code in <foreach item='item' index='index' array='userNameList' open='(' separator=',' close=')'> " +
-//            "#{item} </foreach> <if> and company_id = #{companyId}" +
-//            "</script>}")
-//    List<OperationLogPO> list(Long companyId, @Param("userNameList") List<String> userNameList);
+    // mysql 的动态语句
+    @Select({
+            "<script>",
+            "SELECT * ",
+            "FROM operation_log",
+            "where",
+            "DATE_SUB(CURDATE(), INTERVAL 7 DAY) &lt;= date(operation_time) ",
+            "and company_id = #{companyId}",
+            "<if test='ids.size() &lt; 0'>",
+            "and user_code in ",
+            "<foreach item='id' index='index' collection='ids' open='(' separator=',' close=')'>",
+            "#{id}",
+            "</foreach>",
+            "</if>",
+            "</script>"
+    })
+    List<OperationLogPO> list(@Param("companyId") Long companyId, @Param("ids") List<String> ids);
 
 
-    @Select("{<script>" +
-            "SELECT * FROM `operation_log` " +
-            "where DATE_SUB(CURDATE(), INTERVAL 7 DAY) <= date(operation_time) " +
-            "and user_code in <foreach item='item' index='index' collection='userNameList' open='(' separator=',' close=')'> " +
-            "#{item} </foreach> and company_id = #{companyId}" +
-            "</script>}")
-    List<OperationLogPO> list(@Param("companyId") Long companyId, @Param("userNameList") List<String> userNameList);
+
 
 }

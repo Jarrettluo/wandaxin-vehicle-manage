@@ -22,7 +22,6 @@ public class LogController {
     {
         String str[] = userList.split(",");
         List<String> userNameList = Arrays.asList(str);
-        System.out.println(userNameList);
         return operationLogService.list(companyId, userNameList);
     }
 }

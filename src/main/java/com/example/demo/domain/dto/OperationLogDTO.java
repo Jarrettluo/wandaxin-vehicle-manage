@@ -16,5 +16,6 @@ public class OperationLogDTO {
     Timestamp operationTime; // 操作时间
     String result; // 结果 200表示正常，其他非正常的
     String params; // 访问参数
+    Long companyId; // 公司的主键
 
 }
