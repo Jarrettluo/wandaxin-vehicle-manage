@@ -18,7 +18,6 @@ public class SaleItemRepositoryImpl {
     SaleItemRepository saleItemRepository;
 
     public Integer save(SaleItemPO saleItemPO){
-        System.out.println(saleItemPO.toString());
         return saleItemRepository.save(saleItemPO);
     }
 

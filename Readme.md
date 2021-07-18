@@ -106,7 +106,11 @@ alter table user modify id int(11) auto_increment;
 ```
 用户名不能重复，修改为独一无二
 
+
+```roomsql
 ALTER TABLE `user` ADD UNIQUE ( `username`);
+```
+
 
 ```roomsql
 ALTER TABLE <旧表名> RENAME [TO] <新表名>;
@@ -123,4 +127,78 @@ UPDATE user SET company_id = 1 WHERE LastName = 0;
 
 三张表需要添加company_id
 vehicle_information\ sale_item \ operation_log \
+
+
+
+----
+操作步骤：
+1、先导出生产环境的数据库；
+2、生产环境的数据库增加修改字段；
+3、增加company；
+4、修改user；
+5、修改vehicle_information
+6、修改sale_item
+7、修改operation_log
+8、提交到生产环境中去
+9、修改代码参数
+
+
+1、导出数据到本地
+```roomsql
+mysqldump -uroot -proot --all-databases >/tmp/all.sql
+scp ubuntu@129.211.165.193:/home/ubuntu/wdx/test_db_0718.sql ./
+```
+2、修改sql导入sql
+```roomsql
+mysql -uroot -pLJR199308 < test_db_0718.sql
+```
+3、修改company
+```roomsql
+先导出，再导入
+msyq
+show create table company;
+
+CREATE TABLE `company` (
+    ->   `id` int NOT NULL AUTO_INCREMENT,
+    ->   `company_name` varchar(100) NOT NULL,
+    ->   `abbreviation` varchar(40) NOT NULL,
+    ->   `valid_account` int unsigned DEFAULT '1',
+    ->   `expiration_time` datetime NOT NULL,
+    ->   `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间\n',
+    ->   `modify_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '修改时间',
+    ->   PRIMARY KEY (`id`),
+    ->   UNIQUE KEY `company_name` (`company_name`)
+    -> ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb3
+    -> ;
+
+```
+往company中添加第一条数据
+4、修改User表
+```roomsql
+ALTER TABLE user ADD type VARCHAR(16) not null default "admin";
+ALTER TABLE user ADD company_id int not null default 1;
+alter table user modify id int(11) auto_increment;
+```
+
+5\6\7
+```roomsql
+ALTER TABLE vehicle_information ADD company_id int not null default 1;
+ALTER TABLE sale_item ADD company_id int not null default 1;
+ALTER TABLE operation_log ADD company_id int not null default 1;
+```
+8、导出修改好的库
+```roomsql
+mysqldump -uroot -pLJR199308 --databases test_db >wan_da_xin_prod_20210718.sql;
+
+```
+在服务器上新建数据库后导入 wan_da_xin_prod
+```roomsql
+// mysql -uroot -p123456 wan_da_xin_prod < wan_da_xin_prod_20210718.sql
+```
+source ./wan_da_xin_pr....sql //该种方法有问题！
+
+mysqldump -P端口 -u用户名 -p密码 --databases db1 >/tmp/db1.sql
+
+
+直接修改库名称
 
