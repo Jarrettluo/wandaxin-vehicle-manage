@@ -8,8 +8,6 @@ import com.example.utils.result.ApiResult;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.stereotype.Service;
-
-import java.io.File;
 import java.util.HashMap;
 
 /**
@@ -88,4 +86,33 @@ public class RecognitionServiceImpl implements RecognitionService {
         return ApiResult.success(recognitionDTO);
     }
 
+    /**
+     * vin 识别来自于百度的接口：https://ai.baidu.com/ai-doc/OCR/Nkibizxlf#vin%E7%A0%81%E8%AF%86%E5%88%AB
+     * @param image
+     * @return
+     */
+    @Override
+    public ApiResult vinCode(byte[] image) {
+        if(image.length>10048575) {
+            return ApiResult.error(201, "文件过大！");
+        }
+        // 初始化一个AipOcr
+        AipOcr client = new AipOcr(APP_ID, API_KEY, SECRET_KEY);
+        HashMap<String, String> options = new HashMap<String, String>();
+        JSONObject res = client.vinCode(image, options); // 传入二进制文件
+        if(res.has("words_result")) {
+            JSONArray vins = res.getJSONArray("words_result");
+            JSONObject vinCodeObject = null;
+            if(vins != null && vins.length()>0){
+                vinCodeObject = vins.getJSONObject(0);
+            }
+            if(vinCodeObject != null){
+                String vinCode = vinCodeObject.getString("words");
+                if(!("").equals(vinCode)){
+                    return ApiResult.success(vinCode);
+                }
+            }
+        }
+        return ApiResult.error(1203, "识别失败");
+    }
 }

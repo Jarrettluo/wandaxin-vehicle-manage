@@ -11,5 +11,6 @@ import java.io.File;
 public interface RecognitionService {
 
     ApiResult find(byte[] image);
+    ApiResult vinCode(byte[] image);
 
 }

@@ -36,4 +36,18 @@ public class RecognitionController {
 
     }
 
+    @CrossOrigin
+    @PostMapping("/vinCode")
+    public ApiResult vinCode(@RequestParam(value="file", required=false) MultipartFile multipartFile)
+            throws IOException {
+        byte[] imgBytes = multipartFile.getBytes();
+        if(imgBytes!=null){
+            return recognitionService.vinCode(imgBytes);
+        }
+        else {
+            return ApiResult.error(201,"数据为空!");
+        }
+
+    }
+
 }
