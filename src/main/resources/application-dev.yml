@@ -13,6 +13,13 @@ spring:
   jackson:
     time-zone: GMT+8
 
+  jpa:
+    properties:
+      javax:
+        persistence:
+          validation:
+            mode: none
+
 mybatis:
   configuration:
     map-underscore-to-camel-case: true

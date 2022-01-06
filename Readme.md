@@ -202,3 +202,19 @@ mysqldump -P端口 -u用户名 -p密码 --databases db1 >/tmp/db1.sql
 
 直接修改库名称
 
+
+----
+2022年1月6日更新表
+增加车辆的描述信息
+vehicle_description
+```roomsql
+CREATE TABLE IF NOT EXISTS `vehicle_description`(
+    `id` int NOT NULL AUTO_INCREMENT,
+    `vehicle_id` INT NOT NULL,
+    `vin` VARCHAR(18) NOT NULL,
+    `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间\n',
+    `modify_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '修改时间',
+   PRIMARY KEY ( `id` )
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+```
+

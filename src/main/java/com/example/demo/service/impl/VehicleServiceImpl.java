@@ -1,6 +1,7 @@
 package com.example.demo.service.impl;
 
 import com.example.demo.domain.dto.VehicleInformationDTO;
+import com.example.demo.domain.po.VehicleDescriptionPO;
 import com.example.demo.domain.po.VehicleInformationPO;
 import com.example.demo.repository.VehicleRepository;
 import com.example.demo.repository.impl.PreparednessRepositoryImpl;
@@ -44,12 +45,21 @@ public class VehicleServiceImpl implements VehicleService {
         }
         VehicleInformationPO vehicleInformationPO = BeanUtil.mapperBean(vehicleInformationDTO, VehicleInformationPO.class);
         vehicleRepository.save(vehicleInformationPO);
-        if(vehicleInformationPO.getId() != null){
-            return ApiResult.success(vehicleInformationPO.getId());
-        }else {
-            return ApiResult.error(1202, "保存失败");
+        if(vehicleInformationPO.getId() == null || "".equals(vehicleInformationPO.getId())){
+            return ApiResult.error(1203, "保存失败!");
+        }
+        // 用于保存车辆的vin码
+        String vinCode = vehicleInformationDTO.getVinCode();
+        if(!"".equals(vinCode) && vinCode != null){
+            VehicleDescriptionPO vehicleDescriptionPO = new VehicleDescriptionPO();
+            vehicleDescriptionPO.setVehicleId(vehicleInformationPO.getId());
+            vehicleDescriptionPO.setVinCode(vinCode);
+
+
+
         }
 
+        return ApiResult.success(vehicleInformationPO.getId());
     }
 
     /**

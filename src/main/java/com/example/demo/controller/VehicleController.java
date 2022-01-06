@@ -4,6 +4,7 @@ import com.example.demo.aop.OperationLogAnnotation;
 import com.example.demo.domain.dto.VehicleInformationDTO;
 import com.example.demo.service.VehicleService;
 import com.example.utils.result.ApiResult;
+import io.swagger.annotations.Api;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.validation.annotation.Validated;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.validation.Valid;
+import java.util.regex.Pattern;
 
 /**
  * @Author Jarrett Luo
@@ -28,15 +30,15 @@ public class VehicleController {
     @OperationLogAnnotation(operModul = "车辆入库信息",operType = "增加",operDesc = "增加新车")
     @CrossOrigin
     @PostMapping
-    public ApiResult save(@RequestBody VehicleInformationDTO vehicleInformationDTO) {
-//        for(ObjectError error : bindingResult.getAllErrors()){
-//            return ApiResult.error(1201, error.getDefaultMessage());
-//        }
-//        System.out.println(bindingResult);
-//        if (bindingResult.hasErrors()) {
-//
-//            return ApiResult.error(1201, "error.getDefaultMessage()");
-//        }
+    public ApiResult save(@Valid @RequestBody VehicleInformationDTO vehicleInformationDTO) {
+        String pattern = "^[A-HJ-NPR-Z\\d]{17}$";
+        String vinCode = vehicleInformationDTO.getVinCode();
+        if(!"".equals(vinCode) && vinCode != null){
+            boolean isMatch = Pattern.matches(pattern, vinCode);
+            if(!isMatch) {
+                return ApiResult.error(1202, "VIN格式不对！");
+            }
+        }
         return vehicleService.save(vehicleInformationDTO);
     }
 
