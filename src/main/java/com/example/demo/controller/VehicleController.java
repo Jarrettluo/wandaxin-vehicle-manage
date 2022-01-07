@@ -23,7 +23,7 @@ import java.util.regex.Pattern;
 @RestController
 @RequestMapping(value="/vehicle")
 public class VehicleController {
-
+    private String pattern = "^[A-HJ-NPR-Z\\d]{17}$";
     @Resource
     VehicleService vehicleService;
 
@@ -31,7 +31,6 @@ public class VehicleController {
     @CrossOrigin
     @PostMapping
     public ApiResult save(@Valid @RequestBody VehicleInformationDTO vehicleInformationDTO) {
-        String pattern = "^[A-HJ-NPR-Z\\d]{17}$";
         String vinCode = vehicleInformationDTO.getVinCode();
         if(!"".equals(vinCode) && vinCode != null){
             boolean isMatch = Pattern.matches(pattern, vinCode);
@@ -53,6 +52,13 @@ public class VehicleController {
     @CrossOrigin
     @PutMapping("/{id}")
     public ApiResult update(@RequestBody VehicleInformationDTO vehicleInformationDTO, @PathVariable Long id){
+        String vinCode = vehicleInformationDTO.getVinCode();
+        if(!"".equals(vinCode) && vinCode != null){
+            boolean isMatch = Pattern.matches(pattern, vinCode);
+            if(!isMatch) {
+                return ApiResult.error(1202, "VIN格式不对！");
+            }
+        }
         vehicleInformationDTO.setId(id);
         return vehicleService.update(vehicleInformationDTO);
     }

@@ -6,6 +6,7 @@ import com.example.demo.domain.po.VehicleInformationPO;
 import com.example.demo.repository.VehicleRepository;
 import com.example.demo.repository.impl.PreparednessRepositoryImpl;
 import com.example.demo.repository.impl.SaleItemRepositoryImpl;
+import com.example.demo.repository.impl.VehicleDescRepositoryImpl;
 import com.example.demo.service.VehicleService;
 import com.example.utils.result.ApiResult;
 import com.example.utils.result.bean.BeanUtil;
@@ -38,6 +39,9 @@ public class VehicleServiceImpl implements VehicleService {
     @Resource
     SaleItemRepositoryImpl saleItemRepositoryImpl;
 
+    @Resource
+    VehicleDescRepositoryImpl vehicleDescRepositoryImpl;
+
     @Override
     public ApiResult save(VehicleInformationDTO vehicleInformationDTO) {
         if(vehicleInformationDTO.getVehicleBrand()==null || vehicleInformationDTO.getPurchasePrice()==null){
@@ -54,11 +58,8 @@ public class VehicleServiceImpl implements VehicleService {
             VehicleDescriptionPO vehicleDescriptionPO = new VehicleDescriptionPO();
             vehicleDescriptionPO.setVehicleId(vehicleInformationPO.getId());
             vehicleDescriptionPO.setVinCode(vinCode);
-
-
-
+            vehicleDescRepositoryImpl.save(vehicleDescriptionPO);
         }
-
         return ApiResult.success(vehicleInformationPO.getId());
     }
 
@@ -73,6 +74,8 @@ public class VehicleServiceImpl implements VehicleService {
             return ApiResult.error(1201, "参数错误");
         }
         VehicleInformationPO vehicleInformationPO = vehicleRepository.find(id);
+        // 删除车辆的描述信息
+        vehicleDescRepositoryImpl.remove(id);
         // 如果能够查询到该辆车的话就把该辆车的销售信息给删除
         if(vehicleInformationPO.getSaleitemId()!=null) {
             saleItemRepositoryImpl.remove(vehicleInformationPO.getSaleitemId());
@@ -95,6 +98,19 @@ public class VehicleServiceImpl implements VehicleService {
         }
         VehicleInformationPO vehicleInformationPO = BeanUtil.mapperBean(vehicleInformationDTO, VehicleInformationPO.class);
         vehicleRepository.update(vehicleInformationPO);
+        // 更新车辆的vin码，如果其具有描述信息，则先查找，然后再保存
+        Long vehicleId = vehicleInformationPO.getId();
+        String vinCode = vehicleInformationDTO.getVinCode();
+        VehicleDescriptionPO vehicleDescriptionPO = new VehicleDescriptionPO();
+        vehicleDescriptionPO.setVehicleId(vehicleId);
+        vehicleDescriptionPO.setVinCode(vinCode);
+        if(vehicleDescRepositoryImpl.findDescriptionByVehicleId(vehicleId).size() != 0){
+            vehicleDescRepositoryImpl.update(vehicleDescriptionPO);
+        }else {
+            if(!"".equals(vinCode) || vinCode != null){
+                vehicleDescRepositoryImpl.save(vehicleDescriptionPO);
+            }
+        }
         return ApiResult.success();
     }
 
@@ -103,6 +119,11 @@ public class VehicleServiceImpl implements VehicleService {
         VehicleInformationPO vehicleInformationPO = vehicleRepository.find(id);
         VehicleInformationDTO vehicleInformationDTO = BeanUtil.mapperBean(vehicleInformationPO, VehicleInformationDTO.class);
         if(vehicleInformationDTO.getId() != null ) {
+            List<VehicleDescriptionPO> vehicleDescriptionPOList = vehicleDescRepositoryImpl.findDescriptionByVehicleId(
+                    vehicleInformationDTO.getId());
+            if(vehicleDescriptionPOList != null && vehicleDescriptionPOList.size() > 0){
+                vehicleInformationDTO.setVinCode(vehicleDescriptionPOList.get(0).getVinCode());
+            }
             return ApiResult.success(vehicleInformationDTO);
         }else {
             return ApiResult.error(1202, "查找失败");

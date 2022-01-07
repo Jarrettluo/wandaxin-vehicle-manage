@@ -15,8 +15,9 @@ import java.util.List;
 
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class VehicleInformationPO extends AbstractPO {
+public class VehicleInformationPO {
 
+    private Long id;
     private String vehiclePlate;
     private String vehicleBrand;
     private Date registrationDate;

@@ -1,6 +1,5 @@
 package com.example.utils.result.PO;
 
-import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
 /**
@@ -23,7 +22,7 @@ public abstract class AbstractPO {
 
     protected LocalDateTime modifyTime;
 
-    public @NotNull(message = "车辆ID不能为空") Long getId() {
+    public Integer getId() {
         return id;
     }
 
