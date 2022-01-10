@@ -40,7 +40,7 @@ public interface PrepItemRepository {
      * 查询默认的类目
      * @return 返回全部默认选项
      */
-    @Select("SELECT * FROM `preparatory_item` WHERE type = 'default'")
+    @Select("SELECT id, name, company_id, type FROM `preparatory_item` WHERE type = 'default'")
     List<PreparatoryItemPO> findDefaultItemList();
 
     /**
@@ -48,7 +48,25 @@ public interface PrepItemRepository {
      * @param companyId  公司的主键ID
      * @return 返回自定义的整备项目
      */
-    @Select("SELECT * FROM `preparatory_item` WHERE company_id = #{companyId}")
+    @Select("SELECT id, name, company_id, type FROM `preparatory_item` WHERE company_id = #{companyId}")
     List<PreparatoryItemPO> findUserItemList(Long companyId);
+
+    /**
+     * 判断某个项目名称是否出现在默认条目或者是自定义列表中
+     * @param type 整备项目的类型，default || user
+     * @param companyId 公司的主键ID
+     * @return 返回查询的个数
+     */
+    @Select("<script>SELECT count(id) FROM `preparatory_item`" +
+            "<where>" +
+                "<if test=\"name != null and type == \"default\" \">" +
+                    "and type = \"default'\" and name = #{name}" +
+                "</if>" +
+                "<if test=\"name != null and type == \"user\" \"> " +
+                    "and type = \"user\" and company_id = #{companyId}" +
+                "</if>" +
+            "</where>" +
+            "</script>")
+    Integer countItem(String type, Long companyId, String name);
 
 }

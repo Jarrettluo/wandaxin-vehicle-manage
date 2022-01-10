@@ -15,23 +15,28 @@ public class PrepItemRepositoryImpl {
     @Resource
     PrepItemRepository prepItemRepository;
 
-    Integer save(@Param(value = "preparatoryItemPO") PreparatoryItemPO preparatoryItemPO){
+    public Integer save(@Param(value = "preparatoryItemPO") PreparatoryItemPO preparatoryItemPO){
         return prepItemRepository.save(preparatoryItemPO);
     }
 
-    void remove(Long itemId){
+    public void remove(Long itemId){
         prepItemRepository.remove(itemId);
     }
 
-    void update(PreparatoryItemPO preparatoryItemPO){
+    public void update(PreparatoryItemPO preparatoryItemPO){
         prepItemRepository.update(preparatoryItemPO);
     }
 
-    List<PreparatoryItemPO> findDefaultItemList(){
+    public List<PreparatoryItemPO> findDefaultItemList(){
         return prepItemRepository.findDefaultItemList();
     }
 
-    List<PreparatoryItemPO> findUserItemList(Long companyId){
+    public List<PreparatoryItemPO> findUserItemList(Long companyId){
         return prepItemRepository.findUserItemList(companyId);
     }
+
+    public Integer countNum(String type, Long companyId, String name) {
+        return prepItemRepository.countItem(type, companyId, name);
+    }
+
 }

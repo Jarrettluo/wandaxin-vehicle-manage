@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import com.example.demo.domain.dto.PreparatoryItemDTO;
 import com.example.demo.domain.po.CompanyPO;
 import com.example.demo.repository.CompanyRepository;
+import com.example.demo.repository.impl.PrepItemRepositoryImpl;
 import com.example.demo.service.PrepItemService;
 import com.example.utils.result.ApiResult;
 import org.springframework.web.bind.annotation.*;
@@ -21,6 +22,9 @@ public class PreparatoryItemController {
     @Resource
     PrepItemService prepItemService;
 
+    @Resource
+    PrepItemRepositoryImpl prepItemRepositoryImpl;
+
     /**
      * 校验中文数字英文
      * @param str 整备项目名字
@@ -29,6 +33,19 @@ public class PreparatoryItemController {
     public static boolean isLetterDigitOrChinese(String str) {
         String regex = "^[a-z0-9A-Z\u4e00-\u9fa5]+$";
         return str.matches(regex);
+    }
+
+    /**
+     * 查询某个name是否出现在该公司的列表中
+     * @param name 整备项目名字
+     * @param companyId 公司的主键ID
+     * @return 返回整形数目
+     */
+    private Integer countName(String name, Long companyId) {
+        Integer countNum = 0;
+        countNum += prepItemRepositoryImpl.countNum("default", companyId, name);
+        countNum += prepItemRepositoryImpl.countNum("user", companyId, name);
+        return countNum;
     }
 
     @PostMapping("/addItem")
@@ -46,7 +63,9 @@ public class PreparatoryItemController {
             return ApiResult.error(1202, "项目名称不符合规范！");
         }
         // 名字需要进行查重
-
+        if(countName(preparatoryItemDTO.getName(), preparatoryItemDTO.getCompanyId()) > 0){
+            return ApiResult.error(1202, "该项目已经存在，请更换！");
+        }
         // 设置为用户定义的模式
         preparatoryItemDTO.setType("user");
         return prepItemService.addItem(preparatoryItemDTO);
@@ -74,7 +93,9 @@ public class PreparatoryItemController {
             return ApiResult.error(1202, "项目名称不符合规范！");
         }
         // 名字需要进行查重
-
+        if(countName(preparatoryItemDTO.getName(), preparatoryItemDTO.getCompanyId()) > 0){
+            return ApiResult.error(1202, "该项目已经存在，请更换！");
+        }
         // 设置为用户定义的模式
         preparatoryItemDTO.setType("user");
         return prepItemService.updateItem(preparatoryItemDTO);
