@@ -21,19 +21,34 @@ public class PreparatoryItemController {
     @Resource
     PrepItemService prepItemService;
 
+    /**
+     * 校验中文数字英文
+     * @param str 整备项目名字
+     * @return boolean
+     */
+    public static boolean isLetterDigitOrChinese(String str) {
+        String regex = "^[a-z0-9A-Z\u4e00-\u9fa5]+$";
+        return str.matches(regex);
+    }
+
     @PostMapping("/addItem")
     public ApiResult addItem(@Valid @RequestBody PreparatoryItemDTO preparatoryItemDTO){
         CompanyPO companyPO = companyRepository.find(preparatoryItemDTO.getCompanyId());
         if(companyPO == null){
             return ApiResult.error(1201, "公司的信息不正确！");
         }
-        if(preparatoryItemDTO.getName() == null || "".equals(preparatoryItemDTO.getName())){
+        String itemName = preparatoryItemDTO.getName();
+        if( itemName == null || "".equals(itemName)){
             return ApiResult.error(1201, "项目名称不正确");
         }
         // 名字必须为中文或者数字，需要经过正则校验
+        if(!isLetterDigitOrChinese(itemName)){
+            return ApiResult.error(1202, "项目名称不符合规范！");
+        }
+        // 名字需要进行查重
 
-        preparatoryItemDTO.setType("user"); // 设置为用户定义的模式
-
+        // 设置为用户定义的模式
+        preparatoryItemDTO.setType("user");
         return prepItemService.addItem(preparatoryItemDTO);
     }
 
@@ -50,7 +65,15 @@ public class PreparatoryItemController {
         if(companyPO == null){
             return ApiResult.error(1201, "公司的信息不正确！");
         }
+        String itemName = preparatoryItemDTO.getName();
+        if( itemName == null || "".equals(itemName)){
+            return ApiResult.error(1201, "项目名称不正确");
+        }
         // 名字必须为中文或者数字，需要经过正则校验
+        if(!isLetterDigitOrChinese(itemName)){
+            return ApiResult.error(1202, "项目名称不符合规范！");
+        }
+        // 名字需要进行查重
 
         // 设置为用户定义的模式
         preparatoryItemDTO.setType("user");
@@ -65,6 +88,8 @@ public class PreparatoryItemController {
         }
         return prepItemService.list(companyId);
     }
+
+
 
 
 }
