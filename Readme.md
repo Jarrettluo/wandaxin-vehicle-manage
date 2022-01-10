@@ -218,3 +218,15 @@ CREATE TABLE IF NOT EXISTS `vehicle_description`(
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 ```
 
+----
+2022年1月10日更新表
+```roomsql
+CREATE TABLE IF NOT EXISTS `vehicle_description`(
+    `id` int NOT NULL AUTO_INCREMENT,
+    `vehicle_id` INT NOT NULL,
+    `vin` VARCHAR(18) NOT NULL,
+    `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间\n',
+    `modify_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '修改时间',
+   PRIMARY KEY ( `id` )
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+```
