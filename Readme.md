@@ -221,10 +221,11 @@ CREATE TABLE IF NOT EXISTS `vehicle_description`(
 ----
 2022年1月10日更新表
 ```roomsql
-CREATE TABLE IF NOT EXISTS `vehicle_description`(
+CREATE TABLE IF NOT EXISTS `preparatory_item`(
     `id` int NOT NULL AUTO_INCREMENT,
-    `vehicle_id` INT NOT NULL,
-    `vin` VARCHAR(18) NOT NULL,
+    `company_id` INT NOT NULL,
+    `name` VARCHAR(18) NOT NULL,
+    `type` VARCHAR(18) NOT NULL default 'user',
     `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间\n',
     `modify_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '修改时间',
    PRIMARY KEY ( `id` )

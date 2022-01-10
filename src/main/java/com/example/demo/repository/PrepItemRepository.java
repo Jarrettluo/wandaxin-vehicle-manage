@@ -59,12 +59,8 @@ public interface PrepItemRepository {
      */
     @Select("<script>SELECT count(id) FROM `preparatory_item`" +
             "<where>" +
-                "<if test=\"name != null and type == \"default\" \">" +
-                    "and type = \"default'\" and name = #{name}" +
-                "</if>" +
-                "<if test=\"name != null and type == \"user\" \"> " +
-                    "and type = \"user\" and company_id = #{companyId}" +
-                "</if>" +
+                "<if test='name != null and type == default'> and type = 'default' and name = #{name} </if>" +
+                "<if test='name != null and type == user'> and type = 'user' and company_id = #{companyId} </if>" +
             "</where>" +
             "</script>")
     Integer countItem(String type, Long companyId, String name);
