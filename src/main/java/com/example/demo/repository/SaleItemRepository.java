@@ -1,7 +1,6 @@
 package com.example.demo.repository;
 
 import com.example.demo.domain.po.SaleItemPO;
-import com.example.demo.domain.po.VehicleInformationPO;
 import org.apache.ibatis.annotations.*;
 
 /**
@@ -38,7 +37,10 @@ public interface SaleItemRepository {
     @Delete("DELETE FROM `sale_item` WHERE id = #{id}")
     void remove(Long id);
 
-    // TODO 这里需要修改！
+    /**
+     * TODO 这里需要修改！
+     * @param saleItemPO 销售车的POJO
+     */
     @Update("<script> UPDATE `sale_item` <set>" +
             "<if test='salePrice!=null'>sale_price = #{salePrice}, </if>" +
             "<if test='commissionRate!=null'>commission_rate = #{commissionRate}, </if>" +

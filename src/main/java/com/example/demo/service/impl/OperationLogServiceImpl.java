@@ -21,14 +21,18 @@ public class OperationLogServiceImpl implements OperationLogService {
 
     @Override
     public void save(OperationLogDTO operationLogDTO) throws IllegalAccessException {
-        if(CheckObject.checkObjFieldIsNull(operationLogDTO)) return; // 如果参数为空直接跳过记录
+        if(CheckObject.checkObjFieldIsNull(operationLogDTO)) {
+            return; // 如果参数为空直接跳过记录
+        }
         OperationLogPO operationLogPO = BeanUtil.mapperBean(operationLogDTO, OperationLogPO.class);
         operLogRepositoryImpl.save(operationLogPO);
     }
 
     @Override
     public ApiResult list(Long companyId, List<String> userIdList) {
-        if(companyId.equals("")) return ApiResult.error(1201, "参数不足");
+        if(companyId == null || companyId == 0) {
+            return ApiResult.error(1201, "参数不足");
+        }
         List<OperationLogPO> operationLogPOList = operLogRepositoryImpl.list(companyId, userIdList);
         List<OperationLogDTO> operationLogDTOList = BeanUtil.mapperList(operationLogPOList, OperationLogDTO.class);
         return ApiResult.success(operationLogDTOList);

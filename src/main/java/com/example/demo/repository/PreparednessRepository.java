@@ -1,6 +1,5 @@
 package com.example.demo.repository;
 
-import com.example.demo.domain.po.PartnerPO;
 import com.example.demo.domain.po.PreparednessPO;
 import org.apache.ibatis.annotations.*;
 

@@ -1,7 +1,6 @@
 package com.example.demo.repository;
 
 import com.example.demo.domain.po.UserPO;
-import org.apache.catalina.User;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;
@@ -13,8 +12,8 @@ public interface UserRepository {
     UserPO findByUsername(String username);
 
 
-    @Select("SELECT * FROM `user` where id = #{Id}")
-    UserPO findUserById(String Id);
+    @Select("SELECT * FROM `user` where id = #{userId}")
+    UserPO findUserById(String userId);
 
     @Select("SELECT * FROM `user` WHERE company_id = #{companyId}")
     List<UserPO> findUserByCompanyId(Long companyId);
@@ -25,7 +24,10 @@ public interface UserRepository {
             "VALUES(#{username}, #{password}, #{type}, #{companyId})</script>")
     Integer save(UserPO userPO);
 
-    // 更新用户的密码和用户类型
+    /**
+     * 更新用户的密码和用户类型
+     * @param userPO 用户POJO
+     */
     @Update("<script> UPDATE `user` <set>" +
             "<if test='password!=null'>password = #{password}, </if>" +
             "<if test='type!=null'> type = #{type}, </if>" +

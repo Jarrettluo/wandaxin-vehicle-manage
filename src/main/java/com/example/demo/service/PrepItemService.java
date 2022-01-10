@@ -1,10 +1,8 @@
 package com.example.demo.service;
 
 import com.example.demo.domain.dto.PreparatoryItemDTO;
-import com.example.demo.domain.po.PreparatoryItemPO;
 import com.example.utils.result.ApiResult;
 
-import java.util.List;
 
 public interface PrepItemService {
 

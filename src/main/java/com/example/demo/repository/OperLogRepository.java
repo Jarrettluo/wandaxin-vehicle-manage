@@ -2,10 +2,7 @@ package com.example.demo.repository;
 
 
 import com.example.demo.domain.po.OperationLogPO;
-import com.example.demo.domain.po.VehicleInformationPO;
 import org.apache.ibatis.annotations.*;
-
-import java.sql.Timestamp;
 import java.util.List;
 
 @Mapper

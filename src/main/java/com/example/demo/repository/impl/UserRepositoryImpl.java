@@ -15,26 +15,32 @@ public class UserRepositoryImpl implements UserRepository{
     @Resource
     UserRepository userRepository;
 
+    @Override
     public UserPO findByUsername(String username){
         return userRepository.findByUsername(username);
-    };
+    }
 
+    @Override
     public UserPO findUserById(String id){
         return userRepository.findUserById(id);
-    };
+    }
 
+    @Override
     public List<UserPO> findUserByCompanyId(Long companyId){
         return userRepository.findUserByCompanyId(companyId);
     }
 
+    @Override
     public Integer save(UserPO userPO){
         return userRepository.save(userPO);
     }
 
+    @Override
     public void update(UserPO userPO){
         userRepository.update(userPO);
     }
 
+    @Override
     public void deleteUser(String userId) {
         userRepository.deleteUser(userId);
     }

@@ -1,7 +1,6 @@
 package com.example.demo.service;
 
 import com.example.demo.domain.dto.SaleItemDTO;
-import com.example.demo.domain.dto.VehicleInformationDTO;
 import com.example.utils.result.ApiResult;
 
 /**

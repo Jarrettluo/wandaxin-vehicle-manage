@@ -1,7 +1,6 @@
 package com.example.demo.service.impl;
 
 import com.example.demo.domain.dto.SaleItemDTO;
-import com.example.demo.domain.dto.VehicleInformationDTO;
 import com.example.demo.domain.po.SaleItemPO;
 import com.example.demo.domain.po.VehicleInformationPO;
 import com.example.demo.repository.VehicleRepository;
@@ -69,7 +68,9 @@ public class SaleItemServiceImpl implements SaleItemService {
         }
         // 先去查找一下是否有这么一条记录，然后再进行修改
         SaleItemPO saleItemPOOld = saleItemRepositoryImpl.find(saleItemDTO.getVehicleId());
-        if(CheckObject.checkObjFieldIsNull(saleItemPOOld)) return ApiResult.error(1202, "修改失败");
+        if(CheckObject.checkObjFieldIsNull(saleItemPOOld)) {
+            return ApiResult.error(1202, "修改失败");
+        }
         SaleItemPO saleItemPO = BeanUtil.mapperBean(saleItemDTO, SaleItemPO.class);
         saleItemRepositoryImpl.update(saleItemPO);
         return ApiResult.success(saleItemPO);
@@ -77,7 +78,9 @@ public class SaleItemServiceImpl implements SaleItemService {
 
     @Override
     public ApiResult find(Long vehicleId) {
-        if (vehicleId==null) return ApiResult.error(1201, "参数错误");
+        if (vehicleId==null) {
+            return ApiResult.error(1201, "参数错误");
+        }
         SaleItemPO saleItemPO = saleItemRepositoryImpl.find(vehicleId);
         SaleItemDTO saleItemDTO = BeanUtil.mapperBean(saleItemPO, SaleItemDTO.class);
         return ApiResult.success(saleItemDTO);

@@ -19,7 +19,6 @@ public interface StatisticsRepository {
 
     @Select("SELECT COUNT(*) FROM `vehicle_information` where `saleitem_id` is null and company_id = #{companyId}")
     Integer calTotalNotSold(Long companyId);
-    // select count(*) from table where 字段 = "";
 
     @Select("SELECT COUNT(*) FROM `vehicle_information` where `saleitem_id` is not null and company_id = #{companyId}")
     Integer calTotalSold(Long companyId);

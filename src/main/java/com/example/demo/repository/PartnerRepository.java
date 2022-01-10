@@ -1,7 +1,6 @@
 package com.example.demo.repository;
 
 import com.example.demo.domain.po.PartnerPO;
-import com.example.demo.domain.po.VehicleInformationPO;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;
