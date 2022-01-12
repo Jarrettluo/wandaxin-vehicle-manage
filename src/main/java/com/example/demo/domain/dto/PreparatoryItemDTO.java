@@ -16,7 +16,6 @@ public class PreparatoryItemDTO {
 
     // 默认值为1
     @NotNull(message = "公司主键ID不能为空")
-    @Size(min = 1, max = 9999)
     private Long companyId;
 
     // 整备项目属于平台或者某个用户"user","default"

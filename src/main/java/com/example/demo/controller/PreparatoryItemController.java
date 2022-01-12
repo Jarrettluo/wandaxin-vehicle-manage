@@ -45,6 +45,7 @@ public class PreparatoryItemController {
         Integer countNum = 0;
         countNum += prepItemRepositoryImpl.countNum("default", companyId, name);
         countNum += prepItemRepositoryImpl.countNum("user", companyId, name);
+        System.out.println(countNum);
         return countNum;
     }
 

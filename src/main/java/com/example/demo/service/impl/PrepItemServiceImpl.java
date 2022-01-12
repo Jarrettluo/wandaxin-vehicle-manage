@@ -20,6 +20,7 @@ public class PrepItemServiceImpl implements PrepItemService {
 
     @Override
     public ApiResult addItem(PreparatoryItemDTO preparatoryItemDTO) {
+        System.out.println(preparatoryItemDTO.toString());
         PreparatoryItemPO preparatoryItemPO = BeanUtil.mapperBean(preparatoryItemDTO, PreparatoryItemPO.class);
         prepItemRepositoryImpl.save(preparatoryItemPO);
         return ApiResult.success("保存成功！");

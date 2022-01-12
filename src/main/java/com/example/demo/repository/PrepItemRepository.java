@@ -1,7 +1,6 @@
 package com.example.demo.repository;
 
 import com.example.demo.domain.po.PreparatoryItemPO;
-import com.example.demo.domain.po.VehicleDescriptionPO;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;
@@ -15,10 +14,11 @@ public interface PrepItemRepository {
      * @param preparatoryItemPO 自定义整备项目
      * @return 返回车辆的保存结果
      */
+    @Options(useGeneratedKeys = true, keyProperty = "id", keyColumn = "id")
     @Insert("<script> INSERT INTO `preparatory_item` (name, company_id, type) values " +
             "(#{name}, #{companyId}, #{type})" +
             " </script>")
-    Integer save(@Param(value = "preparatoryItemPO") PreparatoryItemPO preparatoryItemPO);
+    Integer save(PreparatoryItemPO preparatoryItemPO);
 
     /**
      * 删除某个自定义的整备项目
@@ -59,10 +59,10 @@ public interface PrepItemRepository {
      */
     @Select("<script>SELECT count(id) FROM `preparatory_item`" +
             "<where>" +
-                "<if test='name != null and type == default'> and type = 'default' and name = #{name} </if>" +
-                "<if test='name != null and type == user'> and type = 'user' and company_id = #{companyId} </if>" +
+                "<if test='name != null and type == \"default\"'> and type = 'default' and name = #{name} </if>" +
+                "<if test='name != null and type == \"user\"'> and type = 'user' and name = #{name} and company_id = #{companyId} </if>" +
             "</where>" +
             "</script>")
-    Integer countItem(String type, Long companyId, String name);
+    Integer countItem(@Param("type") String type, @Param("companyId") Long companyId, @Param("name") String name);
 
 }
