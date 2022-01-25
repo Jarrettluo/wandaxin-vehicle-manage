@@ -60,8 +60,13 @@ public class CompanyServiceImpl implements CompanyService {
         }
         userPO.setCompanyId(companyId); // 赋值
         userPO.setType("admin"); // 默认赋值为admin
-        String regex = "^1(3-5|7|8)\\d{9}$";  // 写入数据库的数据必须经过正则判断，手机号码，用户密码
-        String pwdReg = "^[\\dA-Za-z_]{6,14}$"; // 密码正则限制
+        // 写入数据库的数据必须经过正则判断，手机号码，用户密码
+        String regex = "^1[3-5|7|8]\\d{9}$";
+        // 密码正则限制
+        String pwdReg = "^[\\dA-Za-z_]{6,14}$";
+        System.out.println(userPO.toString());
+        System.out.println(userPO.getUsername().matches(regex));
+        System.out.println(userPO.getPassword().matches(pwdReg));
         if(!userPO.getUsername().matches(regex) || !userPO.getPassword().matches(pwdReg)){
             companyRepository.deleteById(companyId); // 写入失败，必须将类型给
             return ApiResult.error(1203, "用户写入失败，请重试！");

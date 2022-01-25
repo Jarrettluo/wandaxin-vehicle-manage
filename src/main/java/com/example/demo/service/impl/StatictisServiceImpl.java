@@ -7,9 +7,13 @@ import com.example.demo.repository.impl.StatisticRepositoryImpl;
 import com.example.demo.service.StatictisService;
 import com.example.utils.result.ApiResult;
 import com.example.utils.result.bean.BeanUtil;
+import io.swagger.models.auth.In;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * @Author Jarrett Luo
@@ -41,4 +45,17 @@ public class StatictisServiceImpl implements StatictisService {
         return ApiResult.success(statisticsDTO);
     }
 
+    @Override
+    public ApiResult getFullYearStat(Long year) {
+        HashMap<String, ArrayList<Integer>> monthStat = new HashMap<>();
+        ArrayList<Integer> monthList = new ArrayList();
+        ArrayList<Integer> statList = new ArrayList();
+        for(int i = 0 ; i < 12; i++){
+            monthList.add(i+1);
+            statList.add(statisticRepositoryImpl.monthStat(year, i+1));
+        }
+        monthStat.put("month", monthList);
+        monthStat.put("stat", statList);
+        return ApiResult.success(monthStat);
+    }
 }

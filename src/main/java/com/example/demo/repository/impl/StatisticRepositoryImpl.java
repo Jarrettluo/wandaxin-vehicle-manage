@@ -35,4 +35,9 @@ public class StatisticRepositoryImpl implements StatisticsRepository {
     public Integer calTotalSold(Long companyId) {
         return statisticsRepository.calTotalSold(companyId);
     }
+
+    @Override
+    public Integer monthStat(Long year, Integer month) {
+        return statisticsRepository.monthStat(year, month);
+    };
 }

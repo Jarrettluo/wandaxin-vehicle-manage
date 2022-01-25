@@ -1,5 +1,6 @@
 package com.example.demo.repository;
 
+import io.swagger.models.auth.In;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
@@ -22,4 +23,7 @@ public interface StatisticsRepository {
 
     @Select("SELECT COUNT(*) FROM `vehicle_information` where `saleitem_id` is not null and company_id = #{companyId}")
     Integer calTotalSold(Long companyId);
+
+    @Select("SELECT COUNT(*) FROM `sale_item` WHERE year(created_time) = #{year} and month(created_time) = #{month} ")
+    Integer monthStat(Long year, Integer month);
 }

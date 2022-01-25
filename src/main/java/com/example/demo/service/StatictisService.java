@@ -13,4 +13,6 @@ public interface StatictisService {
 
     ApiResult find(Long companyId);
 
+    ApiResult getFullYearStat(Long year);
+
 }
