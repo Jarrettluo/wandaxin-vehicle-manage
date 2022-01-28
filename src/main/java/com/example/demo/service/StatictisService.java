@@ -11,7 +11,7 @@ import com.example.utils.result.ApiResult;
 
 public interface StatictisService {
 
-    ApiResult find(Long companyId);
+    ApiResult find(Long companyId, Long year);
 
     ApiResult getFullYearStat(Long year);
 

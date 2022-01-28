@@ -161,3 +161,30 @@
 2022-01-28 16:26:05.142  INFO 2269 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
 2022-01-28 16:26:05.182  INFO 2269 --- [http-nio-8081-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
 2022-01-28 16:26:05.289  INFO 2269 --- [http-nio-8081-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-01-28 18:02:28.089  WARN 2269 --- [http-nio-8081-exec-10] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required Long parameter 'year' is not present]
+2022-01-28 18:02:31.845  WARN 2269 --- [http-nio-8081-exec-9] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required Long parameter 'year' is not present]
+2022-01-28 18:10:43.198  INFO 2269 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2022-01-28 18:10:43.327  INFO 2269 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-01-28 18:10:43.359  INFO 2269 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-01-28 18:11:09.440  WARN 2991 --- [restartedMain] o.s.boot.StartupInfoLogger               : InetAddress.getLocalHost().getHostName() took 5005 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+2022-01-28 18:11:14.448  INFO 2991 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Starting WandaxinVehicleManageApplication using Java 1.8.0_282 on MollydeMacBook-Pro.local with PID 2991 (/Users/molly/IdeaProjects/wandaxin-vehicle-manage/target/classes started by molly in /Users/molly/IdeaProjects/wandaxin-vehicle-manage)
+2022-01-28 18:11:14.449  INFO 2991 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : The following profiles are active: dev
+2022-01-28 18:11:14.516  INFO 2991 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-01-28 18:11:14.517  INFO 2991 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-01-28 18:11:15.937  WARN 2991 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo.mapper]' package. Please check your configuration.
+2022-01-28 18:11:15.948  WARN 2991 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'mysqlVehicleRepository' and 'com.example.demo.repository.impl.MysqlVehicleRepository' mapperInterface. Bean already defined with the same name!
+2022-01-28 18:11:17.503  INFO 2991 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2022-01-28 18:11:17.518  INFO 2991 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-28 18:11:17.518  INFO 2991 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2022-01-28 18:11:17.606  INFO 2991 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-28 18:11:17.606  INFO 2991 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3088 ms
+2022-01-28 18:11:18.681  INFO 2991 --- [restartedMain] com.example.demo.config.LogConfig        : ==========print log==========
+2022-01-28 18:11:18.797  INFO 2991 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-01-28 18:11:18.853  INFO 2991 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-01-28 18:11:19.219  INFO 2991 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2022-01-28 18:11:19.654  INFO 2991 --- [restartedMain] c.e.d.WandaxinVehicleManageApplication   : Started WandaxinVehicleManageApplication in 21.021 seconds (JVM running for 27.712)
+2022-01-28 18:11:41.681  INFO 2991 --- [http-nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-01-28 18:11:41.685  INFO 2991 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-01-28 18:11:41.688  INFO 2991 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2022-01-28 18:11:41.798  INFO 2991 --- [http-nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-01-28 18:11:42.246  INFO 2991 --- [http-nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.

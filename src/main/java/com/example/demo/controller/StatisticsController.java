@@ -31,8 +31,9 @@ public class StatisticsController {
 
     @OperationLogAnnotation(operModul = "数据统计",operType = "查询",operDesc = "年度数据")
     @GetMapping()
-    public ApiResult get(@RequestParam("companyId") Long companyId) {
-        return statictisService.find(companyId);
+    public ApiResult get(@RequestParam("companyId") Long companyId,
+                         @RequestParam("year") Long year) {
+        return statictisService.find(companyId, year);
     }
 
     /**

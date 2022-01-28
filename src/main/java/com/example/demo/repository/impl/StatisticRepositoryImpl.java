@@ -18,13 +18,13 @@ public class StatisticRepositoryImpl implements StatisticsRepository {
     StatisticsRepository statisticsRepository;
 
     @Override
-    public Float calTotalSales(Long companyId) {
-        return statisticsRepository.calTotalSales(companyId);
+    public Float calTotalSales(Long companyId, Long year) {
+        return statisticsRepository.calTotalSales(companyId, year);
     }
 
     @Override
-    public Float calTotalProfit(Long companyId) {
-        return statisticsRepository.calTotalProfit(companyId);
+    public Float calTotalProfit(Long companyId, Long year) {
+        return statisticsRepository.calTotalProfit(companyId, year);
     }
 
     @Override

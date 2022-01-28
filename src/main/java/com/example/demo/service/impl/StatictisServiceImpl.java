@@ -28,14 +28,14 @@ public class StatictisServiceImpl implements StatictisService {
     MysqlVehicleRepository mysqlVehicleRepository;
 
     @Override
-    public ApiResult find(Long companyId) {
+    public ApiResult find(Long companyId, Long year) {
         StatisticsDTO statisticsDTO = new StatisticsDTO();
-        Float totalSales = statisticRepositoryImpl.calTotalSales(companyId);
+        Float totalSales = statisticRepositoryImpl.calTotalSales(companyId, year);
 
         if(totalSales == null ) totalSales = 0f;
         totalSales = (float) Math.round( totalSales * 100 )/ 100;
         statisticsDTO.setTotalSales(totalSales);
-        Float totalProfit = statisticRepositoryImpl.calTotalProfit(companyId);
+        Float totalProfit = statisticRepositoryImpl.calTotalProfit(companyId, year);
 
         if(totalProfit == null) totalProfit = 0f;
         totalProfit = (float) Math.round(totalProfit* 100 )/ 100;
