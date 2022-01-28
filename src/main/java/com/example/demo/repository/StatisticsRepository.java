@@ -15,10 +15,10 @@ import java.util.List;
 @Mapper
 public interface StatisticsRepository {
 
-    @Select("SELECT SUM(`sale_price`) FROM `sale_item` WHERE YEAR(created_time) = #{year} and company_id = #{companyId}")
+    @Select("SELECT SUM(`sale_price`) FROM `sale_item` WHERE YEAR(sale_date) = #{year} and company_id = #{companyId}")
     Float calTotalSales(Long companyId, Long year);
 
-    @Select("SELECT SUM(`self_profit`) FROM `sale_item` WHERE YEAR(created_time) = #{year} and company_id = #{companyId}")
+    @Select("SELECT SUM(`self_profit`) FROM `sale_item` WHERE YEAR(sale_date) = #{year} and company_id = #{companyId}")
     Float calTotalProfit(Long companyId, Long year);
 
     @Select("SELECT COUNT(*) FROM `vehicle_information` where `saleitem_id` is null and company_id = #{companyId}")

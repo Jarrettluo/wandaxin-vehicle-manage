@@ -32,12 +32,16 @@ public class StatictisServiceImpl implements StatictisService {
         StatisticsDTO statisticsDTO = new StatisticsDTO();
         Float totalSales = statisticRepositoryImpl.calTotalSales(companyId, year);
 
-        if(totalSales == null ) totalSales = 0f;
+        if(totalSales == null ) {
+            totalSales = 0f;
+        }
         totalSales = (float) Math.round( totalSales * 100 )/ 100;
         statisticsDTO.setTotalSales(totalSales);
         Float totalProfit = statisticRepositoryImpl.calTotalProfit(companyId, year);
 
-        if(totalProfit == null) totalProfit = 0f;
+        if(totalProfit == null) {
+            totalProfit = 0f;
+        }
         totalProfit = (float) Math.round(totalProfit* 100 )/ 100;
         statisticsDTO.setTotalProfit(totalProfit);
 
