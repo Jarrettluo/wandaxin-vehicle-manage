@@ -15,4 +15,9 @@ public interface StatictisService {
 
     ApiResult getFullYearStat(Long year);
 
+    ApiResult getMonthStat(Long companyId, Long year, Integer month);
+
+    ApiResult getMonthStatUnsaled(Long companyId, Long year, Integer month);
+
+
 }

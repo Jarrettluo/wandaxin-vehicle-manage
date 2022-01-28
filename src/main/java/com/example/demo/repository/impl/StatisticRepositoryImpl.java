@@ -4,6 +4,7 @@ import com.example.demo.repository.StatisticsRepository;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * @Author Jarrett Luo
@@ -39,5 +40,15 @@ public class StatisticRepositoryImpl implements StatisticsRepository {
     @Override
     public Integer monthStat(Long year, Integer month) {
         return statisticsRepository.monthStat(year, month);
-    };
+    }
+
+    @Override
+    public List<Integer> findVehicleIdByMonth(Long companyId, Long year, Integer month) {
+        return statisticsRepository.findVehicleIdByMonth(companyId, year, month);
+    }
+
+    @Override
+    public List<Integer> findUnsaledVehicleIdByMonth(Long companyId, Long year, Integer month) {
+        return statisticsRepository.findUnsaledVehicleIdByMonth(companyId, year, month);
+    }
 }

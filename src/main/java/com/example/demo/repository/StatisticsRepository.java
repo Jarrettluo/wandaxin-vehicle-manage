@@ -1,8 +1,11 @@
 package com.example.demo.repository;
 
+import com.example.demo.domain.po.SaleItemPO;
+import com.example.demo.domain.po.VehicleInformationPO;
 import io.swagger.models.auth.In;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
+
+import java.util.List;
 
 /**
  * @Author Jarrett Luo
@@ -24,6 +27,13 @@ public interface StatisticsRepository {
     @Select("SELECT COUNT(*) FROM `vehicle_information` where `saleitem_id` is not null and company_id = #{companyId}")
     Integer calTotalSold(Long companyId);
 
-    @Select("SELECT COUNT(*) FROM `sale_item` WHERE year(created_time) = #{year} and month(created_time) = #{month} ")
+    @Select("SELECT COUNT(*) FROM `sale_item` WHERE year(sale_date) = #{year} and month(sale_date) = #{month} ")
     Integer monthStat(Long year, Integer month);
+
+    @Select("SELECT vehicle_id FROM `sale_item` WHERE `company_id` = #{companyId} and year(sale_date) = #{year} and month(sale_date) = #{month}")
+    List<Integer> findVehicleIdByMonth(Long companyId, Long year, Integer month);
+
+    @Select("SELECT id FROM `vehicle_information` WHERE `company_id` = #{companyId} and year(purchase_date) = #{year} and month(purchase_date) = #{month}")
+    List<Integer> findUnsaledVehicleIdByMonth(Long companyId, Long year, Integer month);
+
 }
