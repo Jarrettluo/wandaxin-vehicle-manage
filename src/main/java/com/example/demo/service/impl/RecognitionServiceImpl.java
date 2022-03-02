@@ -5,10 +5,14 @@ import com.baidu.aip.ocr.AipOcr;
 import com.example.demo.domain.dto.RecognitionDTO;
 import com.example.demo.service.RecognitionService;
 import com.example.utils.result.ApiResult;
+import lombok.Data;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @Author Jarrett Luo
@@ -108,11 +112,40 @@ public class RecognitionServiceImpl implements RecognitionService {
             }
             if(vinCodeObject != null){
                 String vinCode = vinCodeObject.getString("words");
-                if(!("").equals(vinCode)){
-                    return ApiResult.success(vinCode);
+                if(!("").equals(vinCode) && vinCode.length()==17){
+                    // 进行数据校验
+                    ResponseContent responseContent = VinQueryByHttp.queryVin(vinCode);
+                    return ApiResult.success(responseContent);
                 }
             }
         }
         return ApiResult.error(1203, "识别失败");
+    }
+}
+
+
+@Data
+class ResponseContent{
+    private int status;
+    private Object msg;
+    private Object data;
+    private String vinCode;
+}
+
+class VinQueryByHttp{
+    static ResponseContent queryVin(String vinCode){
+        Map<String,String> map = new HashMap();
+        map.put("key","d7ba9fa7634764f2fd5bb81e8183ce18");
+        map.put("vin", vinCode);
+        String url = "http://118.31.113.49/api/vin/v2/index?key={key}&vin={vin}";
+        RestTemplate restTemplate = new RestTemplate();
+        //将指定的url返回的参数自动封装到自定义好的对应类对象中
+        ResponseContent responseContent = restTemplate.getForObject(url, ResponseContent.class, map);
+        responseContent.setVinCode(vinCode);
+        if(responseContent.getStatus()==0 && "[]".equals(responseContent.getData()) == false){
+            responseContent.setStatus(200);
+            return responseContent;
+        }
+        return responseContent;
     }
 }

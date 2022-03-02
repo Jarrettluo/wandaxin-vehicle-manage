@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import com.example.demo.controller.CompanyController;
+import com.mysql.cj.protocol.x.Notice;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.jupiter.api.Test;
@@ -13,6 +14,7 @@ import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.ResultHandler;
 import org.springframework.test.web.servlet.ResultMatcher;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.context.WebApplicationContext;
 
 import static org.assertj.core.api.AssertionsForClassTypes.not;
@@ -51,6 +53,15 @@ class WandaxinVehicleManageApplicationTests {
 				.andDo(print());//打印结果
 		//.andReturn();//想要返回结果，使用此方法
 
+	}
+
+	@Test
+	public void TestHttpRequest(){
+		String url = "http://118.31.113.49/api/vin/v2/index?key=d7ba9fa7634764f2fd5bb81e8183ce18&vin=LFV2A21K363553763";
+		RestTemplate restTemplate = new RestTemplate();
+		//将指定的url返回的参数自动封装到自定义好的对应类对象中
+		Notice notice = restTemplate.getForObject(url,Notice.class);
+		System.out.println(notice);
 	}
 
 
