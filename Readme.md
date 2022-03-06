@@ -273,3 +273,5 @@ mysql> select repair_item, count(*) AS counts from preparedness group by repair_
 | 检测         |      4 |
 +--------------+--------+
 ```
+
+V1.0.3 新增了车辆vin识别车辆详细信息的功能
