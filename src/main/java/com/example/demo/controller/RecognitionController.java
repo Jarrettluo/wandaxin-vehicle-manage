@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import com.example.demo.service.RecognitionService;
 import com.example.utils.result.ApiResult;
+import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -48,6 +49,15 @@ public class RecognitionController {
             return ApiResult.error(201,"数据为空!");
         }
 
+    }
+
+    @CrossOrigin
+    @GetMapping("/searchInfobyVin")
+    public ApiResult searchInfofbyVin(@RequestParam(value = "vin") String vin){
+        if(vin.length() != 17){
+            return ApiResult.error(1201, "提交的vin不对，请重新提交");
+        }
+        return ApiResult.success();
     }
 
 }

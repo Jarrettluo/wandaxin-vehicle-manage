@@ -11,5 +11,6 @@ public interface RecognitionService {
 
     ApiResult find(byte[] image);
     ApiResult vinCode(byte[] image);
+    ApiResult searchInfofbyVin(String vin);
 
 }

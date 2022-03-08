@@ -121,6 +121,13 @@ public class RecognitionServiceImpl implements RecognitionService {
         }
         return ApiResult.error(1203, "识别失败");
     }
+
+    @Override
+    public ApiResult searchInfofbyVin(String vin){
+        // 进行数据校验
+        ResponseContent responseContent = VinQueryByHttp.queryVin(vin);
+        return ApiResult.success(responseContent);
+    }
 }
 
 
