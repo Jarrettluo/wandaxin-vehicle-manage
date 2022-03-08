@@ -3,6 +3,7 @@ package com.example.demo.servicetests;
 
 import com.example.demo.service.RecognitionService;
 import com.example.utils.result.ApiResult;
+import com.example.utils.result.SuccessApiResult;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,10 +22,11 @@ public class RecognitionServiceTests {
     @Test
     public void testRecognition(){
         String vin = "LS5A2DBE5FA003264";
-        ApiResult apiResult = recognitionService.searchInfofbyVin("");
-        System.out.println(apiResult.toString());
-        System.out.println((apiResult).getCode());
-
+        ApiResult apiResult = recognitionService.searchInfofbyVin(vin);
+        if(apiResult.getCode() == 200){
+            SuccessApiResult successApiResult = (SuccessApiResult) apiResult;
+            System.out.println(successApiResult.getData().toString());
+        }
     }
 
 
