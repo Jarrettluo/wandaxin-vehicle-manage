@@ -36,7 +36,7 @@
 <h3 align="center">二手车管家</h3>
 
   <p align="center">
-    车管家服务车商的智能软件，轻松完成记账、结算、统计等。
+    车管家服务车商的智能软件，轻松完成记账、结算、统计
     <br />
     <a href="https://github.com/Jarrettluo/wandaxin-vehicle-manage"><strong>浏览文档 »</strong></a>
     <br />
@@ -45,7 +45,7 @@
     ·
     <a href="https://github.com/Jarrettluo/wandaxin-vehicle-manage/issues">提交缺陷</a>
     ·
-    <a href="https://github.com/Jarrettluo/wandaxin-vehicle-manage/issues">请求特性</a>
+    <a href="https://github.com/Jarrettluo/wandaxin-vehicle-manage/issues">请求功能</a>
   </p>
 </div>
 
@@ -57,23 +57,20 @@
   <ol>
     <li>
       <a href="#about-the-project">关于车管家</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
     </li>
     <li>
       <a href="#getting-started">产品使用及服务</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
+        <li><a href="#prerequisites">免费试用</a></li>
+        <li><a href="#installation">私有部署</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#usage">产品使用</a></li>
+    <li><a href="#roadmap">开发路线图</a></li>
+    <li><a href="#contributing">项目贡献</a></li>
     <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
+    <li><a href="#contact">联系方式</a></li>
+    <li><a href="#acknowledgments">致谢</a></li>
   </ol>
 </details>
 
@@ -82,13 +79,13 @@
 <!-- ABOUT THE PROJECT -->
 ## 关于车管家
 <div id="about-the-project"></div>
-<div align="center">
-    <img src="http://haochego.com/source/haochego-1.png" alt="Logo">
-</div>
 
 随着二手车市场的发展，越来越多的中小型的二手车商需要更加方便快捷的方式来管理车辆。为了帮助二手车商降低经营成本，提高二手车销量，专门研发了这款《车管家》软件。
 
-车管家功能全面，贴合二手车商的管理流程，提供了一站式解决方案。依托车管家的软件，能够实现流量聚集，让车辆和品牌得到海量曝光，让中小车商也能搭上数字时代的快车。目前软件处于开源迭代状态，目的是提高产品的知名度，不断根据用户的反馈，开发者对产品不断的更新迭代。最终，希望能够将车管家这个产品打造成一个最好用的二手车商管理软件。
+- 车管家功能全面，贴合二手车商的管理流程，提供了一站式解决方案。 
+- 依托车管家的软件，能够实现流量聚集，让车辆和品牌得到海量曝光，让中小车商也能搭上数字时代的快车。
+- 目前软件处于开源迭代状态，目的是提高产品的知名度，不断根据用户的反馈，开发者对产品不断的更新迭代。
+- 希望能够将车管家这个产品打造成一个最好用的二手车商管理软件。
 
 <p align="right">(<a href="#top">回到顶部</a>)</p>
 
@@ -102,6 +99,11 @@
 ### 产品特性
 
 #### 二手车商一站式解决方案助力车商专注经营
+
+<div align="center">
+    <img src="http://haochego.com/source/haochego-1.png" alt="Logo">
+</div>
+
 - 操作流程清晰，从入库、销售到统计
 - 从此记账统计工作智能化完成
 - 降低车商经营成本
@@ -122,12 +124,12 @@
 - 支持数据推送第三方，拓宽销路
 - 紧跟时代潮流，数字化经营
 
-### 车商订阅服务
-- 按月付费，现在提供免费试用机会
-- 点击<a href="http://haochego.com">主页</a>即可开始试用
+### 免费试用
+- 现在提供免费试用机会，用户的使用才是开发的源动力
+- 现在点击<a href="http://haochego.com">主页</a>即可开始试用
 
 ### 私有部署服务
-- 提供阿里云、腾讯云、私有云等搭建服务
+- 如果您有自己的服务器资源，我们也提供阿里云、腾讯云、私有云等搭建服务
 - 联系我<a href="http://haochego.com">联系电话</a>
 
 <p align="right">(<a href="#top">回到顶部</a>)</p>
@@ -140,14 +142,16 @@
 该项目采用Springboot + vue 的前后端分离模式开发。
 
 ### 项目后端
-仓库地址: []()
+仓库地址: [https://github.com/Jarrettluo/wandaxin-vehicle-manage](https://github.com/Jarrettluo/wandaxin-vehicle-manage)
+
 使用的组件内容：
-- [Springboot 2.5.6](Springboot 2.5.6)
+- [ Springboot 2.5.6 ](Springboot)
 - [mysql](mysql)
 - [Mybatis](Mybatis)
 
 ### 项目前端
-仓库地址：[]()
+仓库地址：[https://github.com/Jarrettluo/wandaxin-vehicle-manage](https://github.com/Jarrettluo/wandaxin-vehicle-manage)
+
 使用的组件内容：
 * [Vue.js](https://vuejs.org/)
 * [Minui](https://jquery.com)
@@ -162,11 +166,15 @@
 
 <!-- ROADMAP -->
 ## 路线图
-
+车辆列表功能开发
 - [ ] 自定义每日支出及收入
 - [ ] 数据智能分析系统
 - [ ] 二手车批发功能
     - [ ] 好车购数据接入
+  
+开发跨端应用
+  - [ ] 安卓端手机应用
+  - [ ] iOS端手机应用
     
 
 
@@ -202,15 +210,13 @@
 
 Jarrett Luo - [@佳瑞的博客](http://jiaruiblog.com) - luojiarui2@163.com
 
-仓库地址: [https://github.com/Jarrettluo/wandaxin-vehicle-manage](https://github.com/Jarrettluo/wandaxin-vehicle-manage)
-
 <p align="right">(<a href="#top">回到顶部</a>)</p>
 
 
 
 <!-- ACKNOWLEDGMENTS -->
 ## 致谢
-
+车管家感谢以下用户的大力支持。
 * [万达鑫二手车](http://haochego.com)
 * [优驰二手车](http://haochego.com)
 
