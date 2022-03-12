@@ -30,13 +30,13 @@
 <br />
 <div align="center">
   <a href="https://github.com/Jarrettluo/wandaxin-vehicle-manage">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="http://haochego.com/index/img/icon.d13b9ed0.png" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">好车购-商家专用车管家</h3>
+<h3 align="center">二手车管家</h3>
 
   <p align="center">
-    好车购专供商家的二手车管理工具。
+    车管家服务车商的智能软件，轻松完成记账、结算、统计等。
     <br />
     <a href="https://github.com/Jarrettluo/wandaxin-vehicle-manage"><strong>浏览文档 »</strong></a>
     <br />
@@ -56,13 +56,13 @@
   <summary>目录</summary>
   <ol>
     <li>
-      <a href="#about-the-project">About The Project</a>
+      <a href="#about-the-project">关于车管家</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
     <li>
-      <a href="#getting-started">Getting Started</a>
+      <a href="#getting-started">产品使用及服务</a>
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
@@ -80,136 +80,141 @@
 
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
+## 关于车管家
+<div id="about-the-project"></div>
+<div align="center">
+    <img src="http://haochego.com/source/haochego-1.png" alt="Logo">
+</div>
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+随着二手车市场的发展，越来越多的中小型的二手车商需要更加方便快捷的方式来管理车辆。为了帮助二手车商降低经营成本，提高二手车销量，专门研发了这款《车管家》软件。
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
+车管家功能全面，贴合二手车商的管理流程，提供了一站式解决方案。依托车管家的软件，能够实现流量聚集，让车辆和品牌得到海量曝光，让中小车商也能搭上数字时代的快车。目前软件处于开源迭代状态，目的是提高产品的知名度，不断根据用户的反馈，开发者对产品不断的更新迭代。最终，希望能够将车管家这个产品打造成一个最好用的二手车商管理软件。
 
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-### Built With
-
-* [Next.js](https://nextjs.org/)
-* [React.js](https://reactjs.org/)
-* [Vue.js](https://vuejs.org/)
-* [Angular](https://angular.io/)
-* [Svelte](https://svelte.dev/)
-* [Laravel](https://laravel.com)
-* [Bootstrap](https://getbootstrap.com)
-* [JQuery](https://jquery.com)
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- GETTING STARTED -->
-## Getting Started
-
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
-
-### Installation
-
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/github_username/repo_name.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
-
-<p align="right">(<a href="#top">back to top</a>)</p>
+<p align="right">(<a href="#top">回到顶部</a>)</p>
 
 
 
 <!-- USAGE EXAMPLES -->
-## Usage
+<div id="getting-started"></div>
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+## 产品使用及服务
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+### 产品特性
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+#### 二手车商一站式解决方案助力车商专注经营
+- 操作流程清晰，从入库、销售到统计
+- 从此记账统计工作智能化完成
+- 降低车商经营成本
+
+#### 全面的管理流程让二手车管理更方便快捷
+- 车辆信息拍照自动识别
+- 全部车辆信息列表式呈现
+- 自定义添加购车合伙人，自动结算分成
+- 自定义添加支出收入项
+
+#### 更智能的数据分析，全面推动经营决策和业绩增长
+- 按年份、按月份统计经营状况
+- 智能分析销量情况，提供决策分析
+- 分析精准，丝毫不差
+
+#### 真正的二手车商管家
+- 车商经营信息严格保密
+- 支持数据推送第三方，拓宽销路
+- 紧跟时代潮流，数字化经营
+
+### 车商订阅服务
+- 按月付费，现在提供免费试用机会
+- 点击<a href="http://haochego.com">主页</a>即可开始试用
+
+### 私有部署服务
+- 提供阿里云、腾讯云、私有云等搭建服务
+- 联系我<a href="http://haochego.com">联系电话</a>
+
+<p align="right">(<a href="#top">回到顶部</a>)</p>
+
+
+
+<!-- GETTING STARTED -->
+## 项目内容
+
+该项目采用Springboot + vue 的前后端分离模式开发。
+
+### 项目后端
+仓库地址: []()
+使用的组件内容：
+- [Springboot 2.5.6](Springboot 2.5.6)
+- [mysql](mysql)
+- [Mybatis](Mybatis)
+
+### 项目前端
+仓库地址：[]()
+使用的组件内容：
+* [Vue.js](https://vuejs.org/)
+* [Minui](https://jquery.com)
+
+### 安装及使用
+- 前端的安装方式参考：待补充。
+
+
+<p align="right">(<a href="#top">回到顶部</a>)</p>
 
 
 
 <!-- ROADMAP -->
-## Roadmap
+## 路线图
 
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-    - [ ] Nested Feature
+- [ ] 自定义每日支出及收入
+- [ ] 数据智能分析系统
+- [ ] 二手车批发功能
+    - [ ] 好车购数据接入
+    
 
-See the [open issues](https://github.com/github_username/repo_name/issues) for a full list of proposed features (and known issues).
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+<p align="right">(<a href="#top">回到顶部</a>)</p>
 
 
 
 <!-- CONTRIBUTING -->
-## Contributing
+## 项目贡献
+如果你有对项目的建议，希望修改次项目，欢迎fork该项目并创建一个pull请求。具体的操作方法如下。
 
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+1. `Fork` 该项目
+2. 创建一个功能分支 (`git checkout -b feature/AmazingFeature`)
+3. 提交你的修改内容 (`git commit -m 'Add some AmazingFeature'`)
+4. 推送分支 (`git push origin feature/AmazingFeature`)
+5. 打开一个`Pull`请求
 
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-<p align="right">(<a href="#top">back to top</a>)</p>
+<p align="right">(<a href="#top">回到顶部</a>)</p>
 
 
 
 <!-- LICENSE -->
 ## License
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+本项目遵循[Apache-2.0 License](license-url)
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+<p align="right">(<a href="#top">回到顶部</a>)</p>
 
 
 
 <!-- CONTACT -->
-## Contact
+## 联系我
 
-Jarrett Luo - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
+Jarrett Luo - [@佳瑞的博客](http://jiaruiblog.com) - luojiarui2@163.com
 
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
+仓库地址: [https://github.com/Jarrettluo/wandaxin-vehicle-manage](https://github.com/Jarrettluo/wandaxin-vehicle-manage)
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+<p align="right">(<a href="#top">回到顶部</a>)</p>
 
 
 
 <!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
+## 致谢
 
-* []()
-* []()
-* []()
+* [万达鑫二手车](http://haochego.com)
+* [优驰二手车](http://haochego.com)
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+<p align="right">(<a href="#top">回到顶部</a>)</p>
 
 
 
@@ -227,4 +232,4 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 [license-url]: https://github.com/Jarrettluo/wandaxin-vehicle-manage/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/linkedin_username
-[product-screenshot]: images/screenshot.png
+[product-screenshot]: http://haochego.com/source/haochego-1.png
