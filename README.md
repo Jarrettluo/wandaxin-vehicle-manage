@@ -22,7 +22,7 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
+<!--[![LinkedIn][linkedin-shield]][linkedin-url]-->
 
 
 
@@ -36,7 +36,7 @@
 <h3 align="center">二手车管家</h3>
 
   <p align="center">
-    车管家服务车商的智能软件，轻松完成记账、结算、统计
+    服务二手车商的智能软件，轻松完成记账、结算、统计
     <br />
     <a href="https://github.com/Jarrettluo/wandaxin-vehicle-manage"><strong>浏览文档 »</strong></a>
     <br />
@@ -65,7 +65,13 @@
         <li><a href="#installation">私有部署</a></li>
       </ul>
     </li>
-    <li><a href="#usage">产品使用</a></li>
+    <li><a href="#usage">项目内容</a>
+        <ul>
+          <li><a href="#backend">项目后端</a></li>
+          <li><a href="#frondend">项目前端</a></li>
+          <li><a href="#install-and-use">安装及使用</a></li>
+        </ul>
+    </li>
     <li><a href="#roadmap">开发路线图</a></li>
     <li><a href="#contributing">项目贡献</a></li>
     <li><a href="#license">License</a></li>
@@ -98,7 +104,7 @@
 
 ### 产品特性
 
-#### 二手车商一站式解决方案助力车商专注经营
+**二手车商一站式解决方案助力车商专注经营**
 
 <div align="center">
     <img src="http://haochego.com/source/haochego-1.png" alt="Logo">
@@ -108,26 +114,37 @@
 - 从此记账统计工作智能化完成
 - 降低车商经营成本
 
-#### 全面的管理流程让二手车管理更方便快捷
+**全面的管理流程让二手车管理更方便快捷**
+<div align="center">
+    <img src="http://haochego.com/source/haochego-2.png" alt="Logo">
+</div>
 - 车辆信息拍照自动识别
 - 全部车辆信息列表式呈现
 - 自定义添加购车合伙人，自动结算分成
 - 自定义添加支出收入项
 
-#### 更智能的数据分析，全面推动经营决策和业绩增长
+**更智能的数据分析，全面推动经营决策和业绩增长**
+<div align="center">
+    <img src="http://haochego.com/source/haochego-3.png" alt="Logo">
+</div>
 - 按年份、按月份统计经营状况
 - 智能分析销量情况，提供决策分析
 - 分析精准，丝毫不差
 
-#### 真正的二手车商管家
+**真正的二手车商管家**
+<div align="center">
+    <img src="http://haochego.com/source/haochego-4.png" alt="Logo">
+</div>
 - 车商经营信息严格保密
 - 支持数据推送第三方，拓宽销路
 - 紧跟时代潮流，数字化经营
 
+<div id="prerequisites"></div>
 ### 免费试用
 - 现在提供免费试用机会，用户的使用才是开发的源动力
 - 现在点击<a href="http://haochego.com">主页</a>即可开始试用
 
+<div id="installation"></div>
 ### 私有部署服务
 - 如果您有自己的服务器资源，我们也提供阿里云、腾讯云、私有云等搭建服务
 - 联系我<a href="http://haochego.com">联系电话</a>
@@ -137,9 +154,12 @@
 
 
 <!-- GETTING STARTED -->
+<div id="usage"></div>
 ## 项目内容
 
 该项目采用Springboot + vue 的前后端分离模式开发。
+
+<div id="backend"></div>
 
 ### 项目后端
 仓库地址: [https://github.com/Jarrettluo/wandaxin-vehicle-manage](https://github.com/Jarrettluo/wandaxin-vehicle-manage)
@@ -149,6 +169,9 @@
 - [mysql](mysql)
 - [Mybatis](Mybatis)
 
+
+<div id="frondend"></div>
+
 ### 项目前端
 仓库地址：[https://github.com/Jarrettluo/wandaxin-vehicle-manage](https://github.com/Jarrettluo/wandaxin-vehicle-manage)
 
@@ -156,7 +179,10 @@
 * [Vue.js](https://vuejs.org/)
 * [Minui](https://jquery.com)
 
+
+<div id="install-and-use"></div>
 ### 安装及使用
+
 - 前端的安装方式参考：待补充。
 
 
@@ -165,10 +191,25 @@
 
 
 <!-- ROADMAP -->
+<div id="roadmap"></div>
+
 ## 路线图
+
+数据入库功能
+- [ ] 自定义添加成本功能
+- [ ] vin拍照识别提供用户校验功能
+
 车辆列表功能开发
+- [ ] 已经售出车辆列表按年加载
+  
+新增日常记账功能
 - [ ] 自定义每日支出及收入
+- [ ] 每日支出及收入汇入到月度和年度报表中
+
+优化数据统计功能
 - [ ] 数据智能分析系统
+  
+好车购售车系统开发
 - [ ] 二手车批发功能
     - [ ] 好车购数据接入
   
@@ -183,7 +224,10 @@
 
 
 <!-- CONTRIBUTING -->
+<div id="contributing"></div>
+
 ## 项目贡献
+
 如果你有对项目的建议，希望修改次项目，欢迎fork该项目并创建一个pull请求。具体的操作方法如下。
 
 1. `Fork` 该项目
@@ -197,6 +241,7 @@
 
 
 <!-- LICENSE -->
+<div id="license"></div>
 ## License
 
 本项目遵循[Apache-2.0 License](license-url)
@@ -206,6 +251,7 @@
 
 
 <!-- CONTACT -->
+<div id="contact"></div>
 ## 联系我
 
 Jarrett Luo - [@佳瑞的博客](http://jiaruiblog.com) - luojiarui2@163.com
@@ -215,6 +261,7 @@ Jarrett Luo - [@佳瑞的博客](http://jiaruiblog.com) - luojiarui2@163.com
 
 
 <!-- ACKNOWLEDGMENTS -->
+<div id="acknowledgments"></div>
 ## 致谢
 车管家感谢以下用户的大力支持。
 * [万达鑫二手车](http://haochego.com)
