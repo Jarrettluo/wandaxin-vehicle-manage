@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.example.demo.annotation.UserLoginToken;
 import com.example.demo.aop.OperationLogAnnotation;
 import com.example.demo.repository.CompanyRepository;
 import com.example.demo.service.StatictisService;
@@ -29,6 +30,7 @@ public class StatisticsController {
     @Resource
     CompanyRepository companyRepository;
 
+    @UserLoginToken
     @OperationLogAnnotation(operModul = "数据统计",operType = "查询",operDesc = "年度数据")
     @GetMapping()
     public ApiResult get(@RequestParam("companyId") Long companyId,
@@ -41,6 +43,7 @@ public class StatisticsController {
      * @param year
      * @return
      */
+    @UserLoginToken
     @GetMapping("/fullYearStat")
     public ApiResult getFullYearStat(@RequestParam("year") @Min(2019) @Max(2050) Long year,
                                      @RequestParam("companyId") @NotBlank Long companyId){
@@ -51,6 +54,7 @@ public class StatisticsController {
         return statictisService.getFullYearStat(year);
     }
 
+    @UserLoginToken
     @GetMapping("/monthSaledStatDetail")
     public ApiResult monthSaledStatDetail(@RequestParam("companyId") @NotBlank Long companyId,
                                   @RequestParam("year") @Range(min = 2019,max =2050, message = "年龄取值范围1-50") Long year,
@@ -63,6 +67,7 @@ public class StatisticsController {
         return statictisService.getMonthStat(companyId, year, month);
     }
 
+    @UserLoginToken
     @GetMapping("/monthUnsaledStatDetail")
     public ApiResult monthUnsaledStatDetail(@RequestParam("companyId") @NotBlank Long companyId,
                                   @RequestParam("year") @Range(min = 2019,max =2050, message = "年龄取值范围1-50") Long year,

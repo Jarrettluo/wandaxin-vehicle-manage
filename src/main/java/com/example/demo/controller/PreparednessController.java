@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.example.demo.annotation.UserLoginToken;
 import com.example.demo.aop.OperationLogAnnotation;
 import com.example.demo.domain.dto.PartnerDTO;
 import com.example.demo.domain.dto.PreparednessDTO;
@@ -15,7 +16,7 @@ import javax.annotation.Resource;
  * @Date 2021/1/13 14:44
  * @Version 1.0
  */
-
+@CrossOrigin
 @RestController
 @RequestMapping(value="/preparedness")
 public class PreparednessController {
@@ -23,22 +24,22 @@ public class PreparednessController {
     @Resource
     PreparedService preparedService;
 
+    @UserLoginToken
     @OperationLogAnnotation(operModul = "车辆整备信息",operType = "查询",operDesc = "整备信息")
-    @CrossOrigin
     @GetMapping("/{vehicleId}")
     public ApiResult list(@PathVariable Long vehicleId){
         return preparedService.list(vehicleId);
     }
 
+    @UserLoginToken
     @OperationLogAnnotation(operModul = "车辆整备信息",operType = "新增",operDesc = "整备信息")
-    @CrossOrigin
     @PostMapping
     public ApiResult save(@RequestBody PreparednessDTO[] preparednesses) throws IllegalAccessException {
         return preparedService.save(preparednesses);
     }
 
+    @UserLoginToken
     @OperationLogAnnotation(operModul = "车辆整备信息",operType = "删除",operDesc = "整备信息")
-    @CrossOrigin
     @DeleteMapping("/{vehicleId}")
     public ApiResult remove(@PathVariable Long vehicleId) {
         return preparedService.remove(vehicleId);

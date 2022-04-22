@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.Map;
-
+@CrossOrigin
 @RestController
 @RequestMapping("/user")
 public class UserController {
@@ -27,48 +27,43 @@ public class UserController {
 
     //登录
     @OperationLogAnnotation(operModul = "用户系统",operType = "登录", operDesc = "用户登录")
-    @CrossOrigin
+
     @PostMapping("/login")
     public ApiResult login(@RequestBody UserDTO user){
         return userService.findByUsername(user);
     }
 
-    @CrossOrigin
+
     @UserLoginToken
     @GetMapping("/getMessage")
     public String getMessage(){
         return "你已通过验证";
     }
 
-    @CrossOrigin
     @UserLoginToken
     @GetMapping("/save/")
     public ApiResult save(){
         return ApiResult.success();
     }
 
-    @CrossOrigin
     @UserLoginToken
     @GetMapping("/list/")
     public ApiResult list(@RequestParam Long companyId) {
         return userService.list(companyId);
     }
 
-    @CrossOrigin
     @UserLoginToken
     @PostMapping("/changePwd/")
     public ApiResult changePwd(@RequestBody Map<String, String> pwd) {
         return userService.changePwd(pwd);
     }
 
-    @CrossOrigin
     @UserLoginToken
     @PostMapping("/changeType/")
     public ApiResult changeType(@RequestBody Map<String, String> type) {
         return userService.changeType(type);
     }
 
-    @CrossOrigin
     @UserLoginToken
     @DeleteMapping("/")
     public ApiResult deleteUser(@RequestParam("userId") String userId) {

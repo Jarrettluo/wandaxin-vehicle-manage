@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.example.demo.annotation.UserLoginToken;
 import com.example.demo.domain.dto.PreparatoryItemDTO;
 import com.example.demo.domain.po.CompanyPO;
 import com.example.demo.repository.CompanyRepository;
@@ -49,6 +50,7 @@ public class PreparatoryItemController {
         return countNum;
     }
 
+    @UserLoginToken
     @PostMapping("/addItem")
     public ApiResult addItem(@Valid @RequestBody PreparatoryItemDTO preparatoryItemDTO){
         CompanyPO companyPO = companyRepository.find(preparatoryItemDTO.getCompanyId());
@@ -72,6 +74,7 @@ public class PreparatoryItemController {
         return prepItemService.addItem(preparatoryItemDTO);
     }
 
+    @UserLoginToken
     @DeleteMapping("/removeItem")
     public ApiResult removeItem(@Valid @RequestParam long itemId){
         // 首先校验该id所处的信息是否存在
@@ -79,6 +82,7 @@ public class PreparatoryItemController {
         return prepItemService.removeItem(itemId);
     }
 
+    @UserLoginToken
     @PutMapping("/updateItem")
     public ApiResult updateItem(@Valid @RequestBody PreparatoryItemDTO preparatoryItemDTO){
         CompanyPO companyPO = companyRepository.find(preparatoryItemDTO.getCompanyId());
@@ -102,6 +106,7 @@ public class PreparatoryItemController {
         return prepItemService.updateItem(preparatoryItemDTO);
     }
 
+    @UserLoginToken
     @GetMapping("/list")
     public ApiResult list(@RequestParam Long companyId) {
         CompanyPO companyPO = companyRepository.find(companyId);
