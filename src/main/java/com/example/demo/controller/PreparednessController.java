@@ -7,6 +7,7 @@ import com.example.demo.domain.dto.PreparednessDTO;
 import com.example.demo.domain.po.PreparednessPO;
 import com.example.demo.service.PreparedService;
 import com.example.utils.result.ApiResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -31,11 +32,12 @@ public class PreparednessController {
         return preparedService.list(vehicleId);
     }
 
+
     @UserLoginToken
     @OperationLogAnnotation(operModul = "车辆整备信息",operType = "新增",operDesc = "整备信息")
     @PostMapping
-    public ApiResult save(@RequestBody PreparednessDTO[] preparednesses) throws IllegalAccessException {
-        return preparedService.save(preparednesses);
+    public ApiResult save(@RequestBody PreparednessDTO[] preparedness) throws IllegalAccessException {
+        return preparedService.save(preparedness);
     }
 
     @UserLoginToken

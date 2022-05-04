@@ -2,6 +2,7 @@ package com.example.demo.domain.dto;
 
 import lombok.Data;
 
+import javax.validation.constraints.NotNull;
 import java.sql.Date;
 
 /**
@@ -13,7 +14,10 @@ import java.sql.Date;
 public class PreparednessDTO {
 
     private Long id;
+
+    @NotNull(message = "repairItem不能为空！")
     private String repairItem;
+
     private Integer repairPrice;
     private String handlerName;
     private Date handleDate;

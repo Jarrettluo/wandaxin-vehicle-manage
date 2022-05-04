@@ -36,16 +36,10 @@ public class PreparedServiceImpl implements PreparedService {
 
     @Override
     public ApiResult save(PreparednessDTO[] preparednessDTOS) throws IllegalAccessException {
-        for( PreparednessDTO preparednessDTO: preparednessDTOS){
-            if(CheckObject.checkObjFieldIsNull(preparednessDTO)){
-                return ApiResult.error(1201,"参数错误");
-            }
-        }
         ArrayList<PreparednessDTO> preparednessDTOArrayList = new ArrayList<>(Arrays.asList(preparednessDTOS));
-        List<PreparednessPO> preparednessPOList= BeanUtil.mapperList(preparednessDTOArrayList, PreparednessPO.class);
+        List<PreparednessPO> preparednessPOList = BeanUtil.mapperList(preparednessDTOArrayList, PreparednessPO.class);
         Integer id = preparednessRepositoryImpl.save(preparednessPOList);
-        if(id!=null) return ApiResult.success(id);
-        else return ApiResult.error(1202, "保存失败");
+        return ApiResult.success(id);
     }
 
     @Override

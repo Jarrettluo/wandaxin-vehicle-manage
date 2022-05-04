@@ -7,6 +7,7 @@ import com.example.demo.repository.CompanyRepository;
 import com.example.demo.repository.impl.PrepItemRepositoryImpl;
 import com.example.demo.service.PrepItemService;
 import com.example.utils.result.ApiResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -50,7 +51,8 @@ public class PreparatoryItemController {
         return countNum;
     }
 
-    @UserLoginToken
+    @Validated
+//    @UserLoginToken
     @PostMapping("/addItem")
     public ApiResult addItem(@Valid @RequestBody PreparatoryItemDTO preparatoryItemDTO){
         CompanyPO companyPO = companyRepository.find(preparatoryItemDTO.getCompanyId());
@@ -106,7 +108,7 @@ public class PreparatoryItemController {
         return prepItemService.updateItem(preparatoryItemDTO);
     }
 
-    @UserLoginToken
+//    @UserLoginToken
     @GetMapping("/list")
     public ApiResult list(@RequestParam Long companyId) {
         CompanyPO companyPO = companyRepository.find(companyId);
