@@ -87,5 +87,53 @@ public class PreparednessControllerTest {
         Assert.assertEquals(status, 200);
     }
 
+    @Test
+    @Transactional
+    @Rollback()
+    public void saveTest2() throws Exception {
+        PreparatoryItemDTO preparatoryItemDTO = new PreparatoryItemDTO();
+        preparatoryItemDTO.setCompanyId(1L);
+        preparatoryItemDTO.setName("罗佳瑞");
+        preparatoryItemDTO.setType("user1");
+        MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders
+                .post("/preparatoryItem/addItem")
+                .content((new Gson()).toJson(preparatoryItemDTO))
+                .accept(MediaType.APPLICATION_JSON)
+                .contentType(MediaType.APPLICATION_JSON_VALUE)
+        )
+                .andExpect(MockMvcResultMatchers.status().isOk())
+                .andReturn();
+
+        // 拿到响应结果
+        int status = mvcResult.getResponse().getStatus();
+        String result = mvcResult.getResponse().getContentAsString(Charset.defaultCharset());
+        System.out.println(result);
+        Assert.assertEquals(status, 200);
+    }
+
+    @Test
+    @Transactional
+    @Rollback()
+    public void saveTest3() throws Exception {
+        PreparatoryItemDTO preparatoryItemDTO = new PreparatoryItemDTO();
+        preparatoryItemDTO.setCompanyId(1L);
+        preparatoryItemDTO.setName("");
+        preparatoryItemDTO.setType("user");
+        MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders
+                .post("/preparatoryItem/addItem")
+                .content((new Gson()).toJson(preparatoryItemDTO))
+                .accept(MediaType.APPLICATION_JSON)
+                .contentType(MediaType.APPLICATION_JSON_VALUE)
+        )
+                .andExpect(MockMvcResultMatchers.status().isOk())
+                .andReturn();
+
+        // 拿到响应结果
+        int status = mvcResult.getResponse().getStatus();
+        String result = mvcResult.getResponse().getContentAsString(Charset.defaultCharset());
+        System.out.println(result);
+        Assert.assertEquals(status, 200);
+    }
+
 
 }

@@ -3,21 +3,20 @@ package com.example.demo.controller;
 import com.example.demo.annotation.UserLoginToken;
 import com.example.demo.aop.OperationLogAnnotation;
 import com.example.demo.domain.dto.UserDTO;
-import com.example.demo.service.TokenService;
 import com.example.demo.service.UserService;
 import com.example.utils.result.ApiResult;
-import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.HashMap;
 import java.util.Map;
 @CrossOrigin
 @RestController
 @RequestMapping("/user")
 public class UserController {
 
+    @Qualifier("UserService")
     @Autowired
     UserService userService;
 

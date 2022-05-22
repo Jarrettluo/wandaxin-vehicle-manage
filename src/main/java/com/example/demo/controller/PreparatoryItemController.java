@@ -47,25 +47,16 @@ public class PreparatoryItemController {
         Integer countNum = 0;
         countNum += prepItemRepositoryImpl.countNum("default", companyId, name);
         countNum += prepItemRepositoryImpl.countNum("user", companyId, name);
-        System.out.println(countNum);
         return countNum;
     }
 
     @Validated
-//    @UserLoginToken
+    @UserLoginToken
     @PostMapping("/addItem")
     public ApiResult addItem(@Valid @RequestBody PreparatoryItemDTO preparatoryItemDTO){
         CompanyPO companyPO = companyRepository.find(preparatoryItemDTO.getCompanyId());
         if(companyPO == null){
             return ApiResult.error(1201, "公司的信息不正确！");
-        }
-        String itemName = preparatoryItemDTO.getName();
-        if( itemName == null || "".equals(itemName)){
-            return ApiResult.error(1201, "项目名称不正确");
-        }
-        // 名字必须为中文或者数字，需要经过正则校验
-        if(!isLetterDigitOrChinese(itemName)){
-            return ApiResult.error(1202, "项目名称不符合规范！");
         }
         // 名字需要进行查重
         if(countName(preparatoryItemDTO.getName(), preparatoryItemDTO.getCompanyId()) > 0){

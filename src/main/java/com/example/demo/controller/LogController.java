@@ -22,8 +22,8 @@ public class LogController {
     @GetMapping()
     public ApiResult list(@RequestParam("companyId") Long companyId, @RequestParam("userId") String userList)
     {
-        String str[] = userList.split(",");
-        List<String> userNameList = Arrays.asList(str);
+        String[] user = userList.split(",");
+        List<String> userNameList = Arrays.asList(user);
         return operationLogService.list(companyId, userNameList);
     }
 }
