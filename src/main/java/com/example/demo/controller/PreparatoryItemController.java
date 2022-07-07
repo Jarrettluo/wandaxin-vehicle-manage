@@ -1,11 +1,13 @@
 package com.example.demo.controller;
 
+import com.example.demo.annotation.UserLoginToken;
 import com.example.demo.domain.dto.PreparatoryItemDTO;
 import com.example.demo.domain.po.CompanyPO;
 import com.example.demo.repository.CompanyRepository;
 import com.example.demo.repository.impl.PrepItemRepositoryImpl;
 import com.example.demo.service.PrepItemService;
 import com.example.utils.result.ApiResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -48,19 +50,13 @@ public class PreparatoryItemController {
         return countNum;
     }
 
+    @Validated
+    @UserLoginToken
     @PostMapping("/addItem")
     public ApiResult addItem(@Valid @RequestBody PreparatoryItemDTO preparatoryItemDTO){
         CompanyPO companyPO = companyRepository.find(preparatoryItemDTO.getCompanyId());
         if(companyPO == null){
             return ApiResult.error(1201, "公司的信息不正确！");
-        }
-        String itemName = preparatoryItemDTO.getName();
-        if( itemName == null || "".equals(itemName)){
-            return ApiResult.error(1201, "项目名称不正确");
-        }
-        // 名字必须为中文或者数字，需要经过正则校验
-        if(!isLetterDigitOrChinese(itemName)){
-            return ApiResult.error(1202, "项目名称不符合规范！");
         }
         // 名字需要进行查重
         if(countName(preparatoryItemDTO.getName(), preparatoryItemDTO.getCompanyId()) > 0){
@@ -71,6 +67,7 @@ public class PreparatoryItemController {
         return prepItemService.addItem(preparatoryItemDTO);
     }
 
+    @UserLoginToken
     @DeleteMapping("/removeItem")
     public ApiResult removeItem(@Valid @RequestParam long itemId){
         // 首先校验该id所处的信息是否存在
@@ -78,6 +75,7 @@ public class PreparatoryItemController {
         return prepItemService.removeItem(itemId);
     }
 
+    @UserLoginToken
     @PutMapping("/updateItem")
     public ApiResult updateItem(@Valid @RequestBody PreparatoryItemDTO preparatoryItemDTO){
         CompanyPO companyPO = companyRepository.find(preparatoryItemDTO.getCompanyId());
@@ -101,6 +99,7 @@ public class PreparatoryItemController {
         return prepItemService.updateItem(preparatoryItemDTO);
     }
 
+//    @UserLoginToken
     @GetMapping("/list")
     public ApiResult list(@RequestParam Long companyId) {
         CompanyPO companyPO = companyRepository.find(companyId);

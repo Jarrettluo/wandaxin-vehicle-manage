@@ -1,0 +1,13 @@
+```json
+{"timestamp":1651759440238,
+  "code":200,
+  "data":
+  [{"id":1,"name":"洗车","companyId":0,"type":"default"},
+    {"id":8,"name":"还爱","companyId":1,"type":"user"},
+    {"id":9,"name":"你自已","companyId":1,"type":"user"},
+    {"id":12,"name":"积极提","companyId":1,"type":"user"},
+    {"id":15,"name":"你自己","companyId":1,"type":"user"},
+    {"id":16,"name":"12","companyId":1,"type":"user"},
+    {"id":17,"name":"898","companyId":1,"type":"user"}
+  ]}
+```

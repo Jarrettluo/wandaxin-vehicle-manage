@@ -218,3 +218,60 @@ CREATE TABLE IF NOT EXISTS `vehicle_description`(
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 ```
 
+----
+2022年1月10日更新表
+```roomsql
+CREATE TABLE IF NOT EXISTS `preparatory_item`(
+    `id` int NOT NULL AUTO_INCREMENT,
+    `company_id` INT NOT NULL,
+    `name` VARCHAR(18) NOT NULL,
+    `type` VARCHAR(18) NOT NULL default 'user',
+    `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间\n',
+    `modify_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '修改时间',
+   PRIMARY KEY ( `id` )
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+```
+
+
+
+
+
+```json
+mysql> select repair_item, count(*) AS counts from preparedness group by repair_item order by counts desc limit 30;
++--------------+--------+
+| repair_item  | counts |
++--------------+--------+
+| 洗车         |     97 |
+| 加油         |     96 |
+| 提档         |     67 |
+| 过户         |     65 |
+| 补漆         |     31 |
+| 做漆         |     30 |
+| 脚垫         |     28 |
+| 上户         |     26 |
+| 轮毂         |     23 |
+| 过路费       |     21 |
+| 中介         |     12 |
+| 翻新         |      8 |
+| 中介费       |      8 |
+| 换轮胎       |      7 |
+| 修车         |      7 |
+| 轮胎         |      7 |
+| 卖车中介     |      7 |
+| 费用         |      6 |
+| 买车中介     |      6 |
+| 吃饭         |      5 |
+| 停车         |      5 |
+| 违章         |      5 |
+| 审车         |      5 |
+| 调表         |      5 |
+| 合杠子       |      4 |
+| 包方向盘     |      4 |
+| 换电瓶       |      4 |
+| 动平衡       |      4 |
+| 开关         |      4 |
+| 检测         |      4 |
++--------------+--------+
+```
+
+V1.0.3 新增了车辆vin识别车辆详细信息的功能

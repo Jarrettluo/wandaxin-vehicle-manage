@@ -15,7 +15,7 @@ public class PrepItemRepositoryImpl {
     @Resource
     PrepItemRepository prepItemRepository;
 
-    public Integer save(@Param(value = "preparatoryItemPO") PreparatoryItemPO preparatoryItemPO){
+    public Integer save(PreparatoryItemPO preparatoryItemPO){
         return prepItemRepository.save(preparatoryItemPO);
     }
 

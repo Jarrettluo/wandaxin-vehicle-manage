@@ -1,7 +1,9 @@
 package com.example.demo.controller;
 
+import com.example.demo.annotation.UserLoginToken;
 import com.example.demo.service.RecognitionService;
 import com.example.utils.result.ApiResult;
+import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -13,7 +15,7 @@ import java.io.IOException;
  * @Date 2021/1/28 18:26
  * @Version 1.0
  */
-
+@CrossOrigin
 @RestController
 @RequestMapping(value = "/recognition")
 public class RecognitionController {
@@ -21,8 +23,7 @@ public class RecognitionController {
     @Resource
     RecognitionService recognitionService;
 
-
-    @CrossOrigin
+    @UserLoginToken
     @PostMapping
     public ApiResult save(@RequestParam(value="file", required=false) MultipartFile multipartFile)
             throws IOException {
@@ -36,7 +37,7 @@ public class RecognitionController {
 
     }
 
-    @CrossOrigin
+    @UserLoginToken
     @PostMapping("/vinCode")
     public ApiResult vinCode(@RequestParam(value="file", required=false) MultipartFile multipartFile)
             throws IOException {
@@ -48,6 +49,15 @@ public class RecognitionController {
             return ApiResult.error(201,"数据为空!");
         }
 
+    }
+
+    @UserLoginToken
+    @GetMapping("/searchInfobyVin")
+    public ApiResult searchInfofbyVin(@RequestParam(value = "vin") String vin){
+        if(vin.length() != 17){
+            return ApiResult.error(1201, "提交的vin不对，请重新提交");
+        }
+        return recognitionService.searchInfofbyVin(vin);
     }
 
 }

@@ -1,12 +1,10 @@
 package com.example.demo.aop;
 
 import com.auth0.jwt.JWT;
-import com.auth0.jwt.exceptions.JWTDecodeException;
 import com.example.demo.domain.dto.OperationLogDTO;
 import com.example.demo.domain.dto.UserDTO;
 import com.example.demo.service.OperationLogService;
 import com.example.demo.service.UserService;
-import com.example.demo.service.impl.UserServiceImpl;
 import com.example.utils.result.ApiResult;
 import com.example.utils.result.IPUtil;
 import org.aspectj.lang.JoinPoint;
@@ -18,16 +16,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;
-import org.springframework.web.context.request.ServletRequestAttributes;
 
-import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.lang.reflect.Method;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Enumeration;
-import java.util.Map;
 
 
 // 参考写法 https://blog.csdn.net/lmiao1992/article/details/97891594
