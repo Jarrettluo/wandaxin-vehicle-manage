@@ -7,7 +7,9 @@ import com.auth0.jwt.exceptions.JWTDecodeException;
 import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.example.demo.annotation.PassToken;
 import com.example.demo.annotation.UserLoginToken;
+import com.example.demo.constant.ErrorCode;
 import com.example.demo.domain.dto.UserDTO;
+import com.example.demo.exception.AuthenticationException;
 import com.example.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.method.HandlerMethod;
@@ -54,25 +56,25 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
             if (userLoginToken.required()) {
                 // 执行认证
                 if (token == null) {
-                    throw new RuntimeException("无token，请重新登录");
+                    throw new AuthenticationException(ErrorCode.TOKEN_MISSING, "无token，请重新登录");
                 }
                 // 获取 token 中的 user id
                 String userId;
                 try {
                     userId = JWT.decode(token).getAudience().get(0);
                 } catch (JWTDecodeException j) {
-                    throw new RuntimeException("401");
+                    throw new AuthenticationException(ErrorCode.TOKEN_INVALID, "token解码失败");
                 }
                 UserDTO user = userService.findUserById(userId);
                 if (user == null) {
-                    throw new RuntimeException("用户不存在，请重新登录");
+                    throw new AuthenticationException(ErrorCode.USER_NOT_FOUND, "用户不存在，请重新登录");
                 }
                 // 验证 token
                 JWTVerifier jwtVerifier = JWT.require(Algorithm.HMAC256(user.getPassword())).build();
                 try {
                     jwtVerifier.verify(token);
                 } catch (JWTVerificationException e) {
-                    throw new RuntimeException("401");
+                    throw new AuthenticationException(ErrorCode.TOKEN_INVALID, "token验证失败");
                 }
                 return true;
             }
