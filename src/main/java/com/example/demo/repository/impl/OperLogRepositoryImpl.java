@@ -4,7 +4,7 @@ import com.example.demo.domain.po.OperationLogPO;
 import com.example.demo.repository.OperLogRepository;
 import org.springframework.stereotype.Repository;
 
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 import java.util.List;
 
 @Repository

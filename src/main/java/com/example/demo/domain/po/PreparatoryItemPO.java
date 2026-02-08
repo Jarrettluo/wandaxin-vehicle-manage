@@ -3,7 +3,7 @@ package com.example.demo.domain.po;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
 
 @Data
 @EqualsAndHashCode(callSuper = false)

@@ -4,7 +4,7 @@ import com.example.demo.domain.po.VehicleDescriptionPO;
 import com.example.demo.repository.VehicleDescRepository;
 import org.springframework.stereotype.Repository;
 
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 import java.util.List;
 
 @Repository

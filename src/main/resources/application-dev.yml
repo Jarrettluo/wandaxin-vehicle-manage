@@ -22,7 +22,7 @@ spring:
 
   jpa:
     properties:
-      javax:
+      jakarta:
         persistence:
           validation:
             mode: none

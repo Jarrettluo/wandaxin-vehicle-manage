@@ -2,7 +2,7 @@ package com.example.demo.domain.dto;
 
 import lombok.Data;
 
-import java.sql.Date;
+import java.time.LocalDate;
 import java.sql.Timestamp;
 
 /**

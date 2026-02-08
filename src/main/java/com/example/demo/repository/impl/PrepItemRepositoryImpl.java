@@ -6,7 +6,7 @@ import com.example.demo.repository.PrepItemRepository;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 import java.util.List;
 
 @Repository

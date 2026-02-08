@@ -10,7 +10,7 @@ import com.example.utils.result.CheckObject;
 import com.example.utils.result.bean.BeanUtil;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 import java.util.List;
 
 @Service

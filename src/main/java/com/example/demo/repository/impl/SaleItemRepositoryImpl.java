@@ -4,7 +4,7 @@ import com.example.demo.domain.po.SaleItemPO;
 import com.example.demo.repository.SaleItemRepository;
 import org.springframework.stereotype.Repository;
 
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 
 /**
  * @Author Jarrett Luo

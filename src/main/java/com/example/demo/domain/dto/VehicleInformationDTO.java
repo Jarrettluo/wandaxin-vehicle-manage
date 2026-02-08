@@ -5,8 +5,8 @@ import com.example.demo.domain.po.PreparednessPO;
 import com.example.demo.domain.po.SaleItemPO;
 import lombok.Data;
 
-import javax.validation.constraints.*;
-import java.sql.Date;
+import jakarta.validation.constraints.*;
+import java.time.LocalDate;
 import java.util.List;
 
 /**
@@ -24,11 +24,11 @@ public class VehicleInformationDTO {
 
     private String vehicleBrand;
 
-    private Date registrationDate;
+    private LocalDate registrationDate;
 
     private String vehicleColor;
 
-    private Date purchaseDate;
+    private LocalDate purchaseDate;
 
     private Integer purchasePrice;
 

@@ -4,7 +4,7 @@ import com.example.utils.result.PO.AbstractPO;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-import java.sql.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 /**
@@ -20,9 +20,9 @@ public class VehicleInformationPO {
     private Long id;
     private String vehiclePlate;
     private String vehicleBrand;
-    private Date registrationDate;
+    private LocalDate registrationDate;
     private String vehicleColor;
-    private Date purchaseDate;
+    private LocalDate purchaseDate;
     private Integer purchasePrice;
     private String vehicleNote;
     private Long saleitemId;
