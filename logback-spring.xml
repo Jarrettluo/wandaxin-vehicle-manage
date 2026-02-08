@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration debug="false">
 <!-- 日志文件的地址，windows和Linux下都要写绝对地址 -->
-<property name="LOG_HOME" value="/Users/molly/IdeaProjects/wandaxin-vehicle-manage" />
+<property name="LOG_HOME" value="${LOG_PATH:-./logs}" />
 <!-- 日志输出格式：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度,%msg：日志消息，%n是换行符 -->
 <property name="LOG_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n" />
 
@@ -17,7 +17,7 @@
 <appender name="FILE_OUT" class="ch.qos.logback.core.rolling.RollingFileAppender">
     <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
         <!--日志文件名-->
-        <FileNamePattern>${LOG_HOME}/XXX.log.%d{yyyy-MM-dd}.log</FileNamePattern>
+        <FileNamePattern>${LOG_HOME}/app.%d{yyyy-MM-dd}.log</FileNamePattern>
         <!--日志文件保留天数，15天是阿里巴巴开发规范中的最低要求-->
         <MaxHistory>15</MaxHistory>
     </rollingPolicy>
@@ -32,7 +32,7 @@
 </appender>
 
 <!-- myibatis日志配置 -->
-<logger name="com.apache.ibatis" level="TRACE"/>
+<logger name="org.apache.ibatis" level="DEBUG"/>
 <logger name="java.sql.Connection" level="DEBUG"/>
 <logger name="java.sql.Statement" level="DEBUG"/>
 <logger name="java.sql.PreparedStatement" level="DEBUG"/>

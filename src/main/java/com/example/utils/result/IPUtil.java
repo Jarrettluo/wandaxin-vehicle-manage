@@ -3,13 +3,14 @@ package com.example.utils.result;
 
 //
 //import com.example.demo.service.impl.ResponseContent;
-import com.alibaba.fastjson.JSONObject;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.Data;
 import org.apache.commons.lang3.StringUtils;
 
 import org.springframework.web.client.RestTemplate;
 
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
@@ -72,8 +73,14 @@ public class IPUtil {
         String responseContent = restTemplate.getForObject(IP_QUERY_URL, String.class, map);
         responseContent = responseContent.substring(responseContent.indexOf("{"),
                 responseContent.indexOf("}")+1);
-        JSONObject jsonObject = JSONObject.parseObject(responseContent);
-        return jsonObject.get("city") + " " + jsonObject.get("province");
+        try {
+            ObjectMapper objectMapper = new ObjectMapper();
+            JsonNode jsonNode = objectMapper.readTree(responseContent);
+            return jsonNode.get("city").asText() + " " + jsonNode.get("province").asText();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
     public static void main(String[] args) {

@@ -3,14 +3,9 @@ package com.example.demo;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import springfox.documentation.oas.annotations.EnableOpenApi;
 
 @SpringBootApplication
-@MapperScan("com.example.demo.mapper")//使用MapperScan批量扫描所有的Mapper接口；
-// @ComponentScan(basePackages = {"com.example.demo.repository.impl"})
-@MapperScan("com.example.demo.repository.impl")
-@MapperScan("com.example.demo.repository")
-@EnableOpenApi
+@MapperScan({"com.example.demo.mapper", "com.example.demo.repository.impl", "com.example.demo.repository"})
 public class WandaxinVehicleManageApplication {
 
 	public static void main(String[] args) {

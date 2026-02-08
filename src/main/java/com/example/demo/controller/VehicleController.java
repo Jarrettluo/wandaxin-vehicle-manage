@@ -11,8 +11,8 @@ import org.springframework.validation.ObjectError;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.Resource;
-import javax.validation.Valid;
+import jakarta.annotation.Resource;
+import jakarta.validation.Valid;
 import java.util.regex.Pattern;
 
 /**
@@ -34,7 +34,7 @@ public class VehicleController {
     @PostMapping
     public ApiResult save(@Valid @RequestBody VehicleInformationDTO vehicleInformationDTO) {
         String vinCode = vehicleInformationDTO.getVinCode();
-        if(!"".equals(vinCode) && vinCode != null){
+        if(vinCode != null && !"".equals(vinCode)){
             boolean isMatch = Pattern.matches(pattern, vinCode);
             if(!isMatch) {
                 return ApiResult.error(1202, "VIN格式不对！");

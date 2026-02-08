@@ -14,7 +14,7 @@ import io.swagger.annotations.Api;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -54,7 +54,7 @@ public class VehicleServiceImpl implements VehicleService {
         }
         // 用于保存车辆的vin码
         String vinCode = vehicleInformationDTO.getVinCode();
-        if(!"".equals(vinCode) && vinCode != null){
+        if(vinCode != null && !"".equals(vinCode)){
             VehicleDescriptionPO vehicleDescriptionPO = new VehicleDescriptionPO();
             vehicleDescriptionPO.setVehicleId(vehicleInformationPO.getId());
             vehicleDescriptionPO.setVinCode(vinCode);
@@ -107,7 +107,7 @@ public class VehicleServiceImpl implements VehicleService {
         if(vehicleDescRepositoryImpl.findDescriptionByVehicleId(vehicleId).size() != 0){
             vehicleDescRepositoryImpl.update(vehicleDescriptionPO);
         }else {
-            if(!"".equals(vinCode) || vinCode != null){
+            if(vinCode != null && !"".equals(vinCode)){
                 vehicleDescRepositoryImpl.save(vehicleDescriptionPO);
             }
         }
