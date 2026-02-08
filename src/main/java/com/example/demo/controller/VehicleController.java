@@ -5,10 +5,7 @@ import com.example.demo.aop.OperationLogAnnotation;
 import com.example.demo.domain.dto.VehicleInformationDTO;
 import com.example.demo.service.VehicleService;
 import com.example.utils.result.ApiResult;
-import io.swagger.annotations.Api;
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.ObjectError;
-import org.springframework.validation.annotation.Validated;
+
 import org.springframework.web.bind.annotation.*;
 
 import jakarta.annotation.Resource;
