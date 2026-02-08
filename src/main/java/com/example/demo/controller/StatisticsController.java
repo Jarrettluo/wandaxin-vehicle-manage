@@ -5,14 +5,14 @@ import com.example.demo.aop.OperationLogAnnotation;
 import com.example.demo.repository.CompanyRepository;
 import com.example.demo.service.StatictisService;
 import com.example.utils.result.ApiResult;
-import io.swagger.annotations.Api;
+
 import org.hibernate.validator.constraints.Range;
 import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.Resource;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotBlank;
+import jakarta.annotation.Resource;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
 
 /**
  * @Author Jarrett Luo

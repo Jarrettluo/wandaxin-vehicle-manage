@@ -6,7 +6,7 @@ import com.example.demo.repository.PartnerRepository;
 import com.example.demo.repository.PreparednessRepository;
 import org.springframework.stereotype.Repository;
 
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 import java.util.List;
 
 /**

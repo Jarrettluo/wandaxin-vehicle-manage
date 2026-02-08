@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
 import java.util.Map;
 @CrossOrigin
 @RestController
@@ -35,8 +35,8 @@ public class UserController {
 
     @UserLoginToken
     @GetMapping("/getMessage")
-    public String getMessage(){
-        return "你已通过验证";
+    public ApiResult<String> getMessage(){
+        return ApiResult.success("你已通过验证");
     }
 
     @UserLoginToken

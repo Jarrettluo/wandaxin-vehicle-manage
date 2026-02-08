@@ -8,7 +8,7 @@ import com.example.demo.service.StatictisService;
 import com.example.utils.result.ApiResult;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;

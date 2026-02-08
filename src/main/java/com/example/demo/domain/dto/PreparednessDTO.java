@@ -2,8 +2,8 @@ package com.example.demo.domain.dto;
 
 import lombok.Data;
 
-import javax.validation.constraints.NotNull;
-import java.sql.Date;
+import jakarta.validation.constraints.NotNull;
+import java.time.LocalDate;
 
 /**
  * @Author Jarrett Luo
@@ -20,7 +20,7 @@ public class PreparednessDTO {
 
     private Integer repairPrice;
     private String handlerName;
-    private Date handleDate;
+    private LocalDate handleDate;
 
     private Long vehicleId;
 

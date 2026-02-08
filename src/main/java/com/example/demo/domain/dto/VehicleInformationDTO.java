@@ -5,8 +5,8 @@ import com.example.demo.domain.po.PreparednessPO;
 import com.example.demo.domain.po.SaleItemPO;
 import lombok.Data;
 
-import javax.validation.constraints.*;
-import java.sql.Date;
+import jakarta.validation.constraints.*;
+import java.time.LocalDate;
 import java.util.List;
 
 /**
@@ -20,22 +20,16 @@ public class VehicleInformationDTO {
 
     private Long id;
 
-//    @NotNull(message = "车牌号不能为空")
-//    @Size(min = 1, max = 10, message="车牌号长度必须是1-10个字符")
     private String vehiclePlate;
 
     private String vehicleBrand;
 
-//    @Past(message = "注册时间必须是过去的时间") // 必须是过去的时间
-    private Date registrationDate;
+    private LocalDate registrationDate;
 
     private String vehicleColor;
 
-//    @PastOrPresent(message = "购买时间不能是未来时间") // 过去获取现在时间
-    private Date purchaseDate;
+    private LocalDate purchaseDate;
 
-//    @NotNull(message = "购买价格不能为空")
-//    @Min(value = 0, message = "购买价格必须大于0")
     private Integer purchasePrice;
 
     private String vehicleNote;

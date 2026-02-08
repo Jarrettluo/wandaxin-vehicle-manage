@@ -5,7 +5,7 @@ import com.example.demo.domain.po.VehicleInformationPO;
 import com.example.demo.repository.PartnerRepository;
 import org.springframework.stereotype.Repository;
 
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 import java.util.List;
 
 /**

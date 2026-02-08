@@ -5,14 +5,11 @@ import com.example.demo.aop.OperationLogAnnotation;
 import com.example.demo.domain.dto.VehicleInformationDTO;
 import com.example.demo.service.VehicleService;
 import com.example.utils.result.ApiResult;
-import io.swagger.annotations.Api;
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.ObjectError;
-import org.springframework.validation.annotation.Validated;
+
 import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.Resource;
-import javax.validation.Valid;
+import jakarta.annotation.Resource;
+import jakarta.validation.Valid;
 import java.util.regex.Pattern;
 
 /**
@@ -34,7 +31,7 @@ public class VehicleController {
     @PostMapping
     public ApiResult save(@Valid @RequestBody VehicleInformationDTO vehicleInformationDTO) {
         String vinCode = vehicleInformationDTO.getVinCode();
-        if(!"".equals(vinCode) && vinCode != null){
+        if(vinCode != null && !"".equals(vinCode)){
             boolean isMatch = Pattern.matches(pattern, vinCode);
             if(!isMatch) {
                 return ApiResult.error(1202, "VIN格式不对！");

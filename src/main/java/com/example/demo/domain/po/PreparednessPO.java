@@ -2,7 +2,7 @@ package com.example.demo.domain.po;
 
 import lombok.Data;
 
-import java.sql.Date;
+import java.time.LocalDate;
 
 /**
  * @Author Jarrett Luo
@@ -16,7 +16,7 @@ public class PreparednessPO {
     private String repairItem;
     private Integer repairPrice;
     private String handlerName;
-    private Date handleDate;
+    private LocalDate handleDate;
 
     private Long vehicleId;
 

@@ -2,7 +2,7 @@ package com.example.demo.domain.po;
 
 import lombok.Data;
 
-import java.sql.Date;
+import java.time.LocalDate;
 
 /**
  * @Author Jarrett Luo
@@ -20,7 +20,7 @@ public class SaleItemPO {
     private Integer partnerPrice;
     private float partnerProfit;
     private float selfProfit;
-    private Date saleDate;
+    private LocalDate saleDate;
     private Integer clearState;
 
     private float mortgageRebate; // 贷款返佣

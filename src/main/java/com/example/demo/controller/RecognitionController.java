@@ -3,11 +3,11 @@ package com.example.demo.controller;
 import com.example.demo.annotation.UserLoginToken;
 import com.example.demo.service.RecognitionService;
 import com.example.utils.result.ApiResult;
-import io.swagger.annotations.Api;
+
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 import java.io.IOException;
 
 /**

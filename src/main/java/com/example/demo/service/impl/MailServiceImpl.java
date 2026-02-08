@@ -1,6 +1,9 @@
 package com.example.demo.service.impl;
 
 import com.example.demo.domain.vo.MailVO;
+import com.example.demo.constant.ErrorCode;
+import com.example.demo.exception.ServiceException;
+import com.example.demo.exception.ValidationException;
 import com.example.demo.service.MailService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -43,13 +46,13 @@ public class MailServiceImpl implements MailService {
 
     private void checkMail(MailVO mailVo) {
         if (StringUtils.hasText(mailVo.getTo())) {
-            throw new RuntimeException("邮件收信人不能为空");
+            throw new ValidationException(ErrorCode.PARAM_MISSING, "邮件收信人不能为空");
         }
         if (StringUtils.hasText(mailVo.getSubject())) {
-            throw new RuntimeException("邮件主题不能为空");
+            throw new ValidationException(ErrorCode.PARAM_MISSING, "邮件主题不能为空");
         }
         if (StringUtils.hasText(mailVo.getText())) {
-            throw new RuntimeException("邮件内容不能为空");
+            throw new ValidationException(ErrorCode.PARAM_MISSING, "邮件内容不能为空");
         }
     }
 
@@ -80,7 +83,7 @@ public class MailServiceImpl implements MailService {
             mailVo.setStatus("ok");
             logger.info("发送邮件成功：{}->{}", mailVo.getFrom(), mailVo.getTo());
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            throw new ServiceException(ErrorCode.EMAIL_SERVICE_ERROR, "邮件发送失败", e);
         }
     }
 
